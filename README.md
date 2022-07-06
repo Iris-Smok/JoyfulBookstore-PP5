@@ -40,7 +40,7 @@ responsive image and link to live site
 
 
 # About
-This is a full-stack e-commerce project built using Django, Python, HTML, CSS and JavaScript. I created a website for 'JoyfulBookstore' which is designed to sell children's books and other materials such as notebooks, school supplies or arts and crafts supplies.
+This is a full-stack e-commerce project built using Django, Python, HTML, CSS and JavaScript. I created a website for 'JoyfulBookstore' which is designed to sell children's books
 
 
 # UX
@@ -49,13 +49,13 @@ Using the core UX principles I first started with Strategy, thinking about the t
 
 The target audience for 'JoyfulBookstore' are:
 
-- parents, relatives or friends who would like to buy books or other materials for their children/friends
+- parents, relatives or friends who would like to buy books children/friends
 - children age 0 - 18
 
 These users will be looking for:
 - An informative website, with information that is easy-to-find & concise
-- A website that offers children's books and other materials
-- Ability to view & purchase books and other materials that are for sale
+- A website that offers children's books
+- Ability to view & purchase books that are for sale
 - Ability to make a user account in order to see billing history, make whish list and write reviews 
 - A way to sign up for the bookstore newsletter
 
@@ -92,8 +92,8 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 11  | Aa a **user** I can easily see list of products so that I can view what shop can offer
 | 12  | As a **user** I can sort product by category so that I can easily find what I'm looking for
 | 13  | As a **user** I can filter products by rating, price and name so that I can easily find what I'm looking for
-| 14  | As a **user** I can search for products using the search form so I can find products by name, author or description
-| 15  | As a **user** I can see the product details page, which displays the product name, rating, price and short description
+| 14  | As a **user** I can search for products using the search form so that I can find products by name, author or description
+| 15  | As a **user** I can see the product details page, which displays the product name, rating, price, short description and comments
 | 16  | As a **user** I can select quantity of the desire product that I want to purchase
 | 17  | As a **user** I can see rating and reviews so that I can read other users opinions
 | 18  | As a **user** I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated/failed
@@ -114,3 +114,75 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 28  | As a **logged-in User** I can leave reating and reviews so that I can leave my feedback
 
 
+# Scope
+
+## Features
+
+### **Home Page**
+
+*Navigation bar:*
+- The navigation bar appears on every page so users can easily navigate through the site
+- Navigation bar has links for 'Home', 'All Books', 'Categories' and icons for search bar, account and shopping bag
+
+*Account - Login/Register:*
+- The Login/Register feature is located in the upper right corner and offers the user to log in or register for an account as well as log out of the site
+- When the user is logged in links for 'Login' and 'Register' will change to 'My Profile' and 'Logout', add Whish list
+- The admin user has extra access that allow them to add, update and remove books from the store
+
+*Shopping bag:*
+- The shopping bag is also situated on the top right corner of the site and it is always visible for the user throughout all the pages. With one click they can access their    shopping bag to see what is in there, update the quantities of book they wish to purchase or to delete them from the shopping bag.
+- The navbar is fully responsive, collapsing into a hamburger menu for medium and small screen size
+
+*Carousel:*
+- The carousel welcomes the user with a short message and background image advertising what the website is about
+- The 'Shop Now' button will take users to the all books page
+
+*New releases:*
+- The New Releases section displays the latest books the bookstore has in store so users can quickly see new books
+- Each book card displayes an image, book title, author and price
+- Each book card also had an "Add to Bag" button so the user could quickly add the book to their shopping bag
+
+*Footer:*
+- Appears on every page snd contains social links
+- Links are opened in a new tab to avoid dragging users from our site
+
+### **All Books**
+
+- The All Books page shows all the books that the bookstore sells
+- Each book has an image, book title, author, rating and price
+- The site will paginate all books cards to display 10 per page
+- Each book card takes users to the book details page 
+
+
+### **Categories**
+
+- Categories dropdown from Navbar, allowing the user to access specific categories
+- Categories: 
+    - Board Books
+    - Pitcure Story Books
+    - First Reads
+    - Early Readers
+    - Fiction Books
+    - Non Fiction Books
+
+### **Special Offers**
+
+- Special Offers dropdown from Navbar, allowing the user to access specific offer
+- From the dropdown menu user can select : 
+        - Sale
+        - New arrivals
+
+### **Book Details Page**
+- The Book Details Page displays all the information about the selected book
+- Page main body of the page will display book cover image, title, rating, author, book type, size, category, description
+- After the main body content user can select quantity and add product to the shopping bag or whish list
+- Commenting section is located at the end of the page, only logged in users can leave a comment
+
+### **Checkout Page**
+- The checkout page is accessible through the shopping bag
+- Once the site users have made their last decision about what to purchase and they are happy with it. At the checkout the site user can enter and save their personal details and see a summary of what they are about to purchase before entering their card details.
+
+### **Admin User**
+- Admin user can preform full CRUD functionalliy without having to enter the default 'admin panel' from django. 
+- Admin user can add books from 'Book Managment' link in the account menu from the navigation bar 
+- Admin user can edit/delete books from all books page and books details page
