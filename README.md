@@ -56,7 +56,7 @@ These users will be looking for:
 - An informative website, with information that is easy-to-find & concise
 - A website that offers children's books
 - Ability to view & purchase books that are for sale
-- Ability to make a user account in order to see billing history, make whish list and write reviews 
+- Ability to make a user account in order to see billing history, make whishlist and write reviews 
 - A way to sign up for the bookstore newsletter
 
 This website will offer all of these things whilst also allowing for intuitive navigation and conformability of use.
@@ -82,7 +82,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 7   | As a **first time user** I can see an interesting home page so that I can understand what shop sells
 | 8   | As a **first time user** I can easily navigate through the site so that I can view desired content
 | 9   | As a **first time user** I can find a navigation bar and footer so that I can see what content there is on the website
-| 10  | As a **first time user** I can register and create account so that I can view my orders, save delivery details, create whish list and leave feedback
+| 10  | As a **first time user** I can register and create account so that I can view my orders, save delivery details, create whishlist and leave feedback
 
 
 **Epic: User**
@@ -126,11 +126,11 @@ This website will offer all of these things whilst also allowing for intuitive n
 
 *Account - Login/Register:*
 - The Login/Register feature is located in the upper right corner and offers the user to log in or register for an account as well as log out of the site
-- When the user is logged in links for 'Login' and 'Register' will change to 'My Profile' and 'Logout', add Whish list
+- When the user is logged in links for 'Login' and 'Register' will change to 'My Profile', 'Logout' and add Whishlist
 - The admin user has extra access that allow them to add, update and remove books from the store
 
 *Shopping bag:*
-- The shopping bag is also situated on the top right corner of the site and it is always visible for the user throughout all the pages. With one click they can access their    shopping bag to see what is in there, update the quantities of book they wish to purchase or to delete them from the shopping bag.
+- The shopping bag is also situated on the top right corner of the site and it is always visible for the user throughout all the pages. With one click they can access their    shopping bag to see what is in there, update the quantities of book they wish to purchase or to delete them from the shopping bag
 - The navbar is fully responsive, collapsing into a hamburger menu for medium and small screen size
 
 *Carousel:*
@@ -138,13 +138,26 @@ This website will offer all of these things whilst also allowing for intuitive n
 - The 'Shop Now' button will take users to the all books page
 
 *New releases:*
-- The New Releases section displays the latest books the bookstore has in store so users can quickly see new books
+- The New Releases section displays the latest books that the bookstore has in store so users can keep up with new book releases
 - Each book card displayes an image, book title, author and price
+- Each book card will take the user to the book details page where the user can add book to the shopping bag or whishlist
 - Each book card also had an "Add to Bag" button so the user could quickly add the book to their shopping bag
 
 *Footer:*
 - Appears on every page snd contains social links
 - Links are opened in a new tab to avoid dragging users from our site
+
+### **User Profile**
+- A logged-in user can access the my account link, this page displayed links to personal details, previous orders and wishlist
+- The personal details page is where the user can update their default shipping/billing address and contact information
+- The previous order displays a list of all the orders previously made by the user
+- Wish list displays the list of items the user has saved to their wishlist, with the ability to remove the product
+
+### **Admin User**
+- Admin user can preform full CRUD functionalliy without having to enter the default 'admin panel' from django
+- Admin user can add books from 'Book Managment' link in the account menu from the navigation bar 
+- Admin user can edit/delete books from all books page and books details page
+
 
 ### **All Books**
 
@@ -175,14 +188,22 @@ This website will offer all of these things whilst also allowing for intuitive n
 ### **Book Details Page**
 - The Book Details Page displays all the information about the selected book
 - Page main body of the page will display book cover image, title, rating, author, book type, size, category, description
-- After the main body content user can select quantity and add product to the shopping bag or whish list
+- After the main body content user can select quantity and add product to the shopping bag or whishlist
 - Commenting section is located at the end of the page, only logged in users can leave a comment
 
 ### **Checkout Page**
 - The checkout page is accessible through the shopping bag
-- Once the site users have made their last decision about what to purchase and they are happy with it. At the checkout the site user can enter and save their personal details and see a summary of what they are about to purchase before entering their card details.
+- Once the site users have made their last decision about what to purchase and they are happy with it. At the checkout the site user can enter and save their personal details and see a summary of what they are about to purchase before entering their card details
+- If the checkout was successful the user is taken to the 'checkout success' page, which displays the order number and delivery details
 
-### **Admin User**
-- Admin user can preform full CRUD functionalliy without having to enter the default 'admin panel' from django. 
-- Admin user can add books from 'Book Managment' link in the account menu from the navigation bar 
-- Admin user can edit/delete books from all books page and books details page
+### **Shopping Bag**
+
+- The shopping bag page provides an overview of all of the items added by the user
+- The information is displayed in a table that has product name, image, quantity, price and subtotal
+- The user can amend the quantity of each product and also remove it whilst on this page
+- Buttons to proceed to the checkout or to keep shopping are located at the end of the page
+
+
+
+
+
