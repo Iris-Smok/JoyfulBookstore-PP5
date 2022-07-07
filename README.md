@@ -203,7 +203,11 @@ This website will offer all of these things whilst also allowing for intuitive n
 - The user can amend the quantity of each product and also remove it whilst on this page
 - Buttons to proceed to the checkout or to keep shopping are located at the end of the page
 
+## Future Features
 
+- Gift Card
+- School and craft materials
+- Stock app 
 
 
 
