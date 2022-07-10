@@ -1,5 +1,5 @@
 <p align="center">
-<img src="README_docs/logo/logo_transparent.png" width="400" height="100%">
+<img src="assets/documents/README_docs/logo_transparent.png" width="400" height="100%">
 </p>
 
 # Table of Contents 
@@ -208,6 +208,28 @@ This website will offer all of these things whilst also allowing for intuitive n
 - Gift Card
 - School and craft materials
 - Stock app 
+
+
+#
+# Structure
+
+In the children's book market, the target audience isn't made up of children but the bigs who purchase the books for them. That might be parents, uncles, aunts, grandparents,teachers — whomever so the structure idea for JoyfullBookstore was to keep it simple. Simplicity helps users to quickly and easily access the app and navigate within the app.
+
+<!-- Add app list and database schema -->
+
+# SiteMap
+<p align="center">
+<img src="assets/documents/README_docs/sitemap.png" width="1000" height="100%">
+</p>
+
+
+
+# Wireframes
+All wireframes were created used [Balsamiq](https://balsamiq.com/)
+
+Wireframes for each device are linked here:
+- [Desktop](assets/documents/README_docs/Desktop-wireframes.pdf)
+- [Mobile](assets/documents/README_docs/Mobile-wireframes.pdf)
 
 
 
