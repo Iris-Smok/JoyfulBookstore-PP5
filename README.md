@@ -12,6 +12,7 @@
     - [Future Features](#future-features)
 
 3. [Structure](#structure)
+    - [Sitemap](#sitemap)
     - [Wireframes](#wireframes)
     - [Database schema](#database-schema)
     - [Models](#models)
@@ -217,7 +218,7 @@ In the children's book market, the target audience isn't made up of children but
 
 <!-- Add app list and database schema -->
 
-# SiteMap
+# Sitemap
 <p align="center">
 <img src="assets/documents/README_docs/sitemap.png" width="1000" height="100%">
 </p>
