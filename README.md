@@ -216,7 +216,14 @@ This website will offer all of these things whilst also allowing for intuitive n
 
 In the children's book market, the target audience isn't made up of children but the bigs who purchase the books for them. That might be parents, uncles, aunts, grandparents,teachers — whomever so the structure idea for JoyfullBookstore was to keep it simple. Simplicity helps users to quickly and easily access the app and navigate within the app.
 
-<!-- Add app list and database schema -->
+The website is made from ___ app:
+- Home
+- Books
+- Bag
+- Checkout
+- Profile
+- Newsletter
+
 
 # Sitemap
 <p align="center">
@@ -231,6 +238,12 @@ All wireframes were created used [Balsamiq](https://balsamiq.com/)
 Wireframes for each device are linked here:
 - [Desktop](assets/documents/README_docs/Desktop-wireframes.pdf)
 - [Mobile](assets/documents/README_docs/Mobile-wireframes.pdf)
+
+# Database schema
+
+<p align="center">
+<img src="assets/documents/README_docs/database.png" width="1000" height="100%">
+</p>
 
 
 
