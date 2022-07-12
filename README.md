@@ -50,8 +50,8 @@ Using the core UX principles I first started with Strategy, thinking about the t
 
 The target audience for 'JoyfulBookstore' are:
 
-- parents, relatives or friends who would like to buy books children/friends
-- children age 0 - 18
+- adults who buy books for their children. It can be parents, uncles, aunts, grandparents, teachers - anyone
+
 
 These users will be looking for:
 - An informative website, with information that is easy-to-find & concise
@@ -74,6 +74,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 4   | As a **store owner** I can edit/delete products so that I can make sure the website it up to date
 | 5   | As a **store owner** I can send out newsletter via email so that I keep customers updated with new products
 | 6   | As a **store owner** I have created Facebook shop page to increase traffic on my website
+| 7   | As a **store owner** I can write FAQ's to provide users with information about common questions or concerns
 
 **Epic: First time User**
 
@@ -145,11 +146,11 @@ This website will offer all of these things whilst also allowing for intuitive n
 - Each book card also had an "Add to Bag" button so the user could quickly add the book to their shopping bag
 
 *Footer:*
-- Appears on every page snd contains social links
-- Links are opened in a new tab to avoid dragging users from our site
+- Appears on every page and contains FAQ's, Shipping Info, Privacy Policy, Subscribe form, Contact Link and Social links
+- Social links are opened in a new tab to avoid dragging users from our site
 
 ### **User Profile**
-- A logged-in user can access the my account link, this page displayed links to personal details, previous orders and wishlist
+- A logged-in user can access the My account link, this page displayed links to personal details, previous orders and wishlist
 - The personal details page is where the user can update their default shipping/billing address and contact information
 - The previous order displays a list of all the orders previously made by the user
 - Wish list displays the list of items the user has saved to their wishlist, with the ability to remove the product
@@ -158,13 +159,15 @@ This website will offer all of these things whilst also allowing for intuitive n
 - Admin user can preform full CRUD functionalliy without having to enter the default 'admin panel' from django
 - Admin user can add books from 'Book Managment' link in the account menu from the navigation bar 
 - Admin user can edit/delete books from all books page and books details page
+- Admin user can send email newsletters to subscribe users
+- Admin user can add,edit or delete FAQ's
 
 
 ### **All Books**
 
 - The All Books page shows all the books that the bookstore sells
 - Each book has an image, book title, author, rating and price
-- The site will paginate all books cards to display 10 per page
+- The site will paginate all books cards to display 12 per page
 - Each book card takes users to the book details page 
 
 
@@ -188,7 +191,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 
 ### **Book Details Page**
 - The Book Details Page displays all the information about the selected book
-- Page main body of the page will display book cover image, title, rating, author, book type, size, category, description
+- Page main body of the page will display book cover image, title, rating, author, book type, size, suitable for ages, category, description
 - After the main body content user can select quantity and add product to the shopping bag or whishlist
 - Commenting section is located at the end of the page, only logged in users can leave a comment
 
