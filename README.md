@@ -68,52 +68,67 @@ This website will offer all of these things whilst also allowing for intuitive n
 
 | ID  | Content     |
 | --- | ----------- |
-| 1   | As a **store owner** I can log in/log out from of the admin panel so that I can connect or disconnect from the website
+| 1   | As a **store owner** I can log in/out from of the admin panel so that I can connect or disconnect from the website
 | 2   | As a **store owner** I can log in so that I have full access to the store backend
-| 3   | As a **store owner** I can add new products to the shop so that I can make sure the website is up to date
-| 4   | As a **store owner** I can edit/delete products so that I can make sure the website it up to date
-| 5   | As a **store owner** I can send out newsletter via email so that I keep customers updated with new products
+| 3   | As a **store owner** I can add new books to the shop so that I can make sure the website is up to date
+| 4   | As a **store owner** I can edit/delete books so that I can make sure the website is up to date
+| 5   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new books
 | 6   | As a **store owner** I have created Facebook shop page to increase traffic on my website
-| 7   | As a **store owner** I can write FAQ's to provide users with information about common questions or concerns
-
-**Epic: First time User**
+| 7   | As a **store owner** I can add/edit or delete questions to FAQ's section so that I can provide users with information about common questions and concerns
 
 
-| ID  | Content     |
-| --- | ----------- |
-| 7   | As a **first time user** I can see an interesting home page so that I can understand what shop sells
-| 8   | As a **first time user** I can easily navigate through the site so that I can view desired content
-| 9   | As a **first time user** I can find a navigation bar and footer so that I can see what content there is on the website
-| 10  | As a **first time user** I can register and create account so that I can view my orders, save delivery details, create whishlist and leave feedback
-
-
-**Epic: User**
+**Epic: Navigation**
 
 | ID  | Content     |
 | --- | ----------- |
-| 11  | Aa a **user** I can easily see list of products so that I can view what shop can offer
-| 12  | As a **user** I can sort product by category so that I can easily find what I'm looking for
-| 13  | As a **user** I can filter products by rating, price and name so that I can easily find what I'm looking for
-| 14  | As a **user** I can search for products using the search form so that I can find products by name, author or description
-| 15  | As a **user** I can see the product details page, which displays the product name, rating, price, short description and comments
-| 16  | As a **user** I can select quantity of the desire product that I want to purchase
-| 17  | As a **user** I can see rating and reviews so that I can read other users opinions
-| 18  | As a **user** I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated/failed
-| 19  | As a **user** I can add selected item into the shopping bag
+| 8   | As a **user** I can see an interesting home page so that I can understand what shop sells
+| 9   | As a **user** I can easily navigate through the site so that I can view desired content
+| 10  | As a **user** I can  easily find a navigation bar and footer so that I can see what content there is on the website
+
+| 12  | Aa a **user** I can easily see the book list so that I can see what the store has to offer
+| 13  | As a **user** I can sort books by category so that I can easily find what I'm looking for
+| 14  | As a **user** I can sort books by rating, price and name so that I can easily find what I'm looking for
+| 15  | As a **user** I can search for products using the search form so that I can find the products I'm specifically looking for
+| 16  | As a **user** I can see the book details page so that I can see the book name, rating, price, short description and comments
+| 17  | As a **user** I can read the FAQ's so that I can find the answer to my question or concern before contacting the bookstore
+
+**Epic: Purchase**
+| ID  | Content     |
+| --- | ----------- |
+| 18  | As a **user** I can select the quantity of the desired book so that I can buy more books of the same kind
+| 19  | As a **user** I can add selected book into the shopping bag so that I can keep track of what I am spending
 | 20  | As a **user** I can see shopping bag summury and total cost so that I can see how much I will spend
 | 21  | As a **user** I can remove items from shopping bag so that I don't buy what I don't want
 | 22  | As a **user** I can put in my card details so that I can pay for my goods
 | 23  | As a **user** I receive order confirmations to be sure my order has been processed
 
-**Epic: Logged-in User**
+
+**Epic: User Interaction**
 
 | ID  | Content     |
 | --- | ----------- |
-| 24  | As a **logged-in User** I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
-| 25  | As a **logged-in User** I can log in/out off my account if I wish so that I can connect or disconnect from the website
-| 26  | As a **logged-in User** I can have my details saved so that I don't have to re type my address every time
-| 27  | As a **logged-in User** I can create whish list so that I can save selected products for later purchase
-| 28  | As a **logged-in User** I can leave reating and reviews so that I can leave my feedback
+| 24  | As a **user** I can see rating and reviews so that I can read other users opinions
+| 25  | As a **user** I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated
+| 26  | As a **user** I can connect to the sites social media pages so that I can follow them and keep up to date with their products and promotions
+| 27  | As a **user** I can sign up to the websites newsletter so that I can keep up to date with new products and promotions
+| 28  | As a **user** I can contact the bookstore so that I can find out any information that I require
+| 29  | As a **logged-in User** I can leave reating and reviews so that I can share my experience with others
+| 30  | As a **logged-in User** I can save selected products to my whishlist for later purchase
+
+
+
+
+**Epic: Accounts**
+
+| ID  | Content     |
+| --- | ----------- |
+| 31  | As a **user** I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+| 32  | As a **user** I can log in/out off my account if I wish so that I can connect or disconnect from the website
+| 33  | As a **user** I can register for an account so that I can use features for logged-in users
+| 34  | As a **user**  I can receive a confirmation email when creating an account so that I know the registration was successful
+| 35  | As a **logged-in User** I can have my details saved so that I don't have to retype my address every time
+
+
 
 
 # Scope
