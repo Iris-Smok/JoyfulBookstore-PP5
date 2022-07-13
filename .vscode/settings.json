@@ -1,10 +1,13 @@
 {
    "python.linting.pylintEnabled": true,
    "python.linting.enabled": true,
-   "python.linting.pep8Enabled": false,
+   "python.linting.pep8Enabled": true,
    "python.linting.flake8Enabled": true,
    "python.terminal.activateEnvironment": false,
    "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
+   "editor.formatOnSave": true,
+   "python.formatting.provider": "autopep8",
+   "python.linting.lintOnSave": true,
    "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
    "cornflakes.linter.executablePath": "/home/gitpod/.pyenv/shims/flake8",
    "files.exclude": {
@@ -23,5 +26,11 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "json.schemas": [
+
+   ],
+   "[html]": {
+      "editor.defaultFormatter": "HookyQR.beautify",
+   },
+
 }
