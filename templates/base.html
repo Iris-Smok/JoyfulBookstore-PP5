@@ -18,10 +18,10 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     {% endblock %}
 
-    {% block extra_css}
-    {% endblock% }
+    {% block extra_css %}
+    {% endblock %}
 
-    {% block corejs% }
+    {% block corejs %}
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -34,8 +34,8 @@
     </script>
     {% endblock %}
 
-    {% block extra_js}
-    {% endblock% }
+    {% block extra_js %}
+    {% endblock %}
 
     <title>JoyfullBookstore {% block extra_title %}{% endblock %}</title>
 </head>
@@ -44,15 +44,15 @@
 <body>
     <header class="container-fluid fixed-top"></header>
 
-    {% block page_header%}
+    {% block page_header %}
     {% endblock %}
 
     {% block content %}
     {% endblock %}
 
 
-    {% block_postloadjs %}
-    {% endlock %}
+    {% block postloadjs %}
+    {% endblock %}
 
 </body>
 
