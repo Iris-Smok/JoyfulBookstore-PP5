@@ -164,7 +164,7 @@
         </nav>
 
         <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                     aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -181,7 +181,60 @@
     {% block content %}
     {% endblock %}
 
-
+    <footer class="fixed-bottom w-100 m-auto text-center p-4" style="background-color: lightblue;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-sm-12 col-md-4">
+                    <!-- Help Section -->
+                    <div class="footer-header">
+                        <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
+                    </div>
+                    <div><a href="#" class="text-reset">FAQ's</a>
+                    </div>
+                    <div><a href="#" class="text-reset">Shipping Info</a>
+                    </div>
+                    <div><a href="#" class="text-reset"> Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <!-- Subscribe -->
+                    <div class="footer-header">
+                        <h6 class="text-uppercase mb-4"><strong>Subscribe</strong></h6>
+                        <p>Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight to
+                            your inbox!</p>
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+                            <input type="text" class="d-block w-100">
+                            <input type="submit" class=" btn-secondary submit btn m-2 d-block" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="footer-header">
+                        <!-- Contact Us Section -->
+                        <h6 class="text-uppercase mb-4"><strong>Contact Us</strong></h6>
+                        <div>
+                            <a href="#" class="footer-links text-reset">Get in Touch</a>
+                        </div>
+                        <h6 class="text-uppercase">Follow Us</h6>
+                        <a href="#" target="_blank" rel="noopener" class="text-reset">
+                            <i class="fa-brands fa-instagram footer-links fa-lg"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" class="text-reset">
+                            <i class="fa-brands fa-facebook-f fa-lg"></i>
+                        </a>
+                        <div>
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <i class="fa-regular fa-copyright"></i>
+                                <p class="d-inline">JoyfulBookstore, 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     {% block postloadjs %}
     {% endblock %}
 
