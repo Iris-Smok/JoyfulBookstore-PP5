@@ -1,3 +1,4 @@
+""" home page views"""
 from django.shortcuts import render
 
 

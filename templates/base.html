@@ -22,6 +22,7 @@
     {% endblock %}
 
     {% block corejs %}
+    <script src="https://kit.fontawesome.com/fce2e52a2f.js" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -32,6 +33,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
+
+
+
     {% endblock %}
 
     {% block extra_js %}
@@ -42,7 +46,134 @@
 
 
 <body>
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-flex">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">JOYFULBOOKSTORE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- LINKS -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All Books</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Board Books</a>
+                            <a class="dropdown-item" href="#">Pitcure Story Books</a>
+                            <a class="dropdown-item" href="#">First Reads</a>
+                            <a class="dropdown-item" href="#">Early Readers</a>
+                            <a class="dropdown-item" href="#">Fiction Books</a>
+                            <a class="dropdown-item" href="#">Non Fiction Books</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Special Offers
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Sale</a>
+                            <a class="dropdown-item" href="#">New arrivals</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- ICONS -->
+                <div class="list-inline-item ">
+                    <a class="nav-link d-block text-reset" href="#" id="search-icon" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" aria-label="Search">
+                        <div class="text-center">
+                            <div><i class="fas fa-search fa-lg"></i></div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu w-100 p-3 search-icon bg-nav my-0" aria-labelledby="search">
+                        <form class="form" method="GET" action="#">
+                            <div class="input-group w-100 input-left">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search..."
+                                    aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="input-btn form-control form-control btn btn-trans" type="submit"
+                                        aria-label="Search">
+                                        <span class="icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="list-inline-item  dropdown">
+                    <a class="nav-link d-block text-reset" href="#" id="mob-account-menu" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"
+                        aria-label="{% if request.user.is_authenticated %}My Account{% else %}Sign in or sign up{% endif %}">
+                        <div class="text-center">
+                            <div><i class="fa-solid fa-user fa-lg"></i></div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="#" class="dropdown-item">Admin</a>
+                        {% endif %}
+                        <a href="#" class="dropdown-item">My Profile</a>
+                        <a href="#" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a href="#" class="dropdown-item">Register</a>
+                        <a href="#" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+                <!-- Cart nav link that dynamically displays the cart count and total-->
+                <div class="list-inline-item">
+                    <a class="nav-link d-block text-reset" href="#"
+                        title="{% if grand_total %}Your cart grand total is {{ grand_total }}{% else %}Your cart is empty{% endif %}"
+                        aria-label="cart">
+                        <div class="text-center">
+                            <div><i class="fas fa-shopping-cart fa-lg"></i>
+                            </div>
+                            <small
+                                class="my-0 grand-total {% if grand_total %}border-orange{% else %}border-white{% endif %}">
+                                {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }} ({{ product_count }})
+                                {% else %}
+                                €0.00
+                                {% endif %}
+                            </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-nav.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
+        </div>
+    </header>
 
     {% block page_header %}
     {% endblock %}
