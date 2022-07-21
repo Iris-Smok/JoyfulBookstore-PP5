@@ -11,6 +11,12 @@ body{
     font-family: 'Nunito Sans',sans-serif;
 }
 
+.nav-link, .nav-link > a,
+footer h6,
+.welcome-msg-wrapper h2,
+.modal-header{
+    font-family: 'Playfair Display', sans-serif;
+}
 
 .navbar{
     background-color: #b4ccdb;
@@ -32,7 +38,6 @@ body{
     color: #252525;
     font-size: 1.2rem;
     text-transform: uppercase;
-    font-family: 'Playfair Display',sans-serif;
     font-weight: 600;
 }
 
@@ -66,7 +71,6 @@ footer h6{
     color: #252525;
     font-size: 1rem;
     text-transform: uppercase;
-    font-family: 'Playfair Display',sans-serif;
     font-weight: 600;
     letter-spacing: 1.5px;
 }
@@ -115,7 +119,6 @@ html{
 }
 
 .welcome-msg-wrapper h2{
-    font-family: 'Playfair Display',sans-serif;
     font-style: italic;
     font-size: 3.2rem;
 }
@@ -140,3 +143,77 @@ html{
         display: none;
     }
 }
+
+/* Modal */
+
+.model-custom{
+    background: url('../../media/modal-bg.jpg') no-repeat center center;
+    background-size: cover;
+    border: 0;
+    width: 100%;
+}
+
+.modal-header {
+    background-color: #036b9c;
+    border: none;
+    letter-spacing: 2px;
+}
+
+.modal-header .close{
+    margin: -2rem -1.5rem -1.5rem auto;
+    background-color: black;
+    padding: 2px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%
+}
+
+.close{
+    opacity: 1!important;
+}
+
+.modal-body{
+    background-color: #00000070;
+}
+
+.modal-body p{
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+}
+
+.modal-body p:nth-child(2){
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+
+/* Media query */
+
+@media only screen and (max-width: 1000px) {
+
+    .carousel-display{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+   .modal-title {
+    font-size: 1.7rem;
+}
+    
+    .modal-body p{
+        font-size:1.2rem;
+    }
+
+    .modal-body p:nth-child(2){
+        font-size: 2.3rem;
+        letter-spacing: 3px;
+    }
+
+}
+
