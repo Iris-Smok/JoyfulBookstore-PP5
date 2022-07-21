@@ -16,6 +16,7 @@
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -46,17 +47,15 @@
 
 
 <body>
-    <header class="container-fluid fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-flex">
+    <header class="container-fluid p-0 fixed-top">
+        <nav class="navbar navbar-expand-lg d-none d-lg-flex">
             <!-- LOGO -->
-            <a class="navbar-brand" href="#">JOYFULBOOKSTORE</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="#">
+                <img src="../media/logo_image22.png" alt="JoyfulBookstore logo">
+            </a>
 
             <!-- LINKS -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="nav-bar-links mx-3">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
@@ -93,7 +92,7 @@
 
                 <!-- ICONS -->
                 <div class="list-inline-item ">
-                    <a class="nav-link d-block text-reset" href="#" id="search-icon" data-toggle="dropdown"
+                    <a class="nav-link d-block pt-4" href="#" id="search-icon" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" aria-label="Search">
                         <div class="text-center">
                             <div><i class="fas fa-search fa-lg"></i></div>
@@ -119,7 +118,7 @@
 
 
                 <div class="list-inline-item  dropdown">
-                    <a class="nav-link d-block text-reset" href="#" id="mob-account-menu" data-toggle="dropdown"
+                    <a class="nav-link d-block pt-4" href="#" id="mob-account-menu" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"
                         aria-label="{% if request.user.is_authenticated %}My Account{% else %}Sign in or sign up{% endif %}">
                         <div class="text-center">
@@ -143,7 +142,7 @@
 
                 <!-- Cart nav link that dynamically displays the cart count and total-->
                 <div class="list-inline-item">
-                    <a class="nav-link d-block text-reset" href="#"
+                    <a class="nav-link d-block pt-4" href="#"
                         title="{% if grand_total %}Your cart grand total is {{ grand_total }}{% else %}Your cart is empty{% endif %}"
                         aria-label="cart">
                         <div class="text-center">
@@ -164,15 +163,15 @@
         </nav>
 
         <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+            <nav class="navbar d-lg-none w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                     aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span>
                 </button>
                 {% include 'includes/mobile-nav.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
-        </div>
+
     </header>
 
     {% block page_header %}
@@ -181,63 +180,64 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="fixed-bottom w-100 m-auto text-center p-4" style="background-color: lightblue;">
+    <footer class="w-100 m-auto text-center pb-4">
         <div class="container-fluid">
             <div class="row">
                 <div class=" col-sm-12 col-md-4">
                     <!-- Help Section -->
-                    <div class="footer-header">
+                    <div class="footer-header mt-5">
                         <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
                     </div>
-                    <div><a href="#" class="text-reset">FAQ's</a>
+                    <div><a href="#" class="footer-link">FAQ's</a>
                     </div>
-                    <div><a href="#" class="text-reset">Shipping Info</a>
+                    <div><a href="#" class="footer-link">Shipping Info</a>
                     </div>
-                    <div><a href="#" class="text-reset"> Privacy Policy</a>
+                    <div><a href="#" class="footer-link"> Privacy Policy</a>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <!-- Subscribe -->
-                    <div class="footer-header">
+                    <div class="footer-header mt-5">
                         <h6 class="text-uppercase mb-4"><strong>Subscribe</strong></h6>
-                        <p>Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight to
-                            your inbox!</p>
-                        <form action="#" method="POST">
-                            {% csrf_token %}
-                            <input type="text" class="d-block w-100">
-                            <input type="submit" class=" btn-secondary submit btn m-2 d-block" value="Subscribe">
-                        </form>
                     </div>
+                    <p>Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight to
+                        your inbox!</p>
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        <input type="text" class="d-block w-100">
+                        <input type="submit" class=" btn-style submit btn mt-2 d-block" value="Subscribe">
+                    </form>
+
                 </div>
                 <div class="col-sm-12 col-md-4">
-                    <div class="footer-header">
+                    <div class="footer-header mt-5">
                         <!-- Contact Us Section -->
                         <h6 class="text-uppercase mb-4"><strong>Contact Us</strong></h6>
-                        <div>
-                            <a href="#" class="footer-links text-reset">Get in Touch</a>
-                        </div>
-                        <h6 class="text-uppercase">Follow Us</h6>
-                        <a href="#" target="_blank" rel="noopener" class="text-reset">
-                            <i class="fa-brands fa-instagram footer-links fa-lg"></i>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener" class="text-reset">
-                            <i class="fa-brands fa-facebook-f fa-lg"></i>
-                        </a>
-                        <div>
-                            <!-- Copyright -->
-                            <div class="copyright">
-                                <i class="fa-regular fa-copyright"></i>
-                                <p class="d-inline">JoyfulBookstore, 2022</p>
-                            </div>
+                    </div>
+                    <div>
+                        <a href="#" class="footer-link">Get in Touch</a>
+                    </div>
+                    <h6 class="text-uppercase">Follow Us</h6>
+                    <a href="#" target="_blank" rel="noopener" class="footer-link">
+                        <i class="fa-brands fa-instagram footer-links fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="footer-link">
+                        <i class="fa-brands fa-facebook-f fa-lg"></i>
+                    </a>
+                    <div>
+                        <!-- Copyright -->
+                        <div class="copyright">
+                            <i class="fa-regular fa-copyright"></i>
+                            <p class="d-inline">JoyfulBookstore, 2022</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </footer>
     {% block postloadjs %}
     {% endblock %}
-
 </body>
 
 </html>
