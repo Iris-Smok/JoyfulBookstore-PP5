@@ -1,0 +1,361 @@
+[{
+    "pk": 1,
+    "model": "books.book",
+    "fields": {
+        "name": "Little Learnes: Shop",
+        "description": "Join the little learners in a colourful shopping adventure.  Look for different things in each shop and lift the flaps to find hidden items.  Seek, find and count along with this interactive book.  Help to make learning fun with this Little Learners Shop Book where you can identify objects and count along with the tactile number strip at the bottom of each beautifully illustrated page.  An educational book perfect for helping your little one learn to count to 10.",
+        "price": 5.99,
+        "category": 1,
+        "rating": 0,
+        "author": "Emma Smith",
+        "book_type": "Lift the Flap Board Book",
+        "size": "210 x 210 mm",
+        "suitable_for_ages":"0+",
+        "image": "little-learners-shop.png"
+    }
+}, {
+    "pk": 2,
+    "model": "books.book",
+    "fields": {
+        "name": "My First Kitchen",
+        "description": "This tactile board book is a fun, engaging introduction to the kitchen. Press-out pieces, including a child-sized knife, fork and spoon, are perfect for encouraging a lively, interactive reading experience for parents and children. Twirl noodles in an oval bowl, slice a round pizza and spread jam on a square piece of bread, with real miniature utensils!",
+        "price": 7.99,
+        "category": 1,
+        "rating": 0,
+        "author": "Jessie Ford ",
+        "book_type": "Press and Play Board Book",
+        "size": "240 x 300 mm",
+        "suitable_for_ages":"3+",
+        "image": "my-first-kitchen.png"
+    }
+}, {
+    "pk": 3,
+    "model": "books.book",
+    "fields": {
+        "name": "Clap Hands Here Comes Christmas",
+        "description": "Clap hands and play with this range of exciting toddler touch-and-feel books!HERE COMES CHRISTMAS is a playful touch-and-feel book, full of energy, fun and of course, lots of cute festive friends! ",
+        "price": 3.99,
+        "category": 1,
+        "rating": 0,
+        "author": "Pat-a-Cake",
+        "book_type": "Touch and Feel Board Book",
+        "size": "170 x 170 mm",
+        "suitable_for_ages":"3+",
+        "image": "here-comes-christmas.png"
+    }
+},{
+    "pk": 4,
+    "model": "books.book",
+    "fields": {
+        "name": "Thomas and Friends: Noisy Thomas",
+        "description": "Puff, puff! Brrm, brrm! Whoosh, whoosh! Join Thomas and Bertie for a noisy day. Press the sound button to hear Thomas puff on his way! Children will love joining in and making all the puff, brrm and whoosh vehicle sounds as you share the rhyming story in this colourful and fun board book.",
+        "price": 7.99,
+        "category": 1,
+        "rating": 0,
+        "author": "Farshore",
+        "book_type": "Sound Board Book",
+        "size": "180 x 180 mm",
+        "suitable_for_ages":"0+",
+        "image": "noisy-thomas.png"
+    }
+}, {
+    "pk": 5,
+    "model": "books.book",
+    "fields": {
+        "name": "Mr Men: Hide-and-Seek in the Garden",
+        "description": "Mr Bump is playing hide and seek in the garden. Help him to find his friends by searching behind the flowerbeds or in the vegetable patch. How many of the Mr Men and Little Miss can you spot? Children will love finding their favourite characters and lifting the chunky flaps to see who is underneath. With a simple narrative and bright, engaging artwork, this book is the perfect introduction to the world of the Mr Men and Little Miss.",
+        "price": 8.99,
+        "category": 1,
+        "rating": 0,
+        "author": "Roger Hargreaves",
+        "book_type": "Lift the Flap Board Book",
+        "size": " 180 x 180 mm",
+        "suitable_for_ages":"0+",
+        "image": "hide-and-seek.png"
+    }
+}, {
+    "pk": 6,
+    "model": "books.book",
+    "fields": {
+        "name": "My First Animals Play Book",
+        "description": "Come and meet all of your favourite animals in this touch-and-feel carousel book! Tie the ribbon together to create a 360-degree play scene, complete with three different animal-themed areas. With a touch-and-feel element on every scene that is perfect for little hands, toddlers will love to visit he jungle, farm and sea to meet lions, sheep, fish and more.",
+        "price": 8.20,
+        "category": 1,
+        "rating": 0,
+        "author": "Roger Priddy",
+        "book_type": "Touch and Feel Play Board Book",
+        "size": "230 x 230 mm",
+        "suitable_for_ages":"0+",
+        "image": "animal-playbook.png"
+    }
+}, {
+    "pk": 7,
+    "model": "books.book",
+    "fields": {
+        "name": "Pop-Up Farm",
+        "description": "Join Cow for a game of hide-and-seek with Lamb. With exciting pop-ups to discover in every scene, this playful book is packed with surprises!",
+        "price": 6.99,
+        "category": 1,
+        "rating": 0,
+        "author": "Igloo Books",
+        "book_type": "Pop up Board Book",
+        "size": "180 x 180 mm",
+        "suitable_for_ages":"0+",
+        "image": "pop-up-farm.png"
+    }
+}, {
+    "pk": 8,
+    "model": "books.book",
+    "fields": {
+        "name": "Dinosaur Sleepover",
+        "description": "What would you do if you and Dinosaur were invited to a sleepover party, and Dinosaur looked worried? He's never slept away from home before",
+        "price": 4.50,
+        "category": 2,
+        "rating": 0,
+        "author": "Pamela Duncan Edwards",
+        "book_type": "Picture Story Book",
+        "size": "244 x 244 mm",
+        "suitable_for_ages":"0+",
+        "image": "dinosaur-sleepover.png"
+    }
+}, {
+    "pk": 9,
+    "model": "books.book",
+    "fields": {
+        "name": "Albert's Tree",
+        "description": "Albert's favourite tree won't stop crying. What can be the matter? How can Albert cheer up his friend?",
+        "price": 6.49,
+        "category": 2,
+        "rating": 0,
+        "author": "Jenni Desmond",
+        "book_type": "Picture Story Book",
+        "size": "23 x 270 mm",
+        "suitable_for_ages":"0+",
+        "image": "alberts-tree"
+    }
+},{
+    "pk": 10,
+    "model": "books.book",
+    "fields": {
+        "name": "The Farmer's Away! Baa! Neigh!",
+        "description": "What happens in the farmyard when the farmer's away? Find out here in the animals' own words - and when you see one you recognize, join in!",
+        "price": 7.30,
+        "category": 2,
+        "rating": 0,
+        "author": "Anne Vittur Kennedy",
+        "book_type": "Picture Story Book",
+        "size": "232 x 252 mm",
+        "suitable_for_ages":"0+",
+        "image": "farmers-away.png"
+    }
+}, {
+    "pk": 11,
+    "model": "books.book",
+    "fields": {
+        "name": "My Grandparents Love Me",
+        "description": "From the illustrator of I Love Dad and I Love Mom comes a joyful celebration of grandparents everywhere and the special bonds they share with their grandchildren.",
+        "price": 5.50,
+        "category": 2,
+        "rating": 0,
+        "author": "Claire Freedman",
+        "book_type": "Picture Story Book",
+        "size": "241 x 292 mm",
+        "suitable_for_ages":"0+",
+        "image": "grandparents-love-me.png"
+    }
+}, {
+    "pk": 12,
+    "model": "books.book",
+    "fields": {
+        "name": "Cake Test",
+        "description": "When King Frederick and Queen Gwen have triplet daughters, they're delighted - except that no-one can work out who should inherit the throne. So King Frederick sets the three girls a test: whoever can bake a cake, following his careful instructions but also adding their own special flourish, will rule after him. The princesses all have their special qualities - but who has the right recipe to become Queen? This quirky and inviting tale for developing readers from the popular Blue Bananas series comes in at an accessible 48 pages. With full colour artwork throughout, it's an ideal step up from picture books.",
+        "price": 10.00,
+        "category": 3,
+        "rating": 0,
+        "author": "ippa Goodhart",
+        "book_type": "First Reader",
+        "size": "15 x 210 mm",
+        "suitable_for_ages":"0+",
+        "image": "cake-test.png"
+    }
+}, {
+    "pk": 13,
+    "model": "books.book",
+    "fields": {
+        "name": "The Woman who Fooled Fairies",
+        "description": "There was once a woman who baked the best cakes in the whole world. The fairies loved her cakes. But they didn't want to buy them and the woman was far too clever to let anyone steal them. So the fairies decide to steal the cake-maker instead! What follows is a hilarious account of how the woman manages to escape the greedy fairies' clutches.",
+        "price": 5.99,
+        "category": 3,
+        "rating": 0,
+        "author": "Rose Impey",
+        "book_type": "First Reader",
+        "size": "150 x 210 mm",
+        "suitable_for_ages":"0+",
+        "image": "the-woman-fairies"
+    }
+}, {
+    "pk": 14,
+    "model": "books.book",
+    "fields": {
+        "name": "The Porridge Pincher",
+        "description": "Build your child's reading confidence at home with books at the right level When the Three Bears leave their house for a walk, a young girl named Goldilocks appears and is drawn in to the house by the smell of hot porridge. But what happens when the bears return and find their porridge is gone? This fun rhyming play by the 'national children's dramatist' David Wood is wonderfully illustrated by Tom Percival.",
+        "price": 6.99,
+        "category": 3,
+        "rating": 0,
+        "author": "David Wood",
+        "book_type": "First Reader",
+        "size": "150 x 210 mm",
+        "suitable_for_ages":"0+",
+        "image": "porridge-pincher.png"
+    }
+}, {
+    "pk": 15,
+    "model": "books.book",
+    "fields": {
+        "name": "When The Tooth Fairy Forgot",
+        "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
+        "price": 5.20,
+        "category": 4,
+        "rating": 0,
+        "author": "Karen McCombie",
+        "book_type": "Early Readers",
+        "size": "140 x 190mm",
+        "suitable_for_ages":"6+",
+        "image": "tooth-fairy.png"
+    }
+}, {
+    "pk": 16,
+    "model": "books.book",
+    "fields": {
+        "name": "Winnie Spells Trouble!",
+        "description": "Winnie the Witch is busy getting herself into trouble. She's a naughty niece when Auntie Aggie comes to stay, she has difficulty getting rid of her double after waving her wand in front of the mirror, she causes havoc at the after school club, and, on a trip to the museum, she sends the little ordinaries back in time where they find themselves as slave labour building the pyramids!",
+        "price": 8.99,
+        "category": 4,
+        "rating": 0,
+        "author": "Laura Owen",
+        "book_type": "Early Reader",
+        "size": "130 x 200 mm",
+        "suitable_for_ages":"6+",
+        "image": "winnie-spells-trouble.png"
+    }
+}, {
+    "pk": 17,
+    "model": "books.book",
+    "fields": {
+        "name": "The Not So Little Princess: Where's Gilbert?",
+        "description": "Rosie the Not-so-Little Princess has always loved Gilbert, her royal teddy bear. But she feels she's a bit too old for him now and decides to stop playing with him. But then Gilbert goes missing and has a very strange adventure indeed. Will Rosie ever get her teddy back?",
+        "price": 7.99,
+        "category": 4,
+        "rating": 0,
+        "author": "Wendy Finney",
+        "book_type": "Early Reader",
+        "size": "130 x 200 mm",
+        "suitable_for_ages":"6+",
+        "image": "wheres-gilbert.png"
+    }
+}, {
+    "pk": 18,
+    "model": "books.book",
+    "fields": {
+        "name": "Billionaire Boy",
+        "description": "Joe has a lot of reasons to be happy. About a billion of them, in fact. You see, Joe's rich. Really, really rich. Joe's got his own bowling alley, his own cinema, even his own butler who is also an orangutan. He's the wealthiest 12-year-old in the land.",
+        "price": 6.49,
+        "category": 5,
+        "rating": 0,
+        "author": "David Walliams",
+        "book_type": "Paperback Fiction",
+        "size": "129 x 198 mm",
+        "suitable_for_ages":"7+",
+        "image": "billionaire-boy.png"
+    }
+}, {
+    "pk": 19,
+    "model": "books.book",
+    "fields": {
+        "name": "The Giraffe and The Pelly and Me",
+        "description": "A small boy with a desire to own a candy shop meets a window-washing team composed of a giraffe, a pelican, and a monkey and together they go to work for the wealthy Duke of Hampshire, who makes all their dreams come true.",
+        "price": 6.99,
+        "category": 5,
+        "rating": 0,
+        "author": "Roald Dahl",
+        "book_type": "Paperback Fiction",
+        "size": "129 x 198mm",
+        "suitable_for_ages":"7+",
+        "image": "the-giraffe-and-pelly.png"
+    }
+}, {
+    "pk": 20,
+    "model": "books.book",
+    "fields": {
+        "name": "Fantastic Mr. Fox",
+        "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
+        "price": 6.99,
+        "category": 5,
+        "rating": 0,
+        "author": "Roald Dahl",
+        "book_type": "Paperback Fiction",
+        "size": "129 x 198mm",
+        "suitable_for_ages":"7+",
+        "image": "fantastic-fox.png"
+    }
+}, {
+    "pk": 21,
+    "model": "books.book",
+    "fields": {
+        "name": "I Love Dogs and Puppies",
+        "description": "If your heart belongs to dogs of every breed, here's a book to make your tail wag! An adorable guide to 50 popular breeds, packed with heart-melting photos of truly perfect examples. From tiny pugs to enormous Great Danes, which will be your favourite? Cute fact-files let you compare the profiles of each breed. You'll even learn about jobs that different types of dog are best at. Some are smart sheepdogs, some make great guard dogs - and some can even save your life!",
+        "price": 8.99,
+        "category": 6,
+        "rating": 0,
+        "author": "Nicola Jane Swinney",
+        "book_type": "Non Fiction",
+        "size": "220 x 240mm",
+        "suitable_for_ages":"6+",
+        "image": "i-love-dogs.png"
+    }
+}, {
+    "pk": 22,
+    "model": "books.book",
+    "fields": {
+        "name": "Pack of 4 Fact Cat Geography Books",
+        "description": "How much do you know about your wonderful planet? The Fact Cat wants to make sure you're purr-fectly at home on Earth! So in this series, he takes you on a tour of the world's most amazing places and habitats, explaining all the things you'll see. You'll visit all kinds of fun locations, and feast your eyes on spectacular photos. You'll even get to test your knowledge with a quiz or two! How many people live in Europe? What colour is a polar bear's skin? What exactly is the Equator? Explore your world to find out!",
+        "price": 15.99,
+        "category": 6,
+        "rating": 0,
+        "author": "Izzi Howell",
+        "book_type": " Non Fiction set of Geography fact books",
+        "size": "200 x 230mm",
+        "suitable_for_ages":"5+",
+        "image": "continents.png"
+    }
+}, {
+    "pk": 23,
+    "model": "books.book",
+    "fields": {
+        "name": "The Great Explorer",
+        "description": "When a famous explorer goes missing in the North Pole, his son, Tom, decides he must find him. And so a daring adventure begins across the treacherous icy terrain of the North Pole. Will Tom be able overcome the many challenges ahead and find his father?",
+        "price": 5.49,
+        "category": 7,
+        "rating": 0,
+        "author": "Chris Judge",
+        "book_type": "Picture Story Book",
+        "size": "240 x 240mm",
+        "suitable_for_ages":"6+",
+        "image": "explorer.png"
+    }
+}, {
+    "pk": 24,
+    "model": "books.book",
+    "fields": {
+        "name": "Brian Boru The warrior King",
+        "description": "Get ready to make your knowledge a bit bigger by learning all about the warrior king that was Brian Ború.",
+        "price": 7.99,
+        "category": 8,
+        "rating": 0,
+        "author": "John & Fatti Burke",
+        "book_type": "Irish History",
+        "size": "200 x 260mm",
+        "suitable_for_ages":"7+",
+        "image": "brian-boru.png"
+    }
+} ]

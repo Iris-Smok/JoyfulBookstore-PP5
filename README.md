@@ -198,6 +198,8 @@ _Footer:_
   - Early Readers
   - Fiction Books
   - Non Fiction Books
+  - Sale
+  - New Arrivals
 
 ### **Special Offers**
 
