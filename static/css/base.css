@@ -43,7 +43,7 @@ footer h6,
 }
 
 .navbar-brand:hover{
-    color: #252525;
+    color: white;
     text-decoration: overline;
 }
 
@@ -68,10 +68,19 @@ footer h6,
     padding-top: 8px;
 }
 
-.footer-link:hover,
 .nav-link:hover{
-    color: rgb(59, 59, 59);
+    color: white;
+    animation: shaking 0.40s ease-in-out;
 }
+
+@keyframes shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
 
 .navbar-toggler-icon > i {
     color: white;
@@ -249,6 +258,12 @@ footer h6{
 
 @media only screen and (max-width: 1000px) {
 
+    .navbar-nav .nav-link,
+    .footer-link {
+        width: 25%;
+    }
+
+ 
     .header-container{
         padding-top: 80px;
     }
@@ -256,6 +271,8 @@ footer h6{
     .carousel-display{
         display: none;
     }
+
+     
 }
 
 
