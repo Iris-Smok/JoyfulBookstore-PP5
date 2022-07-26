@@ -7,11 +7,13 @@ class BookAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'category',
+        'price',
+        'review_count',
         'image'
     )
 
-
-ordering = ('category',)
+    search_fields = ('title', 'author', 'price',)
+    ordering = ('category',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -21,6 +23,8 @@ class CategoryAdmin(admin.ModelAdmin):
         'name'
     )
 
+    search_fields = ('friendly_name', 'name',)
+
 
 admin.site.register(Book, BookAdmin)
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
