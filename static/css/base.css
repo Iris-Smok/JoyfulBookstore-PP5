@@ -16,7 +16,7 @@ body{
 .nav-link, .nav-link > a,
 footer h6,
 .welcome-msg-wrapper h2,
-.modal-header{
+.logo-font{
     font-family: 'Roboto Slab', sans-serif;
 }
 
@@ -25,7 +25,7 @@ footer h6,
 
 .navbar,
 .dropdown-menu{
-    background-color: #4c4c4c29;
+    background-color: #41484a;
     backdrop-filter: blur(5px);
 }
 
@@ -229,6 +229,18 @@ footer h6{
     letter-spacing: 3px;
 }
 
+
+/* All Books page */
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
 
 /* Media query */
 
