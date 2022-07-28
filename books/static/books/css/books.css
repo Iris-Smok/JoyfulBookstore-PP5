@@ -2,3 +2,12 @@
     height: 270px;
     width: 250px;
 }
+
+.book-details-img{
+    max-width: 500px;
+    max-height: 550px;
+}
+
+.description-text{
+    line-height: 27px;
+}

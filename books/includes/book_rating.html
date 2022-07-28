@@ -1,0 +1,41 @@
+{% if book.rating > 4.5 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+{% elif book.rating > 4 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star-half"></i>
+{% elif book.rating > 3.5 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+{% elif product.rating > 3 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star-half"></i>
+{% elif book.rating > 2.5 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+{% elif book.rating > 2 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star-half"></i>
+{% elif book.rating > 1.5 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star"></i>
+{% elif book.rating > 1 %}
+<i class="fa fa-solid fa-star"></i>
+<i class="fa fa-solid fa-star-half"></i>
+{% elif book.rating > 0.5 %}
+<i class="fa fa-solid fa-star"></i>
+{% else %}
+<p class="d-inline">No Rating</p>
+{% endif %}
