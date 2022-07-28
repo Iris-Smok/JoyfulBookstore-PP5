@@ -83,12 +83,14 @@
                     <button class="text-uppercase w-100  btn-style logo-font p-1"> add to bag</button>
                 </a>
             </div>
+            {% if user.is_authenticated %}
             <div class="col">
                 <a href="#">
                     <button class="text-uppercase mt-5 text-left  btn-style logo-font py-1 px-3"> add to
                         whishlist</button>
                 </a>
             </div>
+            {% endif %}
 
         </div>
     </div>

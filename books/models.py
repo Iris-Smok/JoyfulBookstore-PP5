@@ -39,9 +39,9 @@ class Book(models.Model):
     image = models.ImageField(null=True, blank=True)
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
-    likes = models.ManyToManyField(
+    add_to_whishlist = models.ManyToManyField(
         User,
-        related_name='product_likes',
+        related_name='whishlist_add',
         blank=True
     )
     review_count = models.DecimalField(
