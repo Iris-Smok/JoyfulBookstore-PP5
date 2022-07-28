@@ -33,12 +33,12 @@
                     <div class="card border-0">
                         <!-- Book image -->
                         {% if book.image %}
-                        <a href="" class="text-center">
+                        <a href="{% url 'book_detail' book.id %}" class="text-center">
                             <img class="card-img-top img-fluid book-img" src="{{ book.image.url }}"
                                 alt="{{ book.title }}" width="100%" height="400px">
                         </a>
                         {% else %}
-                        <a href="" class="text-center">
+                        <a href="{% url 'book_detail' book.id %}" class="text-center">
                             <img class="card-img-top img-fluid book-img" src="{{ MEDIA_URL }}noimage.png"
                                 alt="{{ book.title }}" width="100%" height="400px">
                         </a>
@@ -46,12 +46,9 @@
                         <div class="card-body pb-0">
                             <p class="mb-0 lead font-weight-bold">{{ book.title }}</p>
                             <p class="mb-0">{{ book.book_type }}</p>
-                            <p class="lead mb-0 text-left font-weight-bold">${{ book.price }}</p>
-                            {% if book.rating_count %}
-                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ book.rating_count }}/5</small>
-                            {% else %}
-                            <small class="text-muted">No Rating</small>
-                            {% endif %}
+                            <p class="lead mb-0 text-left font-weight-bold">€{{ book.price }}</p>
+                            <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                            <p class="ml-3 small d-inline">({{ book.review_count}})</p>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
