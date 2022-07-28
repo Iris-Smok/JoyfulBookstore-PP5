@@ -1,13 +1,14 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto d-lg-none">
         <li class="nav-item d-block d-lg-none">
-            <a class="navbar-brand navbar-collapse text-uppercase text-center" href="#">joyfulbookstore</a>
+            <a class="navbar-brand navbar-collapse text-uppercase text-center"
+                href="{% url 'home' %}">joyfulbookstore</a>
             <a class="logo-font nav-link mx-3" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mx-3" href="#">All Books</a>
+            <a class="nav-link mx-3" href="{% url 'books' %}">All Books</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
