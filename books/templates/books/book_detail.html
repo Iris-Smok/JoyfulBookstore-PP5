@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <a href="#">
+                <a href="{% url 'books' %}">
                     <button class="text-uppercase w-100 mt-2  btn-style logo-font p-1"> keep shopping </button>
                 </a>
             </div>
@@ -83,15 +83,12 @@
                     <button class="text-uppercase w-100  btn-style logo-font p-1"> add to bag</button>
                 </a>
             </div>
-            {% if user.is_authenticated %}
             <div class="col">
-                <a href="#">
+                <form action="" method="POST">
                     <button class="text-uppercase mt-5 text-left  btn-style logo-font py-1 px-3"> add to
                         whishlist</button>
-                </a>
+                </form>
             </div>
-            {% endif %}
-
         </div>
     </div>
 </div>
@@ -102,6 +99,7 @@
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}

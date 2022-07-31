@@ -11,3 +11,7 @@
 .description-text{
     line-height: 27px;
 }
+
+.book-rating .fa-solid{
+    color: gold;
+}

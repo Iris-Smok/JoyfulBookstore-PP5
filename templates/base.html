@@ -100,9 +100,9 @@
                         </div>
                     </a>
                     <div class="dropdown-menu w-100 p-3 search-icon bg-nav my-0" aria-labelledby="search">
-                        <form class="form" method="GET" action="#">
+                        <form class="form" method="GET" action="{% url 'books' %}">
                             <div class="input-group w-100 input-left">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search..."
+                                <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search..."
                                     aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="input-btn form-control form-control btn btn-trans" type="submit"
