@@ -70,12 +70,14 @@
                             Categories
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Board Books</a>
-                            <a class="dropdown-item" href="#">Pitcure Story Books</a>
-                            <a class="dropdown-item" href="#">First Reads</a>
-                            <a class="dropdown-item" href="#">Early Readers</a>
-                            <a class="dropdown-item" href="#">Fiction Books</a>
-                            <a class="dropdown-item" href="#">Non Fiction Books</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?category=board_books">Board Books</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?category=picture_story_books">Picture Story
+                                Books</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?category=first_readers">First Readers</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?category=early_readers">Early Readers</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?category=fiction_books">Fiction Books</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?category=non_fiction_books">Non Fiction
+                                Books</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
