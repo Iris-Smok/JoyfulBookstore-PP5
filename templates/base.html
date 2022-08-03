@@ -145,7 +145,7 @@
 
                 <!-- Cart nav link that dynamically displays the cart count and total-->
                 <div class="list-inline-item">
-                    <a class="nav-link d-block pt-4" href="#"
+                    <a class="nav-link d-block pt-4" href="{% url 'shopping_bag'%}"
                         title="{% if grand_total %}Your cart grand total is {{ grand_total }}{% else %}Your cart is empty{% endif %}"
                         aria-label="cart">
                         <div class="text-center">
