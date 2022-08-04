@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col">
             {% if shopping_bag_items %}
-            <div class="table-responsive rounded">
+            <div class="table-responsive rounded mb-5">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
@@ -35,25 +35,33 @@
                         </tr>
                     </thead>
                     {% for item in shopping_bag_items %}
-                    <tr>
-                        <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.book.image.url }}" alt="{{item.book.title }}"
-                                height="200px" width="200px">
-                        </td>
-                        <td class="py-3">
-                            <p class="my-0"><strong>{{ item.book.title }}</strong></p>
-                        </td>
-                        <td class="py-3">
-                            <p class="my-0">€{{ item.book.price }}</p>
-                        </td>
-                        <td class="py-3 w-25">
-                            <p class="my-0">{{ item.quantity }}</p>
-                        </td>
-                        <td class="py-3">
-                            <p class="my-0">€{{ item.book.price }}</p>
-                        </td>
-                    </tr>
-                    {% endfor %}
+                    <tbody class="border-top border-bottom">
+                        <tr>
+                            <td class="p-3">
+                                {% if item.book.image %}
+                                <img class="img-fluid rounded" src="{{ item.book.image.url }}"
+                                    alt="{{ item.book.title }}" style="width: 9rem; height: 10rem;">
+                                {% else %}
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ item.book.name }}" height="180px" width="180px">
+                                {% endif %}
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0"><strong>{{ item.book.title }}</strong></p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0">€{{ item.book.price }}</p>
+                            </td>
+                            <td class="py-3 w-25">
+                                <p class="my-0">{{ item.quantity }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0">€{{ item.book.price }}</p>
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+                    </tbody>
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
@@ -69,13 +77,13 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'books' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <a href="{% url 'books' %}" class="btn border-secondary btn-style logo-font">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
-                                <span class="text-uppercase">Keep Shopping</span>
+                                <span class="text-uppercase ">Keep Shopping</span>
                             </a>
-                            <a href="" class="btn btn-black rounded-0 btn-lg">
+                            <a href="" class="btn border-secondary btn-style logo-font">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
