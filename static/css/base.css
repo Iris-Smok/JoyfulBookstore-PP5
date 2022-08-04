@@ -22,6 +22,11 @@ footer h6,
     font-family: 'Roboto Slab', sans-serif;
 }
 
+.update-link,
+.delete-item{
+    cursor: pointer;
+}
+
 /* NAVBAR */
 
 
