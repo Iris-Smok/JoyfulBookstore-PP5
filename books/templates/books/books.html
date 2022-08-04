@@ -97,9 +97,13 @@
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <button type="submit" class="btn border-secondary rounded-pill btn-style w-100">Add
-                                        to
-                                        bag</button>
+                                    <form class="form" action="{% url 'add_to_shopping_bag' book.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        <button type="submit" class="btn border rounded-pill btn-style w-100"
+                                            name="quantity" value="1">Add to bag</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
