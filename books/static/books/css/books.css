@@ -16,6 +16,11 @@
     color: gold;
 }
 
+.input-group-append, 
+.input-group-prepend{
+    background-color: gray;
+}
+
 
 #myBtn {
     display: none;
