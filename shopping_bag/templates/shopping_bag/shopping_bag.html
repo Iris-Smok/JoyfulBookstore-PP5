@@ -22,8 +22,10 @@
     </div>
     <div class="row">
         <div class="col">
-            {% if bag_items %}
-            <div class="table-responsive rounded"></div>
+            {% if shopping_bag_items %}
+            <div class="table-responsive rounded">
+                {{ shopping_bag_items }}
+            </div>
             {% else %}
             <p class="lead my-5 text-center"> Your bag is empty.</p>
             <a href="{% url 'books' %}">
