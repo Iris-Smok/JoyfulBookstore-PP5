@@ -15,7 +15,10 @@ def shopping_bag_contents(request):
 
     for item_id, quantity in shopping_bag.items():
         book = get_object_or_404(Book, pk=item_id)
-        total += quantity * book.price
+        if book.sale_price:
+            total += quantity * book.sale_price
+        else:
+            total += quantity * book.price
         book_count += quantity
         shopping_bag_items.append({
             'item_id': item_id,

@@ -45,7 +45,7 @@
                 </p>
                 {%endif %}
                 <p class="lead mb-0 text-left font-weight-bold">€{{book.price}}</p>
-                <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                <div class="book-rating d-inline">{% include 'books/templates/books/includes/book_rating.html' %}</div>
                 <p class="ml-3 small d-inline mb-5">({{ book.review_count }})</p>
                 <p class="mt-5 mb-3"><strong>Author:</strong> {{ book.author }} </p>
                 <p class="my-3"><strong>Book Type:</strong> {{ book.book_type }} </p>

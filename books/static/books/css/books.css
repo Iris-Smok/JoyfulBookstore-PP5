@@ -52,19 +52,15 @@
     background: gold;
     width: fit-content;
     padding: 4px 8px 2px;
-    top: -10px;
+    top: -12px;
     border-radius: -2px;
-    right: -2px;
+    right: 50px;
     position: absolute;
     z-index: 1;
     font-size: .8rem;
 }
 
 
-.label-new {
-    border-color: #ffa73a;
-}
-
 .lower-label {
-    top: 23px;
+    top: 22px;
 }

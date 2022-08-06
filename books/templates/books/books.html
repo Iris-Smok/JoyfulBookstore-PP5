@@ -33,7 +33,6 @@
             {% for c in current_categories %}
             <h4 class="mb-5">{{ c.friendly_name}}</h4>
             {% endfor %}
-            <!-- If items are filtered by new or on sale filters, show this -->
             {% if new or sale %}
             {% if new %}
             <h4 class="mb-5">New Arrivals</h4>
@@ -41,9 +40,12 @@
             {% if sale %}
             <h4 class="mb-5">On Sale</h4>
             {% endif %}
+            {% endif %}
+
+            <!-- If items are filtered by new or on sale filters, show this -->
         </div>
     </div>
-    {% endif %}
+
 </div>
 <div class="row">
     <div class="product-container col-10 offset-1">
@@ -113,18 +115,19 @@
                             <!-- If book is on sale, show the price crossed out -->
                             {% if book.sale_price %}
                             <small class="mr-1"><del class="text-muted">€{{ book.price }} </del></small>
-                            <a class="text-sale-new font-weight-bold"
+                            <a class="text-sale-new font-weight-bold text-decoration-none"
                                 href="{% url 'book_detail' book.id %}">€{{ book.sale_price }}</a>
                             {% else %}
 
-                            <a class="text-sale-new font-weight-bold"
+                            <a class="text-sale-new font-weight-bold text-decoration-none"
                                 href="{% url 'book_detail' book.id %}">€{{ book.price }}</a>
                             {% endif %}
                         </p>
 
                         <p class="mb-0">{{ book.book_type }}</p>
 
-                        <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                        <div class="book-rating d-inline">
+                            {% include 'books/templates/books/includes/book_rating.html' %}</div>
                         <p class="ml-3 small d-inline">({{ book.review_count}})</p>
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">

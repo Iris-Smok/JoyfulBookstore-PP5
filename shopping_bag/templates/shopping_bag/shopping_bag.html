@@ -38,19 +38,25 @@
                     <tbody class="border-top border-bottom">
                         <tr>
                             <td class="p-3">
-                                {% if item.book.image %}
-                                <img class="img-fluid rounded" src="{{ item.book.image.url }}"
-                                    alt="{{ item.book.title }}" style="width: 9rem; height: 10rem;">
-                                {% else %}
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
-                                    alt="{{ item.book.name }}" height="180px" width="180px">
-                                {% endif %}
+                                <a href="{% url 'book_detail' item.book.id %}">
+                                    {% if item.book.image %}
+                                    <img class="img-fluid rounded" src="{{ item.book.image.url }}"
+                                        alt="{{ item.book.title }}" style="width: 9rem; height: 10rem;">
+                                    {% else %}
+                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                        alt="{{ item.book.name }}" height="180px" width="180px">
+                                    {% endif %}
+                                </a>
                             </td>
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.book.title }}</strong></p>
                             </td>
                             <td class="py-3">
+                                {% if item.book.sale_price %}
+                                <p class="my-0">€{{ item.book.sale_price }}</p>
+                                {% else %}
                                 <p class="my-0">€{{ item.book.price }}</p>
+                                {% endif %}
                             </td>
                             <td class="py-3 w-25">
                                 <form class="update-form" action="" method="POST">
@@ -90,7 +96,11 @@
                                 </div>
                             </td>
                             <td class="py-3">
+                                {% if item.book.sale_price %}
+                                <p class="my-0">€{{ item.book.sale_price }}</p>
+                                {% else %}
                                 <p class="my-0">€{{ item.book.price }}</p>
+                                {% endif %}
                             </td>
                         </tr>
 
