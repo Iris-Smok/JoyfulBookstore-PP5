@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load shopping_bag_tools %}
+
 
 
 {% block page_header %}
@@ -59,14 +61,15 @@
                                 {% endif %}
                             </td>
                             <td class="py-3 w-25">
-                                <form class="update-form" action="" method="POST">
+                                <form class="form update-form" method="POST"
+                                    action="{% url 'adjust_shopping_bag' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="form-group w-50">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <button class="decrement-qty btn btn-sm border-secondary rounded mr-1"
+                                                <button class="decrement-qty btn btn-sm btn-black rounded-0"
                                                     data-item_id="{{ item.item_id }}"
-                                                    id="decrement-qty_{{ item.item_.id }}">
+                                                    id="decrement-qty_{{ item.item_id }}">
                                                     <span>
                                                         <i class="fas fa-minus fa-sm"></i>
                                                     </span>
@@ -76,7 +79,7 @@
                                                 name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                 data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                             <div class="input-group-append">
-                                                <button class="increment-qty btn btn-sm border-secondary rounded ml-1"
+                                                <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                     data-item_id="{{ item.item_id }}"
                                                     id="increment-qty_{{ item.item_id }}">
                                                     <span>
@@ -87,19 +90,18 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="w-50">
-                                    <a
-                                        class="update-link text-info float-left text-decoration-none"><small>Update</small></a>
-                                    <a class="delete-item text-danger float-right text-decoration-none"
-                                        id="remove_{{ item.item_id }}"
-                                        data-product_size="{{ item.size }}"><small>Delete</small></a>
-                                </div>
+
+                                <a class="update-link text-info"><small>Update</small></a>
+                                <a class="delete-item text-danger float-right"
+                                    id="delete_{{ item.item_id }}"><small>Delete</small></a>
+
+
                             </td>
                             <td class="py-3">
                                 {% if item.book.sale_price %}
-                                <p class="my-0">€{{ item.book.sale_price }}</p>
+                                <p class="my-0">€{{ item.book.sale_price | calc_subtotal:item.quantity }}</p>
                                 {% else %}
-                                <p class="my-0">€{{ item.book.price }}</p>
+                                <p class="my-0">€{{ item.book.price | calc_subtotal:item.quantity }}</p>
                                 {% endif %}
                             </td>
                         </tr>
@@ -165,13 +167,13 @@
         var itemId = $(this).attr('id').split('delete_')[1];
         var url = `/shopping_bag/delete/${itemId}/`;
         var data = {
-            'csrfmiddlewaretoken': csrfToken
+            'csrfmiddlewaretoken': csrfToken,
         };
 
         $.post(url, data)
             .done(function () {
                 location.reload();
             });
-    });
+    })
 </script>
 {% endblock %}
