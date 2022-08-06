@@ -86,8 +86,8 @@
                             Special Offers
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Sale</a>
-                            <a class="dropdown-item" href="#">New arrivals</a>
+                            <a class="dropdown-item" href=" {% url 'books' %}?new=true">New arrivals</a>
+                            <a class="dropdown-item" href="{% url 'books' %}?on_sale=true">Sale</a>
                         </div>
                     </li>
 

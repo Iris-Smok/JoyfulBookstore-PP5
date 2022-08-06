@@ -13,6 +13,9 @@ def all_books(request):
     categories = None
     sort = None
     direction = None
+    new = None
+    sale = None
+    price = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -35,6 +38,14 @@ def all_books(request):
             books = books.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        if 'new' in request.GET:
+            books = books.filter(is_new=True)
+            new = True
+
+        if 'on_sale' in request.GET:
+            books = books.filter(~Q(sale_price=price))
+            sale = True
+
     if 'q' in request.GET:
         query = request.GET['q']
         if not query:
@@ -53,6 +64,8 @@ def all_books(request):
         'search_term': query,
         'current_categories': categories,
         "current_sorting": current_sorting,
+        'new': new,
+        'sale': sale,
     }
     return render(request, 'books/books.html', context)
 

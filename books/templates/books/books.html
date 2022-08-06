@@ -33,113 +33,146 @@
             {% for c in current_categories %}
             <h4 class="mb-5">{{ c.friendly_name}}</h4>
             {% endfor %}
-
+            <!-- If items are filtered by new or on sale filters, show this -->
+            {% if new or sale %}
+            {% if new %}
+            <h4 class="mb-5">New Arrivals</h4>
+            {% endif %}
+            {% if sale %}
+            <h4 class="mb-5">On Sale</h4>
+            {% endif %}
         </div>
     </div>
-    <div class="row">
-        <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2">
-                <div
-                    class="col-12 col-md-6 order-md-last my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                    <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector"
-                            class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
-                            </option>
-                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
-                                (low to high)</option>
-                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
-                                (high to low)</option>
-                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
-                                Rating (low to high)</option>
-                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
-                                Rating (high to low)</option>
-                            <option value="title_asc" {% if current_sorting == 'title_asc' %}selected{% endif %}>Title
-                                (A-Z)</option>
-                            <option value="title_desc" {% if current_sorting == 'title_desc' %}selected{% endif %}>Title
-                                (Z-A)</option>
-                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
-                                Category (A-Z)</option>
-                            <option value="category_desc"
-                                {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 order-md-first">
-                    <p class="text-muted mt-3 text-center text-md-left">
-                        {{ books|length }} Books
-                    </p>
+    {% endif %}
+</div>
+<div class="row">
+    <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2">
+            <div
+                class="col-12 col-md-6 order-md-last my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                <div class="sort-select-wrapper w-50">
+                    <select id="sort-selector"
+                        class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                        </option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                            (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                            (high to low)</option>
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
+                            Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
+                            Rating (high to low)</option>
+                        <option value="title_asc" {% if current_sorting == 'title_asc' %}selected{% endif %}>Title
+                            (A-Z)</option>
+                        <option value="title_desc" {% if current_sorting == 'title_desc' %}selected{% endif %}>Title
+                            (Z-A)</option>
+                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                            Category (A-Z)</option>
+                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                            Category (Z-A)</option>
+                    </select>
                 </div>
             </div>
-            <div class="row">
-                {% for book in books %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card border-0">
-                        <!-- Book image -->
-                        {% if book.image %}
-                        <a href="{% url 'book_detail' book.id %}" class="text-center">
-                            <img class="card-img-top img-fluid book-img" src="{{ book.image.url }}"
-                                alt="{{ book.title }}" width="100%" height="400px">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'book_detail' book.id %}" class="text-center">
-                            <img class="card-img-top img-fluid book-img" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ book.title }}" width="100%" height="400px">
-                        </a>
-                        {% endif %}
-                        <div class="card-body pb-0">
-                            <p class="mb-0 lead font-weight-bold">{{ book.title }}</p>
-                            <p class="mb-0">{{ book.book_type }}</p>
-                            <p class="lead mb-0 text-left font-weight-bold">€{{ book.price }}</p>
-                            <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
-                            <p class="ml-3 small d-inline">({{ book.review_count}})</p>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col">
-                                    <form class="form" action="{% url 'add_to_shopping_bag' book.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        <button type="submit" class="btn border rounded-pill btn-style w-100"
-                                            name="quantity" value="1">Add to bag</button>
-                                    </form>
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted mt-3 text-center text-md-left">
+                    {{ books|length }} Books
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {% for book in books %}
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-0">
+                    <!-- Book discount and new labels -->
+                    {% if book.discount %}
+                    <p class="sale-new-label text-shadow">Save €{{ book.discount }}!</p>
+                    {% endif %}
 
-                                </div>
+                    {% if book.is_new %}
+                    <p class="sale-new-label text-shadow label-new{% if book.discount %} lower-label{% endif %}">NEW!
+                    </p>
+                    {% endif %}
+                    <!-- Book image -->
+                    {% if book.image %}
+                    <a href="{% url 'book_detail' book.id %}" class="text-center">
+                        <img class="card-img-top img-fluid book-img" src="{{ book.image.url }}" alt="{{ book.title }}"
+                            width="100%" height="400px">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'book_detail' book.id %}" class="text-center">
+                        <img class="card-img-top img-fluid book-img" src="{{ MEDIA_URL }}noimage.png"
+                            alt="{{ book.title }}" width="100%" height="400px">
+                    </a>
+                    {% endif %}
+
+
+                    <div class="card-body pb-0">
+                        <p class="mb-0 lead font-weight-bold">{{ book.title }}</p>
+                        <p class="text-orange lead mb-0">
+                            <!-- If book is on sale, show the price crossed out -->
+                            {% if book.sale_price %}
+                            <small class="mr-1"><del class="text-muted">€{{ book.price }} </del></small>
+                            <a class="text-sale-new font-weight-bold"
+                                href="{% url 'book_detail' book.id %}">€{{ book.sale_price }}</a>
+                            {% else %}
+
+                            <a class="text-sale-new font-weight-bold"
+                                href="{% url 'book_detail' book.id %}">€{{ book.price }}</a>
+                            {% endif %}
+                        </p>
+
+                        <p class="mb-0">{{ book.book_type }}</p>
+
+                        <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                        <p class="ml-3 small d-inline">({{ book.review_count}})</p>
+                    </div>
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+                                <form class="form" action="{% url 'add_to_shopping_bag' book.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    <button type="submit" class="btn border rounded-pill btn-style w-100"
+                                        name="quantity" value="1">Add to bag</button>
+                                </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-sm-none mb-5">
-                    <hr>
-
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-
-                {% empty %}
-                <div class="col mt-5 empty-result">
-                    <p class="text-center lead">Sorry, no books match that search.</p>
-
-                </div>
-                {% endfor %}
             </div>
+            {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+                <hr>
+
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+            </div>
+            {% endif %}
+
+            {% empty %}
+            <div class="col mt-5 empty-result">
+                <p class="text-center lead">Sorry, no books match that search.</p>
+
+            </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
