@@ -15,6 +15,21 @@ body{
     font-size: 17px;
 }
 
+.message-container{
+    position: fixed;
+    top: 85px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper{
+    height: 2px;
+}
+
 .nav-link, .nav-link > a,
 footer h6,
 .welcome-msg-wrapper h2,
