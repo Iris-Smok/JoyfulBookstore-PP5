@@ -30,6 +30,13 @@ body{
     height: 2px;
 }
 
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .nav-link, .nav-link > a,
 footer h6,
 .welcome-msg-wrapper h2,
