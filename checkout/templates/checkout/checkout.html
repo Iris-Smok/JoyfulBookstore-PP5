@@ -79,7 +79,7 @@
         </div>
         <div class="col-12 col-lg-6">
             <p>Please fill out the form below to complete your orders</p>
-            <form action="{% url 'checkout' %}" method="POST" id="payment_form">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token%}
                 <fieldset class="rounded-0 px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2">Details</legend>
@@ -115,7 +115,7 @@
                     <!-- Stripe card element -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Display form errors -->
-                    <div class="mb-3 text-danger" id="card-error" role="alert"></div>
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'shopping_bag_view' %}" class="btn border-secondary btn-style logo-font">
