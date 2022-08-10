@@ -76,5 +76,9 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.book.price * self.quantity
-        super().save(*args, **kwargs)
+        if self.book.sale_price:
+            self.lineitem_total = self.book.sale_price * self.quantity
+            super().save(*args, **kwargs)
+        else:
+            self.lineitem_total = self.book.price * self.quantity
+            super().save(*args, **kwargs)
