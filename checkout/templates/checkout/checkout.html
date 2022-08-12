@@ -116,6 +116,7 @@
                     <div class="mb-3" id="card-element"></div>
                     <!-- Display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <input type="hidden" name="client_secret" value="{{ client_secret }}">
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'shopping_bag_view' %}" class="btn border-secondary btn-style logo-font">
@@ -134,7 +135,7 @@
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
-                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                        <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
                     </p>
                 </div>
             </form>
