@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+if os.path.exists('env.py'):
+    import env  # noqa
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -173,9 +176,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 20
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = 'pk_test_51LVaMJEcD5XXTroUMOIGcfZ2zBKLp0GasYqmnx5UZBjEIyzGS2bzkyGKmXiVjDcCECCw68ejBTHbnGB8AYfSqlK800NJWeXPZs'
-STRIPE_SECRET_KEY = 'sk_test_51LVaMJEcD5XXTroUAVf7xdL6uQzpRFvKimaY7BGK4WBLc7EJpvnZbLSUAWwWgwFLkaQuZ3x61oWMnLGN9O16ME0E00SuVzJiOo'
-STRIPE_WH_SECRET = 'whsec_uqkq9cGVScN6tNsD5ru9dbLmB0xCXvtz'
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
