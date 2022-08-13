@@ -122,9 +122,7 @@
 
 
                 <div class="list-inline-item  dropdown">
-                    <a class="nav-link d-block pt-4" href="#" id="mob-account-menu" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"
-                        aria-label="{% if request.user.is_authenticated %}My Account{% else %}Sign in or sign up{% endif %}">
+                    <a class="nav-link d-block pt-4" href="#" data-toggle="dropdown">
                         <div class="text-center">
                             <div><i class="fa-solid fa-user fa-lg"></i></div>
                         </div>
@@ -134,7 +132,7 @@
                         {% if request.user.is_superuser %}
                         <a href="#" class="dropdown-item">Admin</a>
                         {% endif %}
-                        <a href="#" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_overview' %}" class="dropdown-item">My Account</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                         {% else %}
                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>

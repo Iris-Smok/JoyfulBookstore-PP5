@@ -1,0 +1,11 @@
+.accounts-btns{
+    width: 75%;
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 668px){
+    .accounts-btns{
+        width: 100%;
+        font-size: 1rem;
+    }
+}
