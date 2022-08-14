@@ -125,6 +125,23 @@ footer h6,
     letter-spacing: 1px;
 }
 
+/* USER DROPDOWN  */
+
+.account-dropdown {
+    left: -44px !important;
+}
+
+/* ACCOUNTS */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
 
 /* FOOTER */
 

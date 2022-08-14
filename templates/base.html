@@ -127,7 +127,7 @@
                             <div><i class="fa-solid fa-user fa-lg"></i></div>
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    <div class="account-dropdown dropdown-menu border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a href="#" class="dropdown-item">Admin</a>
