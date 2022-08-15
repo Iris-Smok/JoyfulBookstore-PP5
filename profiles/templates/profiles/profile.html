@@ -27,7 +27,7 @@
     </div>
     <div class="row mb-3">
         <div class="sm-8">
-            <span class="p-3">
+            <span>
                 <a href="{% url 'account_change_password' %}" class="btn logo-font btn-style rounded">Change your
                     password</a>
             </span>
@@ -35,7 +35,7 @@
     </div>
     <div class="row mb-5">
         <div class="sm-8">
-            <span class="p-3">
+            <span>
                 <a href="{% url 'account_email' %}" class="btn logo-font btn-style rounded">Change your
                     login details</a>
             </span>
@@ -57,4 +57,9 @@
 </div>
 
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
