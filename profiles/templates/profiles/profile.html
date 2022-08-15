@@ -47,6 +47,8 @@
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
+                <span><a href="{% url 'account_overview' %}" class="btn logo-font btn-style"><i
+                            class="fas fa-chevron-left pr-2"></i>My Account</a></span>
                 <button class="btn logo-font btn-style">Update Details</button>
             </form>
         </div>

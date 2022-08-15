@@ -20,10 +20,28 @@
     color: #aab7c4;
 }
 
+.border-th-orders > tr{
+    border-bottom: 3px solid black;
+}
+
+.border-th-orders > tr > th{
+    border-top: none;
+}
+
+.order-history{
+    max-height: 416px;
+    overflow: auto;
+}
 
 @media only screen and (max-width: 668px){
     .accounts-btns{
         width: 100%;
         font-size: 1rem;
     }
+
+    .order-history-links > a{
+        display: block !important;
+        margin-top: 10px;
+    }
+
 }
