@@ -23,6 +23,10 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile update successfully!')
+        else:
+            messages.error(
+                request,
+                "Failed to update profile - please check form and try again")
 
     template = 'profiles/profile.html'
     context = {
