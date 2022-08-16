@@ -71,14 +71,11 @@
                             Categories
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'books' %}?category=board_books">Board Books</a>
-                            <a class="dropdown-item" href="{% url 'books' %}?category=picture_story_books">Picture Story
-                                Books</a>
-                            <a class="dropdown-item" href="{% url 'books' %}?category=first_readers">First Readers</a>
-                            <a class="dropdown-item" href="{% url 'books' %}?category=early_readers">Early Readers</a>
-                            <a class="dropdown-item" href="{% url 'books' %}?category=fiction_books">Fiction Books</a>
-                            <a class="dropdown-item" href="{% url 'books' %}?category=non_fiction_books">Non Fiction
-                                Books</a>
+                            {% for category in categories %}
+                            <a class="dropdown-item"
+                                href="{% url 'books' %}?category={{ category.name }}">{{ category.friendly_name }}</a>
+                            {% endfor %}
+
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -130,7 +127,7 @@
                     <div class="account-dropdown dropdown-menu border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="#" class="dropdown-item">Admin</a>
+                        <a href="{% url 'admin_profile' %}" class="dropdown-item">Admin</a>
                         {% endif %}
                         <a href="{% url 'account_overview' %}" class="dropdown-item">My Account</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
