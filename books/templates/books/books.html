@@ -124,7 +124,7 @@
                             {% endif %}
                         </p>
 
-                        <p class="mb-0">{{ book.book_type }}</p>
+                        <p class="mb-0">{{ book.book_type|default_if_none:'' }}</p>
 
                         <div class="book-rating d-inline">
                             {% include 'books/includes/book_rating.html' %}</div>

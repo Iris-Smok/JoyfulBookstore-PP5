@@ -9,7 +9,7 @@ from .forms import BookForm, CategoryForm
 def all_books(request):
     """ A view to show all books, including sorting and searching queries"""
 
-    books = Book.objects.all()
+    books = Book.objects.all().order_by('-id')
     query = None
     categories = None
     sort = None
@@ -77,13 +77,32 @@ def book_detail(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     context = {
         'book': book,
+
     }
     return render(request, 'books/book_detail.html', context)
 
 
 def add_book(request):
     """ Add a book to the store """
-    form = BookForm()
+
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            book = form.save()
+            if book.sale_price and book.sale_price > 0:
+                book.discount = book.price - book.sale_price
+            else:
+                book.sale_price = None
+            book.save()
+            messages.success(request, 'Successfully added book!')
+            return redirect(reverse('add_book'))
+        else:
+            messages.error(
+                request, 'Failed to add book. Please ensure the form is valid.')
+    else:
+        form = BookForm()
+
     template = 'books/add_book.html'
     context = {
         'form': form
