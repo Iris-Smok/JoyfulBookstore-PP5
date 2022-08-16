@@ -112,7 +112,18 @@ def add_book(request):
 
 def add_category(request):
     """ Add a category to the store """
-    form = CategoryForm()
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added category!')
+            return redirect(reverse('add_category'))
+        else:
+            messages.error(
+                request, 'Failed to add book. Please ensure the form is valid.')
+    else:
+        form = CategoryForm()
     template = 'books/add_category.html'
     context = {
         'form': form

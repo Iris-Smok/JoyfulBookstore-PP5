@@ -64,3 +64,8 @@
 .lower-label {
     top: 22px;
 }
+
+.category-table{
+    max-height: 450px;
+    overflow: auto;
+}
