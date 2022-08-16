@@ -8,8 +8,7 @@ from checkout.models import Order
 def account_overview(request):
     """ Display the account overview"""
     template = 'profiles/account_overview.html'
-    context = {}
-    return render(request, template, context)
+    return render(request, template)
 
 
 def profile(request):
@@ -63,3 +62,15 @@ def order_confirmation(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def admin_profile(request):
+    """ Display admin account overview"""
+    template = 'profiles/admin_profile.html'
+    return render(request, template)
+
+
+def book_managment(request):
+    """ Display book managment page where admin can choose to add category and book """
+    template = 'profiles/book_managment.html'
+    return render(request, template)

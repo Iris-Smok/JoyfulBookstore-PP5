@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <hr>
+            <h2 class="logo-font mb-4">Book Managment</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col text-center">
+            <a href="{% url 'add_category' %}">
+                <div class="btn logo-font btn-style accounts-btns">
+                    <span><i class="fa-solid fa-list pr-2"></i></span>
+                    Add Category
+                </div>
+            </a>
+            <p class="mt-2"> Add new Category</p>
+
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a href="{% url 'add_book' %}">
+                <div class="btn logo-font btn-style accounts-btns">
+                    <span><i class="fas fa-book pr-2"></i></span>
+                    Add Book
+                </div>
+            </a>
+            <p class="mt-2"> Add new Book</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+{% endblock %}
