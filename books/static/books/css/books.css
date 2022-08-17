@@ -70,4 +70,7 @@
     overflow: auto;
 }
 
+.input-div-shopping:hover input{
+    color: white;
+}
 
