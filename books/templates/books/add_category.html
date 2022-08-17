@@ -56,14 +56,14 @@
                             <td>
                                 <p> {{category.name}}</p>
                             </td>
-
                             <td>{{category.friendly_name}}</td>
-
                             <td>
+                                <div class="btn logo-font d-inline">
 
-                                <div class="btn btn-delete-category text-danger">Delete</div>
+                                    <a href="{% url 'edit_category' category.id %}" class="text-success">Edit</a>
+                                </div>
+                                <div class="d-inline">Delete</div>
                             </td>
-
                         </tr>
                         {% endfor %}
                     </tbody>

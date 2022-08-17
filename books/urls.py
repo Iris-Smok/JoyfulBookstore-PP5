@@ -9,4 +9,6 @@ urlpatterns = [
     path('add_book/', views.add_book, name='add_book'),
     path('add_category/', views.add_category, name='add_category'),
     path('edit_book/<int:book_id>/', views.edit_book, name='edit_book'),
+    path('edit_category/<int:category_id>/',
+         views.edit_category, name='edit_category'),
 ]
