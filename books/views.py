@@ -96,7 +96,7 @@ def add_book(request):
                 book.sale_price = None
             book.save()
             messages.success(request, 'Successfully added book!')
-            return redirect(reverse('add_book'))
+            return redirect(reverse('book_detail', args=[book.id]))
         else:
             messages.error(
                 request, 'Failed to add book. Please ensure the form is valid.')
@@ -189,3 +189,16 @@ def edit_category(request, category_id):
     }
 
     return render(request, template, context)
+
+
+def delete_book(request, book_id):
+    """ Delete a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store ownesr can do that.')
+        return redirect(reverse('home'))
+
+    book = get_object_or_404(Book, pk=book_id)
+    book.delete()
+    messages.success(request, 'Book deleted')
+
+    return redirect(reverse('books'))

@@ -37,7 +37,6 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="book-details-container mb-5 mt-md-5">
                 <h2 class="mb-0 text-left font-weight-bold">{{ book.title }} </h2>
-                <a href="{% url 'edit_book' book.id %}">edit</a>
                 {% if book.category %}
                 <p class="small mt-1 mb-0">
                     <a href="{% url 'books' %}?category={{ book.category.name }}" class="text-muted">
@@ -50,6 +49,17 @@
                 <p class="lead mb-0 text-left font-weight-bold">€{{book.price}}</p>
                 <div class="book-rating d-inline"> {% include 'books/includes/book_rating.html' %}</div>
                 <p class="ml-3 small d-inline mb-5">({{ book.review_count }})</p>
+
+                <!-- edit and delete btn -->
+                {% if request.user.is_superuser %}
+                <div>
+                    <small class="text-uppercase">
+                        <a href="{% url 'edit_book' book.id %}" class="text-success">edit</a>
+                        <a href="{% url 'delete_book' book.id %}" class="text-danger">delete</a>
+                    </small>
+                </div>
+                {% endif %}
+
                 <p class="mt-5 mb-3"><strong>Author:</strong> {{ book.author }}
                 </p>
                 <p class="my-3" id="readonly"><strong>Book Type:</strong> {{ book.book_type }} </p>

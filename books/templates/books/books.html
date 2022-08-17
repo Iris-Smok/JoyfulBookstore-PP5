@@ -131,6 +131,14 @@
 
                         <p class="ml-3 small d-inline">({{ book.review_count}})</p>
                     </div>
+                    {% if request.user.is_superuser %}
+                    <small class="ml-4 text-uppercase">
+                        <a href="{% url 'edit_book' book.id %}" class="text-success">edit</a>
+                        <a href="{% url 'delete_book' book.id %}" class="text-danger">delete</a>
+                    </small>
+
+
+                    {% endif %}
                     <div class="card-footer bg-white pt-0 border-0 text-left">
                         <div class="row">
                             <div class="col">
