@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <hr>
-            <h2 class="logo-font mb-4">Book Managment</h2>
+            <h2 class="logo-font mb-4">Category Managment</h2>
             <h5 class="text-muted">Add a Category</h5>
             <hr>
         </div>
@@ -32,20 +32,20 @@
             <form action="{% url 'add_category' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy}}
-                <div class="text-right">
+                <div class="text-right mb-3">
                     <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Cancel</a>
                     <button class="btn logo-font btn-style rounded" type="submit">Add Category</button>
                 </div>
             </form>
-
+            <!-- List of categories, edit and delete btns -->
         </div>
         <div class="col-12 col-lg-6">
-            <div class="category-table table-responsive">
+            <div class="category-table table-responsive mb-5">
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr class="border-bottom">
                             <th>Name</th>
-                            <th>Friendl Name</th>
+                            <th>Friendly Name</th>
                             <th></th>
 
                         </tr>
@@ -61,8 +61,13 @@
                                 <div class="btn logo-font d-inline">
 
                                     <a href="{% url 'edit_category' category.id %}" class="text-success">Edit</a>
+
+                                    <button class="btn logo-font text-danger" data-toggle="modal"
+                                        data-target="#deleteModal{{category.id}}">Delete</button>
+                                    <!-- Modal -->
+                                    {% include 'books/includes/delete_category_modal.html' %}
                                 </div>
-                                <div class="d-inline">Delete</div>
+
                             </td>
                         </tr>
                         {% endfor %}

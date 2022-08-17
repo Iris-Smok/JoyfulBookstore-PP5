@@ -162,7 +162,7 @@ def edit_book(request, book_id):
 
 
 def edit_category(request, category_id):
-    """ Edit a category in the store """
+    """ Edit a category on add category page """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only store ownesr can do that.')
         return redirect(reverse('home'))
@@ -202,3 +202,16 @@ def delete_book(request, book_id):
     messages.success(request, 'Book deleted')
 
     return redirect(reverse('books'))
+
+
+def delete_category(request, category_id):
+    """ Delete a category"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store ownesr can do that.')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(Category, pk=category_id)
+    category.delete()
+    messages.success(request, 'Category deleted')
+
+    return redirect(reverse('add_category'))

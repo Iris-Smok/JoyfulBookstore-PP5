@@ -33,10 +33,10 @@
             <a href="{% url 'add_category' %}">
                 <div class="btn logo-font btn-style accounts-btns">
                     <span><i class="fa-solid fa-list pr-2"></i></span>
-                    Add Category
+                    Category Managment
                 </div>
             </a>
-            <p class="mt-2"> Add new Category</p>
+
 
         </div>
     </div>
@@ -45,11 +45,19 @@
             <a href="{% url 'add_book' %}">
                 <div class="btn logo-font btn-style accounts-btns">
                     <span><i class="fas fa-book pr-2"></i></span>
-                    Add Book
+                    Book Managment
                 </div>
             </a>
-            <p class="mt-2"> Add new Book</p>
-
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center small">
+            <a href="{% url 'admin_profile' %}">
+                <div class="btn logo-font btn-style">
+                    <span><i class="fas fa-arrow-left pr-2"></i></span>
+                    Back to Admin Panel
+                </div>
+            </a>
         </div>
     </div>
 </div>
