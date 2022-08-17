@@ -46,7 +46,13 @@
                 {%endif %}
 
 
-                <p class="lead mb-0 text-left font-weight-bold">€{{book.price}}</p>
+                {% if book.sale_price %}
+                <p class="mr-1 mb-0"><del class="text-muted">€{{ book.price }} </del></p>
+                <p class="lead font-weight-bold">€{{ book.sale_price }}</p>
+                {% else %}
+
+                <p class=" lead font-weight-bold">€{{ book.price }}</p>
+                {% endif %}
                 <div class="book-rating d-inline"> {% include 'books/includes/book_rating.html' %}</div>
                 <p class="ml-3 small d-inline mb-5">({{ book.review_count }})</p>
 
@@ -100,13 +106,16 @@
                     </div>
 
                     <div class="col-12">
-                        <a href="{% url 'books' %}"
-                            class="btn mt-5 border-secondary w-100 text-center btn-style logo-font">
+                        <div
+                            class=" input-div-shopping btn mt-5 border-secondary btn-style w-100 text-center logo-font">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
+                                <input type=button value="Keep Shopping"
+                                    class="border-0 bg-transparent btn-style logo-font text-uppercase d-inline"
+                                    onClick="window.history.back();return false;">
                             </span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
+
+                        </div>
                         <div>
                             <input type="submit"
                                 class="btn text-uppercase mt-5 border-secondary w-100 text-center btn-style logo-font"
@@ -135,10 +144,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script>
-    $(document).ready(function () {
-        $("p:contains('None')").hide();
-    });
-</script>
+
 {% include 'books/includes/quantity_input_script.html' %}
 {% endblock %}
