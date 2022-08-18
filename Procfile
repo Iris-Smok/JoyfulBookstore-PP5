@@ -1,1 +1,1 @@
-web: gunicorn joyfulbookstore.wsgi.application
+web: gunicorn joyfulbookstore.wsgi:application
