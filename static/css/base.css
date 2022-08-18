@@ -7,7 +7,7 @@ html{
 }
 
 body{
-    background: url('../../media/background_image.png') no-repeat center center fixed;
+    background: url('/media/background_image.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     color: #252525;
@@ -227,7 +227,7 @@ footer h6{
 /* Modal */
 
 .model-custom{
-    background: url('../../media/modal-bg.jpg') no-repeat center center;
+    background: url('/media/modal-bg.jpg') no-repeat center center;
     background-size: cover;
     border: 0;
     width: 100%;
