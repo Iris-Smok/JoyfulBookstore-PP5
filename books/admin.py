@@ -3,7 +3,7 @@ from .models import Book, Category
 
 
 class BookAdmin(admin.ModelAdmin):
-    """ product model display """
+    """ book model display """
     list_display = (
         'title',
         'category',
@@ -17,7 +17,7 @@ class BookAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    """category model dissplay"""
+    """category model display"""
     list_display = (
         'friendly_name',
         'name'
