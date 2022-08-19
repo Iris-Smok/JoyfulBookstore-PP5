@@ -61,8 +61,12 @@
                 <div>
                     <small class="text-uppercase">
                         <a href="{% url 'edit_book' book.id %}" class="text-success">edit</a>
-                        <a href="{% url 'delete_book' book.id %}" class="text-danger">delete</a>
+                        <button class="btn logo-font text-danger border-0" data-toggle="modal"
+                            data-target="#book-modal-{{book.id}}">Delete</button>
                     </small>
+
+                    {% include 'books/includes/delete_book_modal.html' %}
+
                 </div>
                 {% endif %}
 
