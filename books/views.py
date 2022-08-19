@@ -112,7 +112,8 @@ def add_book(request):
 
     template = 'books/add_book.html'
     context = {
-        'form': form
+        'form': form,
+        'on_page': True,
     }
     return render(request, template, context)
 
@@ -138,7 +139,8 @@ def add_category(request):
         form = CategoryForm()
     template = 'books/add_category.html'
     context = {
-        'form': form
+        'form': form,
+        'on_page': True,
     }
     return render(request, template, context)
 
@@ -169,6 +171,7 @@ def edit_book(request, book_id):
     context = {
         'form': form,
         'book': book,
+        'on_page': True,
     }
 
     return render(request, template, context)
@@ -200,6 +203,7 @@ def edit_category(request, category_id):
     context = {
         'form': form,
         'category': category,
+        'on_page': True,
     }
 
     return render(request, template, context)

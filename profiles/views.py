@@ -36,7 +36,7 @@ def profile(request):
     context = {
         'form': form,
         'profile': profile,
-        'on_profile_page': True,
+        'on_page': True,
     }
     return render(request, template, context)
 
@@ -49,7 +49,7 @@ def order_history(request):
     orders = profile.orders.all()
     context = {
         'orders': orders,
-        'on_profile_page': True,
+        'on_page': True,
     }
     return render(request, 'profiles/order_history.html', context)
 
