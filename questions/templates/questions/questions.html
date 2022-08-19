@@ -43,6 +43,13 @@
                                 data-target="#collapseOne-{{question.id}}" aria-expanded="false"
                                 aria-controls="collapseOne">
                                 {{question.question}}
+                                {% if request.user.is_superuser %}
+                                <small class="ml-4 text-uppercase">
+                                    <a href="{% url 'edit_faq' question.id %}" class="text-success">edit</a>
+                                    <a href="#" class="text-danger">delete</a>
+                                </small>
+
+                                {% endif %}
                             </button>
                         </h2>
                     </div>

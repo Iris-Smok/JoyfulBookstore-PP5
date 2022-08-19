@@ -191,7 +191,7 @@ def edit_category(request, category_id):
         else:
             messages.error(
                 request,
-                'Failed to update categoty. Please ensure the form is valid.')
+                'Failed to update category. Please ensure the form is valid.')
     else:
         form = CategoryForm(instance=category)
         messages.info(request, f'You are editing {category.friendly_name}')
