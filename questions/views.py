@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from . models import Question
 from . forms import QuestionForm
 
@@ -16,6 +17,7 @@ def faq_page(request):
     return render(request, template, context)
 
 
+@login_required
 def add_faq(request):
     """ Form for add questiona and answer """
     if not request.user.is_superuser:
@@ -29,11 +31,11 @@ def add_faq(request):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully added question & answer!')
+            messages.success(request, 'Successfully added FAQ!')
             return redirect(reverse('add_faq'))
         else:
             messages.error(
-                request, 'Failed to add question & answer. Please ensure the form is valid.')
+                request, 'Failed to add FAQ. Please ensure the form is valid.')
     else:
         form = QuestionForm()
     template = 'questions/add_question.html'
@@ -44,6 +46,7 @@ def add_faq(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_faq(request, question_id):
     """ Edit a faq on faq page """
     if not request.user.is_superuser:
@@ -72,3 +75,16 @@ def edit_faq(request, question_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_faq(request, question_id):
+    """ Delete FAQ"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+    question = get_object_or_404(Question, pk=question_id)
+    question.delete()
+    messages.success(request, 'FAQ deleted')
+
+    return redirect(reverse('add_faq'))

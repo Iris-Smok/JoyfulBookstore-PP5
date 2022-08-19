@@ -43,15 +43,23 @@
                                 data-target="#collapseOne-{{question.id}}" aria-expanded="false"
                                 aria-controls="collapseOne">
                                 {{question.question}}
-                                {% if request.user.is_superuser %}
-                                <small class="ml-4 text-uppercase">
-                                    <a href="{% url 'edit_faq' question.id %}" class="text-success">edit</a>
-                                    <a href="#" class="text-danger">delete</a>
-                                </small>
 
-                                {% endif %}
                             </button>
                         </h2>
+                        {% if request.user.is_superuser %}
+
+                        <small class="text-uppercase ml-3">
+                            <a href="{% url 'edit_faq' question.id %}"
+                                class="text-success text-decoration-none p-1">edit</a>
+                            <button class="btn btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
+                                data-target="#deleteFAQ{{question.id}}">Delete</button>
+
+                            <!-- Modal -->
+                        </small>
+                        {% include 'questions/includes/delete_faq_modal.html' %}
+
+
+                        {% endif %}
                     </div>
                     <div id="collapseOne-{{question.id}}" class="collapse" aria-labelledby="headingOne-{{question.id}}"
                         data-parent="#question-{{question.id}}">

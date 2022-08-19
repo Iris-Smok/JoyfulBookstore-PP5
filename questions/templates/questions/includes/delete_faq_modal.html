@@ -1,0 +1,25 @@
+<!-- Model -->
+<div id="deleteFAQ{{question.id}}" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header logo-font">
+                <h3 class="modal-title text-uppercase w-100">JoyfulBookstore</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body-delete">
+                <h4 class="mt-4">Are you sure you want to delete <br> <strong>{{question.question }}</strong>
+                    question?
+                </h4>
+                <p class="text-danger mt-3">This action cannot be undone!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{% url 'delete_faq' question.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- End of Model -->

@@ -59,13 +59,16 @@
                                 {% endif %}
                             </td>
                             <td>
-                                <div class="logo-font d-inline">
+                                <div class="logo-font">
 
                                     <a href="{% url 'edit_faq' question.id %}" class="text-success d-inline">Edit</a>
 
-                                    <button class="p-0 btn logo-font text-danger d-inline">Delete</button>
+                                    <button class="btn logo-font text-danger" data-toggle="modal"
+                                        data-target="#deleteFAQ{{question.id}}">Delete</button>
+                                    <!-- Modal -->
 
                                 </div>
+                                {% include 'questions/includes/delete_faq_modal.html' %}
 
                             </td>
                         </tr>
