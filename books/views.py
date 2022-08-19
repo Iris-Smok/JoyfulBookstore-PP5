@@ -97,8 +97,10 @@ def add_book(request):
             book = form.save()
             if book.sale_price and book.sale_price > 0:
                 book.discount = book.price - book.sale_price
+
             else:
                 book.sale_price = None
+
             book.save()
             messages.success(request, 'Successfully added book!')
             return redirect(reverse('book_detail', args=[book.id]))
