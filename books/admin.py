@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Category
+from .models import Book, Category, Review
 
 
 class BookAdmin(admin.ModelAdmin):
@@ -24,6 +24,23 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
     search_fields = ('friendly_name', 'name',)
+
+
+class ReviewAdmin(admin.ModelAdmin):
+    """review model display"""
+    list_display = (
+        'user',
+        'rating',
+        'book',
+        'created_on'
+
+    )
+
+    search_fields = ('user', 'book',)
+    ordering = ('-created_on',)
+
+
+admin.site.register(Review, ReviewAdmin)
 
 
 admin.site.register(Book, BookAdmin)

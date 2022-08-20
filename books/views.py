@@ -3,8 +3,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Book, Category
-from .forms import BookForm, CategoryForm
+from django.db.models import Avg
+from django.conf import settings
+from .models import Book, Category, Review
+from .forms import BookForm, CategoryForm, ReviewForm
+from profiles.models import UserProfile
 
 
 def all_books(request):
@@ -76,10 +79,55 @@ def book_detail(request, book_id):
     """ A view to show book details"""
 
     book = get_object_or_404(Book, pk=book_id)
-    context = {
-        'book': book,
+    reviews = Review.objects.all().filter(
+        book=book).order_by('-created_on')
+    review_count = len(reviews)
 
-    }
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            reviews.create(
+                user=user_profile,
+                book=book,
+                rating=request.POST.get('rating'),
+                body=request.POST.get('body')
+            )
+            reviews = Review.objects.all().filter(book=book)
+            rating = reviews.aggregate(Avg('rating'))['rating__avg']
+            book.rating = rating
+            book.review_count = review_count + 1
+            book.save()
+            messages.success(request, 'Review sucessfully added')
+            return redirect(reverse('book_detail', args=[book_id]))
+        else:
+            print(form.errors.as_data())
+            messages.error(
+                request,
+                'Review Failed. \
+                    Please check for errors or profanity and try again.'
+            )
+            return redirect(reverse('book_detail', args=[book_id]))
+    else:
+        form = ReviewForm()
+        if request.user.is_authenticated:
+            reviewed = Review.objects.all().filter(
+                book=book).filter(user=user_profile.id)
+        else:
+            reviewed = False
+
+        delivery = settings.STANDARD_DELIVERY
+
+        context = {
+            'book': book,
+            'form': form,
+            'reviews': reviews,
+            'review_count': review_count,
+            'reviewed': reviewed,
+            'delivery': delivery,
+        }
     return render(request, 'books/book_detail.html', context)
 
 
@@ -97,11 +145,14 @@ def add_book(request):
             book = form.save()
             if book.sale_price and book.sale_price > 0:
                 book.discount = book.price - book.sale_price
+                if book.sale_price and book.sale_price > book.price:
+                    messages.error(
+                        request, 'Sale price must be lower than current price!')
+                    return redirect(reverse('edit_book', args=[book.id]))
 
             else:
                 book.sale_price = None
 
-            form.validate_initial_price()
             book.save()
             messages.success(request, 'Successfully added book!')
             return redirect(reverse('book_detail', args=[book.id]))
@@ -160,10 +211,13 @@ def edit_book(request, book_id):
             book = form.save()
             if book.sale_price and book.sale_price > 0:
                 book.discount = book.price - book.sale_price
+                if book.sale_price and book.sale_price > book.price:
+                    messages.error(
+                        request, 'Sale price must be lower than current price!')
+                    return redirect(reverse('edit_book', args=[book.id]))
             else:
-                book.sale_price = None
+                form.clean_field()
 
-            form.validate_initial_price()
             book.save()
             messages.success(request, 'Successfully updated book!')
             return redirect(reverse('book_detail', args=[book.id]))

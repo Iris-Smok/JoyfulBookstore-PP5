@@ -44,7 +44,11 @@
                     </a>
                 </p>
                 {%endif %}
-
+                <div class="mb-3">
+                    <!-- Book Rating -->
+                    <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                    <p class="ml-3 small d-inline">({{ review_count }})</p>
+                </div>
 
                 {% if book.sale_price %}
                 <p class="mr-1 mb-0"><del class="text-muted">€{{ book.price }} </del></p>
@@ -53,8 +57,6 @@
 
                 <p class=" lead font-weight-bold">€{{ book.price }}</p>
                 {% endif %}
-                <div class="book-rating d-inline"> {% include 'books/includes/book_rating.html' %}</div>
-                <p class="ml-3 small d-inline mb-5">({{ book.review_count }})</p>
 
                 <!-- edit and delete btn -->
                 {% if request.user.is_superuser %}
@@ -143,10 +145,13 @@
     </div>
 </div>
 
+{% include 'books/includes/reviews.html' %}
+
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 
 {% include 'books/includes/quantity_input_script.html' %}
+
 {% endblock %}
