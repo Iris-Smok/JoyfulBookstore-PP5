@@ -1,0 +1,112 @@
+<!-- Reviews -->
+<div class="row mt-5 mb-2 mb-lg-3 px-4">
+    <!-- Customer Reviews -->
+    <section class="col-lg-6 ">
+        {% if reviews %}
+        <h4>{{ review_count }} Reviews for {{ book.title }}</h4>
+        <hr>
+        <div class="container">
+            {% for review in reviews %}
+            <div class="row">
+                <div class="col review-stars">
+                    {% if review.rating == 5 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 4 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 3 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 2 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 1 %}
+                    <i class="fa fa-solid fa-star"></i>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    {{ review.body }}
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <p class="d-inline font-italic small text-muted">by {{ review.user }} &#8226;
+                        {{review.created_on}}</p>
+                    <p class="d-inline small text-muted float-right">
+                        {% if user.is_authenticated and user.id == review.user.user.id %}
+                        <a href="#">edit</a> |
+                        <!-- Button triggering deletion warning modal -->
+                        <button class="btn btn-sm p-0 review-delete-btn" data-toggle="modal"
+                            data-target="#review-modal-{{ review.id }}">delete</button>
+                        <!-- Deletion warning Modal -->
+                        <div class="modal fade" id="review-modal-{{ review.id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-white" id="exampleModalLabel">Warning!</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete your review? This act is irreversible.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-dark rounded-pill"
+                                            data-dismiss="modal">Cancel</button>
+                                        <a href="#" class="btn text-white bg-danger rounded-pill">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h4>This Product has no reviews</h4>
+        <hr>
+        {% endif %}
+    </section>
+
+    <!-- Add a review  -->
+    <section class="col-lg-6 my-4 my-lg-0">
+        <h4>Add Review</h4>
+        <hr>
+        {% if user.is_authenticated %}
+        {% if reviewed %}
+        <p>You have already reviewed this product.</p>
+        {% else %}
+        <form action="{% url 'book_detail' book.id %}" method="POST">
+            {% csrf_token %}
+            {% for field in form  %}
+            {% if field.name == "rating" %}
+            <p class="mb-0">{{ field.label }} *</p>
+            <br>
+            {% for radio in field %}
+            <label for="{{ radio.id_for_label }}">
+                <i class="far fa-star star"></i>
+            </label>
+            <div class="radio-tag d-inline">{{ radio.tag }}</div>
+            {% endfor %}
+            <br>
+            {% else %}
+            {{ field.errors }}
+            <br>
+            {{ field | as_crispy_field }}
+            {% endif %}
+            {% endfor %}
+            <p class="small text-muted font-italic">* Required</p>
+            <button type="submit" class="btn link-btn rounded-pill d-block mt-2">Add Review</button>
+        </form>
+        {% endif %}
+        {% else %}
+        <p>Please <a href="{% url 'account_login' %}">login</a> to leave a review.</p>
+        {% endif %}
+    </section>

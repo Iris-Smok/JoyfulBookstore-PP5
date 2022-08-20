@@ -27,7 +27,7 @@ def add_to_shopping_bag(request, item_id):
 
 
 def adjust_shopping_bag(request, item_id):
-    """ Ajustthe quantity of the book to the specified amount"""
+    """ Ajust quantity of the book to the specified amount"""
 
     book = get_object_or_404(Book, pk=item_id)
     quantity = int(request.POST.get('quantity') or 1)
