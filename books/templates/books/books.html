@@ -58,9 +58,11 @@
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                             </option>
-                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
+                                Price
                                 (low to high)</option>
-                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>
+                                Price
                                 (high to low)</option>
                             <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
                                 Rating (low to high)</option>
@@ -115,7 +117,8 @@
                         <div class="card-body pb-0">
                             <p class="mb-0 lead font-weight-bold">{{ book.title }}</p>
                             <p class="text-orange lead mb-0">
-                                <!-- If book is on sale, show the price crossed out -->
+
+
                                 {% if book.sale_price %}
                                 <small class="mr-1"><del class="text-muted">€{{ book.price }} </del></small>
                                 <a class="text-sale-new font-weight-bold text-decoration-none"

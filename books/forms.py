@@ -1,5 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
+from django.core.exceptions import ValidationError
 from .models import Book, Category
 
 
@@ -27,3 +28,16 @@ class BookForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+    def validate_initial_price(self):
+        """
+        Make sure that the sale_price is never higher
+        than the price
+        """
+        sale_price = self.cleaned_data['sale_price']
+        price = self.cleaned_data['price']
+        if price and price <= sale_price:
+            raise ValidationError(
+                "Add an sale_price only if the product is on sale " +
+                "and has a lower current price."
+            )
