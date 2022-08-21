@@ -28,16 +28,10 @@ class BookForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
 
-    def clean_field(self):
-        data = self.cleaned_data['sale_price']
-        if not data:
-            data = 0
-        return data
-
 
 class ReviewForm(forms.ModelForm):
     """ Form for leaving rating and review """
-    error_css_class = 'erorr-field'
+
     RATING = [
         (1, '1'),
         (2, '2'),
