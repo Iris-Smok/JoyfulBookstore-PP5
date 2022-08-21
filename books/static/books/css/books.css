@@ -12,8 +12,10 @@
     line-height: 27px;
 }
 
-.book-rating .fa-solid{
+
+.fa-star{
     color: gold;
+    text-shadow: -1px 1px #000;
 }
 
 .btn-color{

@@ -79,8 +79,7 @@ def book_detail(request, book_id):
     """ A view to show book details"""
 
     book = get_object_or_404(Book, pk=book_id)
-    reviews = Review.objects.all().filter(
-        book=book).order_by('-created_on')
+    reviews = Review.objects.all().filter(book=book).order_by('-created_on')
     review_count = len(reviews)
 
     if request.user.is_authenticated:
@@ -95,21 +94,18 @@ def book_detail(request, book_id):
                 rating=request.POST.get('rating'),
                 body=request.POST.get('body')
             )
+
             reviews = Review.objects.all().filter(book=book)
             rating = reviews.aggregate(Avg('rating'))['rating__avg']
             book.rating = rating
             book.review_count = review_count + 1
             book.save()
-            messages.success(request, 'Review sucessfully added')
-            return redirect(reverse('book_detail', args=[book_id]))
+            messages.success(request, 'Review successfully added')
+            return redirect(reverse('book_detail', args=[book.id]))
         else:
-            print(form.errors.as_data())
             messages.error(
-                request,
-                'Review Failed. \
-                    Please check for errors or profanity and try again.'
-            )
-            return redirect(reverse('book_detail', args=[book_id]))
+                request, 'Failed to add review. Please ensure the form is valid.')
+
     else:
         form = ReviewForm()
         if request.user.is_authenticated:
@@ -118,16 +114,13 @@ def book_detail(request, book_id):
         else:
             reviewed = False
 
-        delivery = settings.STANDARD_DELIVERY
-
-        context = {
-            'book': book,
-            'form': form,
-            'reviews': reviews,
-            'review_count': review_count,
-            'reviewed': reviewed,
-            'delivery': delivery,
-        }
+    context = {
+        'book': book,
+        'form': form,
+        'reviews': reviews,
+        'review_count': review_count,
+        'reviewed': reviewed,
+    }
     return render(request, 'books/book_detail.html', context)
 
 
@@ -216,7 +209,7 @@ def edit_book(request, book_id):
                         request, 'Sale price must be lower than current price!')
                     return redirect(reverse('edit_book', args=[book.id]))
             else:
-                form.clean_field()
+                book.discount = None
 
             book.save()
             messages.success(request, 'Successfully updated book!')

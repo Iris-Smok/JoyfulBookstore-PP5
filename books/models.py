@@ -60,7 +60,7 @@ class Review(models.Model):
 
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    rating = models.IntegerField(choices=RATING)
+    rating = models.IntegerField(choices=RATING, default=3)
     body = models.TextField(max_length=1024)
     created_on = models.DateTimeField(auto_now_add=True)
 

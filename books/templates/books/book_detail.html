@@ -45,7 +45,6 @@
                 </p>
                 {%endif %}
                 <div class="mb-3">
-                    <!-- Book Rating -->
                     <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
                     <p class="ml-3 small d-inline">({{ review_count }})</p>
                 </div>
@@ -63,8 +62,8 @@
                 <div>
                     <small class="text-uppercase">
                         <a href="{% url 'edit_book' book.id %}" class="text-success">edit</a>
-                        <button class="btn logo-font text-danger border-0" data-toggle="modal"
-                            data-target="#book-modal-{{book.id}}">Delete</button>
+                        <button class="btn btn-sm p-0 pl-1 logo-font text-danger border-0 text-uppercase"
+                            data-toggle="modal" data-target="#book-modal-{{book.id}}">Delete</button>
                     </small>
 
                     {% include 'books/includes/delete_book_modal.html' %}
@@ -144,8 +143,88 @@
         </div>
     </div>
 </div>
+<!-- Reviews -->
+<div class="container">
 
-{% include 'books/includes/reviews.html' %}
+    <div class="row">
+        <div class="col">
+            {% if reviews %}
+            <h4>{{ review_count }} Reviews for <strong>{{ book.title }}</strong></h4>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            {% for review in reviews %}
+            <div class="row mt-3">
+                <div class="col review-stars">
+                    {% if review.rating == 5 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 4 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 3 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                        class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 2 %}
+                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                    {% elif review.rating == 1 %}
+                    <i class="fa fa-solid fa-star"></i>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ review.body}}
+                    <p class="small text-muted">{{ review.user }} &#8226; {{review.created_on|timesince }}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                </div>
+            </div>
+
+            {% endfor %}
+            {% else %}
+            <h4>This Product has no reviews</h4>
+            <hr>
+            {% endif %}
+
+
+        </div>
+
+        <!-- Add review -->
+        <div class="col-12 col-md-6">
+            <h1 class="text-center">Leave A Review</h1>
+            {% if reviewed %}
+            <p class="text-center">You have already reviewed <strong> {{ book.title }}</strong>.</p>
+            {% else %}
+            {% if request.user.is_authenticated %}
+            <form method="POST" action="{% url 'book_detail' book.id %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="text-right">
+                    <button class="btn btn-style logo-font mb-5" type="submit">Submit Review</button>
+                </div>
+            </form>
+            {% else %}
+            <p class="text-center">Please <a class="link-normal" href="{% url 'account_signup' %}">Register</a> or <a
+                    class="link-normal" href="{% url 'account_login' %}">Login</a> to leave a review.</p>
+            {% endif %}
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+
 
 {% endblock %}
 
