@@ -135,7 +135,9 @@
                             <div class="book-rating d-inline">
                                 {% include 'books/includes/book_rating.html' %}</div>
 
+                            {% if book.review_count > 0 %}
                             <p class="ml-3 small d-inline">({{ book.review_count}})</p>
+                            {% endif %}
                         </div>
                         {% if request.user.is_superuser %}
                         <small class="ml-4 text-uppercase">
