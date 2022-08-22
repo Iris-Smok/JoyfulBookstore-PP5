@@ -13,9 +13,12 @@
 }
 
 
-.fa-star{
-    color: gold;
-    text-shadow: -1px 1px #000;
+.fa-star,
+.fa-star-half,
+.fa-star-half-stroke{
+    color:#d7b500;
+    text-shadow: 0 0.5rem 1rem rgba(0,0,0,.15)!important;
+
 }
 
 .btn-color{
