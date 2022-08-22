@@ -297,10 +297,20 @@ def edit_review(request, review_id):
     """ Edit review"""
     review = get_object_or_404(Review, pk=review_id)
     book = review.book
+
+    if request.user.id != review.user.user.id:
+        messages.error(request, 'Sorry, you do not have access to that.')
+        return redirect(
+            reverse('book_detail', args=[book.id]))
+
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
+            reviews = Review.objects.all().filter(book=book)
+            rating = reviews.aggregate(Avg('rating'))['rating__avg']
+            book.rating = rating
+            book.save()
             messages.success(request, 'Successfully updated review!')
             return redirect(reverse('book_detail', args=[book.id]))
         else:
@@ -320,3 +330,24 @@ def edit_review(request, review_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete review """
+    review = get_object_or_404(Review, pk=review_id)
+    book = review.book
+
+    if request.user.id != review.user.user.id:
+        messages.error(request, 'Sorry, you do not have access to that.')
+        return redirect(
+            reverse('book_detail', args=[book.id]))
+
+    review.delete()
+    reviews = Review.objects.all().filter(book=book)
+    rating = reviews.aggregate(Avg('rating'))['rating__avg']
+    book.rating = rating
+    book.review_count -= 1
+    book.save()
+    messages.success(request, 'Review successfully deleted!')
+    return redirect(reverse('book_detail', args=[book.id]))

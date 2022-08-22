@@ -193,11 +193,19 @@
                         <!-- User and admin edit btn -->
                         {% if review.user == request.user or request.user.is_superuser %}
                         <a href="{% url 'edit_review' review.id %}#reviews-section"
-                            aria-label="Edit review from {{ review.user }}" class="text-secondary">
+                            aria-label="Edit review from {{ review.user }}" class="text-secondary text-decoration-none">
                             <span class="icon mr-2">
                                 <i class="fa-regular fa-pen-to-square"></i>
                             </span>
                         </a>
+                        <a class="text-danger text-decoration-none btn" data-toggle="modal"
+                            data-target="#reviewDeleteModal" aria-label="Delete review from {{ review.user }}">
+                            <span class="icon">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </span>
+                        </a>
+
+                        {% include 'books/includes/delete_review_modal.html' %}
                         {% endif %}
                     </div>
                 </div>
@@ -206,11 +214,6 @@
                         {{ review.body}}
                         <p class="small text-muted">{{ review.user }} &#8226; {{review.created_on|timesince }}
                         </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-
                     </div>
                 </div>
                 {% endfor %}
