@@ -45,8 +45,12 @@
                 </p>
                 {%endif %}
                 <div class="mb-3">
-                    <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
-                    <p class="ml-3 small d-inline">({{ review_count }})</p>
+                    <a href="#reviews-section" class="text-decoration-none">
+                        <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                    </a>
+                    {% if book.review_count > 0 %}
+                    <p class="ml-3 small d-inline">({{ book.review_count}})</p>
+                    {% endif %}
                 </div>
 
                 {% if book.sale_price %}
@@ -144,91 +148,93 @@
     </div>
 </div>
 <!-- Reviews -->
-<div class="container">
+<section id="reviews-section">
+    <div class="container">
 
-    <div class="row">
-        <div class="col">
-            {% if reviews %}
-            <h4>{{ review_count }} Reviews for <strong>{{ book.title }}</strong></h4>
-            <hr>
+        <div class="row">
+            <div class="col">
+                {% if reviews %}
+                <h4>{{ review_count }} Reviews for <strong>{{ book.title }}</strong></h4>
+                <hr>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            {% for review in reviews %}
-            <div class="row mt-3">
-                <div class="col review-stars">
-                    {% if review.rating == 5 %}
-                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
-                        class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
-                        class="fa fa-solid fa-star"></i>
-                    {% elif review.rating == 4 %}
-                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
-                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
-                    <i class="fa fa-regular fa-star"></i>
-                    {% elif review.rating == 3 %}
-                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
-                        class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
-                        class="fa fa-regular fa-star"></i>
-                    {% elif review.rating == 2 %}
-                    <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
-                        class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
-                        class="fa fa-regular fa-star"></i>
-                    {% elif review.rating == 1 %}
-                    <i class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
-                        class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
-                        class="fa fa-regular fa-star"></i>
-                    {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+
+                {% for review in reviews %}
+                <div class="row mt-3">
+                    <div class="col review-stars">
+                        {% if review.rating == 5 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i>
+                        {% elif review.rating == 4 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 3 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 2 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 1 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <!-- User and admin edit btn -->
+                        {% if review.user == request.user or request.user.is_superuser %}
+                        <a href="{% url 'edit_review' review.id %}#reviews-section"
+                            aria-label="Edit review from {{ review.user }}" class="text-secondary">
+                            <span class="icon mr-2">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </span>
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    {{ review.body}}
-                    <p class="small text-muted">{{ review.user }} &#8226; {{review.created_on|timesince }}
-                    </p>
+                <div class="row">
+                    <div class="col">
+                        {{ review.body}}
+                        <p class="small text-muted">{{ review.user }} &#8226; {{review.created_on|timesince }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
+                <div class="row">
+                    <div class="col">
 
+                    </div>
                 </div>
+                {% endfor %}
+                {% else %}
+                {% if not edit %}
+                <div class="col-12 col-md-8 mx-auto">
+                    <h4>This Book has no reviews</h4>
+                </div>
+                {% endif %}
+                {% endif %}
+
+
+
             </div>
 
-            {% endfor %}
-            {% else %}
-            <h4>This Product has no reviews</h4>
-            <hr>
-            {% endif %}
-
+            <!-- Add review -->
+            <div class="col-12 col-md-6">
+                <h1 class="text-center">Leave A Review</h1>
+                {% include 'books/includes/add_edit_review.html' %}
+            </div>
 
         </div>
-
-        <!-- Add review -->
-        <div class="col-12 col-md-6">
-            <h1 class="text-center">Leave A Review</h1>
-            {% if reviewed %}
-            <p class="text-center">You have already reviewed <strong> {{ book.title }}</strong>.</p>
-            {% else %}
-            {% if request.user.is_authenticated %}
-            <form method="POST" action="{% url 'book_detail' book.id %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <div class="text-right">
-                    <button class="btn btn-style logo-font mb-5" type="submit">Submit Review</button>
-                </div>
-            </form>
-            {% else %}
-            <p class="text-center">Please <a class="link-normal" href="{% url 'account_signup' %}">Register</a> or <a
-                    class="link-normal" href="{% url 'account_login' %}">Login</a> to leave a review.</p>
-            {% endif %}
-            {% endif %}
-        </div>
-
     </div>
-</div>
+</section>
 
 
 
