@@ -138,12 +138,12 @@
                 {% if request.user.is_authenticated %}
 
                 <a href="{% url 'add_to_wishlist' book.id %}">
-                    <!-- if the book is in the wishlist -->
+
                     {% if book in wishlist_items %}
                     <div class="btn text-uppercase mt-5 border-secondary btn-style logo-font"
                         style="background-color:goldenrod;">remove from wishlist</div>
                     {% else %}
-                    <!-- if the book is not in wishlist -->
+
                     <div class="btn text-uppercase mt-5 border-secondary btn-style logo-font">add to wishlist</div>
                     {% endif %}
                 </a>
