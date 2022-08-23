@@ -209,9 +209,15 @@
                     </div>
                     <div><a href="#" class="footer-link">Shipping Info</a>
                     </div>
-                    <div><a href="#" class="footer-link"> Privacy Policy</a>
+                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#PolicyModal">Privacy
+                            Policy</a>
+
+
                     </div>
+
+
                 </div>
+
                 <div class="col-sm-12 col-md-4">
                     <!-- Subscribe -->
                     <div class="footer-header mt-4">
@@ -253,6 +259,7 @@
                 </div>
             </div>
         </div>
+        {% include 'includes/privacy_policy_modal.html' %}
     </footer>
     {% block postloadjs %}
     <script type="text/javascript">

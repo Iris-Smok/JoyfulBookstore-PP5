@@ -263,18 +263,19 @@ footer h6{
 }
 
 
-.modal-body{
+.home{
     background-color: #00000070;
+
 }
 
-.modal-body p{
+.home p{
     font-size: 1.2rem;
     letter-spacing: 1px;
     color: white;
     text-align: center;
 }
 
-.modal-body p:nth-child(2){
+.home p:nth-child(2){
     font-size: 2.2rem;
     letter-spacing: 3px;
 }
