@@ -41,7 +41,5 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Review, ReviewAdmin)
-
-
 admin.site.register(Book, BookAdmin)
 admin.site.register(Category, CategoryAdmin)
