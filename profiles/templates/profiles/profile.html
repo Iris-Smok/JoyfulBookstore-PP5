@@ -43,7 +43,7 @@
     </div>
     <div class="row mb-5">
         <div class="sm-8">
-            <p class="text-muted">User Profile Details</p>
+            <p class="text-muted"> <i class="fas fa-regular fa-truck mr-1"></i>Delivery Details</p>
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
