@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'profiles',
     'questions',
     'wishlist',
+
     # Other
     'crispy_forms',
     'storages',
@@ -90,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'shopping_bag.contexts.shopping_bag_contents',
                 'home.contexts.book_categories',
+                'wishlist.contexts.wishlist_list',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
