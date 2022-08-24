@@ -4,14 +4,15 @@ from .models import Subscriber, SubscriberEmail
 from .forms import EmailForm, SubscriberForm
 
 
-def subscribers(request):
+def newsletter(request):
     """ subscribers page view"""
-    subscribers_all = Subscriber.objects.all()
+    all_subscribers = Subscriber.objects.all()
     form = EmailForm()
-    template = 'newsletter/subscribers.html'
+    template = 'newsletter/newsletter.html'
     context = {
-        'subscribers_all': subscribers_all,
+
         'form': form,
+        'all_subscribers': all_subscribers,
 
     }
     return render(request, template, context)

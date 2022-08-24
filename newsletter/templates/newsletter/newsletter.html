@@ -47,24 +47,23 @@
 
                         </tr>
                     </thead>
-                    <tbody>
-                        {% for subscriber in subscribers_all %}
-                        <tr>
-                            <td>
-                                <p> {{subscriber.email}}</p>
-                            </td>
-                            <td>
-                                <div class="btn logo-font d-inline">
+                    {% for subscriber in all_subscribers %}
+                    <tr>
+                        <td>
+                            {{ subscriber.email}}
+                        </td>
+                        <td>
+                            <div class="btn logo-font d-inline">
 
-                                    <button class="btn logo-font text-danger" data-toggle="modal"
-                                        data-target="#">Delete</button>
-                                    <!-- Modal -->
+                                <button class="btn logo-font text-danger" data-toggle="modal"
+                                    data-target="#">Delete</button>
+                                <!-- Modal -->
 
-                                </div>
+                            </div>
 
-                            </td>
-                        </tr>
-                        {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
