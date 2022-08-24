@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'profiles',
     'questions',
     'wishlist',
+    'newsletter',
 
     # Other
     'crispy_forms',
@@ -92,6 +93,7 @@ TEMPLATES = [
                 'shopping_bag.contexts.shopping_bag_contents',
                 'home.contexts.book_categories',
                 'wishlist.contexts.wishlist_list_items',
+                'newsletter.contexts.subscribe_form_global',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

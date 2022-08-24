@@ -227,9 +227,9 @@
                     <p class="text-white">Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight
                         to
                         your inbox!</p>
-                    <form action="#" method="POST">
+                    <form action="{% url 'subscribers' %}" method="POST">
                         {% csrf_token %}
-                        <input type="text" class="d-block w-100">
+                        {{ subscribe_form | crispy }}
                         <input type="submit" class=" btn-style submit btn mt-2 d-block" value="Subscribe">
                     </form>
 
@@ -267,14 +267,14 @@
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
-    <script>
+    <!-- <script>
         $(window).on('load', function () {
             $('#myModal').modal({
                 backdrop: 'static',
                 keyboard: false
             });
         });
-    </script>
+    </script> -->
     {% endblock %}
 </body>
 
