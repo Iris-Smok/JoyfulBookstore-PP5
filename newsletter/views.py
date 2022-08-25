@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
+from django.conf import settings
 from django.template.loader import render_to_string
 from .models import Subscriber, SubscriberEmail
 from .forms import EmailForm, SubscriberForm
@@ -26,6 +27,7 @@ def subscribe_form_post(request):
 
     if request.method == "POST":
         subscribe_form = SubscriberForm(request.POST)
+        email_host = settings.DEFAULT_FROM_EMAIL
         if subscribe_form.is_valid():
             email = subscribe_form.cleaned_data['email']
             if Subscriber.objects.filter(email=email).exists():
@@ -33,6 +35,12 @@ def subscribe_form_post(request):
                     request, f'You are already subscribed with {email}! ')
             else:
                 subscribe_form.save()
+                send_mail(
+                    'Thank you for subscribing!',
+                    'You are subscibed to JoyfulBookstore online newsletter!',
+                    email_host,
+                    [email],
+                )
                 messages.success(request, 'Successfully Subscribed.')
         return redirect(reverse("home"))
 
@@ -60,6 +68,7 @@ def newsletter_email(request):
             messages.success(request,
                              'You Have Sent Your Newsletter \
                               To Your Subscribers.')
+
             return redirect(reverse("newsletter"))
     else:
         form = EmailForm()
