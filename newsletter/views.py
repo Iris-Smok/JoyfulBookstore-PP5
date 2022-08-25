@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.template.loader import render_to_string
 from .models import Subscriber, SubscriberEmail

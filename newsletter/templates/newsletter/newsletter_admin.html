@@ -54,21 +54,22 @@
                         </td>
                         <td>
                             <div class="btn logo-font d-inline">
-
-                                <button class="btn logo-font text-danger" data-toggle="modal"
-                                    data-target="#">Delete</button>
-                                <!-- Modal -->
+                                <a href="{% url 'unsubscribe' %}" class="btn logo-font text-danger">
+                                    Unsubscribe
+                                </a>
 
                             </div>
-
-                        </td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
             </div>
+
+
+            </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
         </div>
     </div>
+</div>
 </div>
 
 
