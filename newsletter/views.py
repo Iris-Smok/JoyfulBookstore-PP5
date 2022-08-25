@@ -63,6 +63,9 @@ def newsletter_email(request):
             return redirect(reverse("newsletter"))
     else:
         form = EmailForm()
+        messages.error(request, 'Please check the form and try again')
+        return redirect(reverse("newsletter"))
+
     context = {
         'form': form,
     }
