@@ -1,0 +1,9 @@
+To JoyfulBookstore Customer Service.
+
+{{ cust_name}} send the following message:
+
+'{{ cust_message}} '
+
+Please respond to the message at {{ cust_email }} as soon as possible.
+
+Thank you

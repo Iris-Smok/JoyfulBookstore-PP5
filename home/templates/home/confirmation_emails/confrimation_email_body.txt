@@ -1,0 +1,15 @@
+Hello {{ cust_name }}
+
+Thank you for your message. One of our agents will respond to you as soon as possible.
+In the meantime, you may find the answer to your question on our <a href="https://joyfulbookstore.herokuapp.com/questions/">FAQ page</a>.
+
+Your message details:
+
+Email: {{ cust_email }}
+Name: {{ cust_name }}
+
+Message: {{ cust_message }}
+
+Sincerely,
+
+JoyfulBookstore

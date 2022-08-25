@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from django.conf import settings
 
 
@@ -15,29 +16,38 @@ def contact_page(request):
 
     if request.method == 'POST':
         email_host = settings.DEFAULT_FROM_EMAIL
-        try:
-            message_email = request.POST['message-email']
-            message_name = request.POST['message-name']
-            message = request.POST['message']
-            messages.success(
-                request, f'Thank you {message_name}, your message has been send!')
-            send_mail(
-                'Message from ' + message_name,  # subject line
-                message,  # message
-                message_email,  # from email
-                [email_host],
-            )
+        cust_email = request.POST.get('message-email')
+        cust_name = request.POST.get('message-name')
+        cust_message = request.POST.get('message')
+        message = render_to_string(
+            'home/confirmation_emails/confitmation_email_body_admin.txt',
+            {
+                'cust_email': cust_email,
+                'cust_name': cust_name,
+                'cust_message': cust_message})
+        messages.success(
+            request, f'Thank you {cust_name}, your message has been send!')
+        # Send email to bookstore
+        send_mail(
+            'ALERT! New customer message from ' + cust_name,  # subject line
+            message,  # message
+            email_host,  # from email
+            [email_host],  # to email
+        )
 
-            if send_mail:
-                send_mail(
-                    'Contact confirmation',
-                    'Thank you for contacting us! We will get back to you as soon as possbile.',  # message
-                    email_host,
-                    [message_email],  # from email
-                )
-            return redirect(reverse('contact'))
-
-        except ValueError:
-            messages.error(request, 'Please make sure your form is valid!')
+        # Send confirmation email to customer
+        message = render_to_string(
+            'home/confirmation_emails/confrimation_email_body.txt',
+            {
+                'cust_email': cust_email,
+                'cust_name': cust_name,
+                'cust_message': cust_message})
+        send_mail(
+            'JoyfulBookstore Message Received Confirmation!',
+            message,  # message
+            email_host,
+            [cust_email],  # from email
+        )
+        return redirect(reverse('contact'))
 
     return render(request, 'home/contact.html')
