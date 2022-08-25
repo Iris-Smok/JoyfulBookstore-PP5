@@ -1,0 +1,8 @@
+New books are waiting for you!
+
+{{ message }}
+
+
+Please visit our page for more information! https://joyfulbookstore.herokuapp.com/
+
+If you want to unsuscribe see the link {% url 'unsubscribe' %}

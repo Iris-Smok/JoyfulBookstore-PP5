@@ -30,7 +30,6 @@ class StripeWH_Handler:
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email])
-        print(body)
 
     def handle_event(self, event):
         """ Handle a generic/unknown/unexpected webhook event """

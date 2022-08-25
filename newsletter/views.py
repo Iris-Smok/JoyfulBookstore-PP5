@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
+from django.template.loader import render_to_string
 from .models import Subscriber, SubscriberEmail
 from .forms import EmailForm, SubscriberForm
 
@@ -10,7 +11,7 @@ def newsletter(request):
     """ subscribers page view"""
     all_subscribers = Subscriber.objects.all()
     form = EmailForm()
-    template = 'newsletter/newsletter.html'
+    template = 'newsletter/newsletter_admin.html'
     context = {
 
         'form': form,
@@ -47,9 +48,11 @@ def newsletter_email(request):
             form.save()
             title = form.cleaned_data.get('title')
             message = form.cleaned_data.get('message')
+            body = render_to_string(
+                'newsletter/newsletter_body.txt', {'message': message})
             send_mail(
                 title,
-                message,
+                body,
                 '',
                 mail_list,
                 fail_silently=False,
@@ -58,11 +61,29 @@ def newsletter_email(request):
                              'You Have Sent Your Newsletter \
                               To Your Subscribers.')
             return redirect(reverse("newsletter"))
-            print(form)
-            print(mail_list)
     else:
         form = EmailForm()
     context = {
         'form': form,
     }
     return render(request, 'newsletter/newsletter.html', context)
+
+
+def unsubscribe(request):
+    """ unsubscribe from newsletter"""
+    if request.method == 'POST':
+        email = request.POST.get("email")
+        try:
+            current_subscriber = Subscriber.objects.get(email=email)
+            current_subscriber.delete()
+            messages.success(
+                request,
+                f'Successfully unsubscribed email {current_subscriber.email}\
+                    from our newsletter')
+
+        except Subscriber.DoesNotExist:
+            messages.error(
+                request,
+                f'The email {email} is not on our list of subscribers')
+
+    return render(request, 'newsletter/unsubscribe.html')

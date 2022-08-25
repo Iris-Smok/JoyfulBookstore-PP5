@@ -14,3 +14,4 @@ class SubscriberEmail(models.Model):
     """ model to store newsletter """
     title = models.CharField(max_length=254, null=False, blank=False)
     message = models.TextField()
+    created_on = models.DateTimeField(auto_now=True)
