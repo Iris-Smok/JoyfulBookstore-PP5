@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="overlay"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font mt-3">Get In Touch</h2>
+            <hr class="w-50 mb-2">
+
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 mt-4">
+            <form action="{% url 'contact' %}" method="POST">
+                <!-- Contact Form -->
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email Address</label>
+                    <input type="email" class="form-control" name="message-email" placeholder="name@example.com"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Your Name</label>
+                    <input type="text" class="form-control" name="message-name" pattern="[a-zA-Z]+[a-zA-Z ]+"
+                        minlength="3" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Tell Us Anything!</label>
+                    <textarea class="form-control" name="message" pattern="[a-zA-Z0-9]+[a-zA-Z0-9]+" minlength="10"
+                        rows="10" required></textarea>
+                </div>
+                <div class="text-left">
+                    <button type="submit" class="btn logo-font btn-style rounded mb-5">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
