@@ -31,8 +31,8 @@
         <div class="col-12 col-md-6">
             <form action="#" method="POST" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input readonly type="email" class="form-control" placeholder="email" aria-label="email"
-                    aria-describedby="email" name="email" required value="{{current_subscriber}}">
+                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="email"
+                    name="email" required>
                 <button class="btn logo-font btn-style rounded mt-3" type="submit">Unsubscribe</button>
             </form>
         </div>
