@@ -37,7 +37,7 @@ def subscribe_form_post(request):
                 subscribe_form.save()
                 send_mail(
                     'Thank you for subscribing!',
-                    'You are subscibed to JoyfulBookstore online newsletter!',
+                    'You are subscibed to JoyfulBookstore online newsletter! \n To unsubscribe follow the link https://joyfulbookstore.herokuapp.com/newsletter/unsubscribe',
                     email_host,
                     [email],
                 )
@@ -57,7 +57,7 @@ def newsletter_email(request):
             title = form.cleaned_data.get('title')
             message = form.cleaned_data.get('message')
             body = render_to_string(
-                'newsletter/newsletter_body.txt', {'message': message})
+                'newsletter/newsletter_emails/newsletter_body.txt', {'message': message})
             send_mail(
                 title,
                 body,

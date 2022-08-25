@@ -5,4 +5,4 @@ New books are waiting for you!
 
 Please visit our page for more information! https://joyfulbookstore.herokuapp.com/
 
-If you want to unsuscribe see the link https://joyfulbookstore.herokuapp.com/newsletter/unsubscribe
+If you want to unsuscribe follow the link https://joyfulbookstore.herokuapp.com/newsletter/unsubscribe

@@ -1,7 +1,8 @@
 Hello {{ cust_name }}
 
 Thank you for your message. One of our agents will respond to you as soon as possible.
-In the meantime, you may find the answer to your question on our <a href="https://joyfulbookstore.herokuapp.com/questions/">FAQ page</a>.
+In the meantime, please visit the following link to our FAQ's page where you may find the answer to your question
+https://joyfulbookstore.herokuapp.com/questions/
 
 Your message details:
 
