@@ -265,16 +265,15 @@
     </footer>
     {% block postloadjs %}
     <script type="text/javascript">
+        // Toasts
         $('.toast').toast('show');
-    </script>
-    <script>
+
+        // Modal
         $(window).on('load', function () {
-            $('#myModal').modal({
-                backdrop: 'static',
-                keyboard: false
-            });
+            $('#myModal').modal('show');
         });
     </script>
+
     {% endblock %}
 </body>
 
