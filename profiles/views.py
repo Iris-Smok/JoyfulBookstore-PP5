@@ -46,7 +46,7 @@ def order_history(request):
     """ Display order history """
     profile = get_object_or_404(UserProfile, user=request.user)
     # get all orders under user name
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('-id')
     context = {
         'orders': orders,
         'on_page': True,

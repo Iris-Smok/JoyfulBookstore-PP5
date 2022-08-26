@@ -11,7 +11,10 @@ def wishlist(request):
     """ wishlist page """
 
     template = 'wishlist/wishlist.html'
-    return render(request, template)
+    context = {
+        'on_page': True,
+    }
+    return render(request, template, context)
 
 
 @login_required

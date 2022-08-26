@@ -8,7 +8,10 @@ from django.conf import settings
 
 def home_page(request):
     """ home page view"""
-    return render(request, 'home/index.html')
+    context = {
+        'on_page': True,
+    }
+    return render(request, 'home/index.html', context)
 
 
 def contact_page(request):
@@ -49,5 +52,8 @@ def contact_page(request):
             [cust_email],  # from email
         )
         return redirect(reverse('contact'))
+    context = {
+        'on_page': True,
+    }
 
-    return render(request, 'home/contact.html')
+    return render(request, 'home/contact.html', context)

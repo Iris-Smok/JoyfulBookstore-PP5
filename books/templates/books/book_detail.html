@@ -147,12 +147,15 @@
                     <div class="btn text-uppercase mt-5 border-secondary btn-style logo-font">add to wishlist</div>
                     {% endif %}
                 </a>
+                {% else %}
+                <button class="btn text-uppercase mt-5 border-secondary btn-style logo-font" data-toggle="modal"
+                    data-target="#wishlist">add to wishlist</button>
                 {% endif %}
-
             </div>
         </div>
     </div>
 </div>
+{% include 'books/includes/wishlist_modal.html' %}
 <div class="container">
     <div class="row">
         <div class="col">

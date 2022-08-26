@@ -33,8 +33,12 @@
                 {% csrf_token %}
                 {{ form|crispy}}
                 <div class="text-right mb-3">
-                    <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Cancel</a>
+                    <a href="{% url 'add_category' %}" class="btn logo-font btn-style rounded">Cancel</a>
                     <button class="btn logo-font btn-style rounded" type="submit">Add Category</button>
+                    <div>
+                        <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded mt-2">
+                            Back to Admin Panel</a>
+                    </div>
                 </div>
             </form>
         </div>

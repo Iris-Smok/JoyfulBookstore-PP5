@@ -79,3 +79,11 @@
     color: white;
 }
 
+@media only screen and (max-width: 1700px) {
+
+    .sale-new-label {
+        right: 16px;
+
+    }
+
+}

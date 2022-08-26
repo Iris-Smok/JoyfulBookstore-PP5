@@ -18,6 +18,7 @@ def newsletter(request):
 
         'form': form,
         'all_subscribers': all_subscribers,
+        'on_page': True,
 
     }
     return render(request, template, context)
@@ -78,6 +79,7 @@ def newsletter_email(request):
 
     context = {
         'form': form,
+        'on_page': True
     }
     return render(request, 'newsletter/newsletter.html', context)
 
