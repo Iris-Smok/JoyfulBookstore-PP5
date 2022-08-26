@@ -42,9 +42,18 @@ class Book(models.Model):
     review_count = models.DecimalField(
         max_digits=6, decimal_places=0, null=True, blank=True, default=0
     )
+    sort_price = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)  # field for sorting books by price
 
     def __str__(self):
         return str(self.title)
+
+    def save(self, *args, **kwargs):
+        if self.sale_price:
+            self.sort_price = self.sale_price
+        else:
+            self.sort_price = self.price
+        return super(Book, self).save(*args, **kwargs)
 
 
 class Review(models.Model):
