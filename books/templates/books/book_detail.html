@@ -75,13 +75,17 @@
                 </div>
                 {% endif %}
 
-                <p class="mt-5 mb-3"><strong>Author:</strong> {{ book.author }}
-                </p>
-                <p class="my-3" id="readonly"><strong>Book Type:</strong> {{ book.book_type }} </p>
-                <p class="my-3"><strong>Book Size:</strong> {{ book.book_size }} </p>
-                <p class="my-3"><strong>Suitable for ages:</strong> {{ book.suitable_for_ages }} </p>
-                <p class="mt-5 description-text"><strong>Description:</strong></p>
-                <p>{{book.description}}</p>
+                <!-- Book details -->
+                <div class="book-details">
+
+                    <p class="mt-5 mb-3"><strong>Author:</strong> {{ book.author }}
+                    </p>
+                    <p class="my-3"><strong>Book Type:</strong> {{ book.book_type }} </p>
+                    <p class="my-3"><strong>Book Size:</strong> {{ book.book_size }} </p>
+                    <p class="my-3"><strong>Suitable for ages:</strong> {{ book.suitable_for_ages }} </p>
+                    <p class="mt-5 description-text"><strong>Description:</strong></p>
+                    <p>{{book.description}}</p>
+                </div>
             </div>
 
             <!-- FORM -->
@@ -236,7 +240,7 @@
                 {% else %}
                 {% if not edit %}
                 <div class="col-12 col-md-8 mx-auto">
-                    <h4>This Book has no reviews</h4>
+                    <h5>This Book has no reviews</h5>
                 </div>
                 {% endif %}
                 {% endif %}
@@ -247,7 +251,7 @@
 
             <!-- Add review -->
             <div class="col-12 col-md-6">
-                <h1 class="text-center">Leave A Review</h1>
+                <h4 class="text-center">Leave A Review</h4>
                 {% include 'books/includes/add_edit_review_forms.html' %}
             </div>
 
@@ -263,5 +267,10 @@
 {{ block.super }}
 
 {% include 'books/includes/quantity_input_script.html' %}
+<script>
+    $(document).ready(function () {
+        $("p:contains('None')").hide();
+    });
+</script>
 
 {% endblock %}
