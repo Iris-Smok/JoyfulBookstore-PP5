@@ -55,10 +55,10 @@
 
                 {% if book.sale_price %}
                 <p class="mr-1 mb-0"><del class="text-muted">€{{ book.price }} </del></p>
-                <p class="lead font-weight-bold">€{{ book.sale_price }}</p>
+                <p class="lead font-weight-bold">€{{ book.sort_price }}</p>
                 {% else %}
 
-                <p class=" lead font-weight-bold">€{{ book.price }}</p>
+                <p class=" lead font-weight-bold">€{{ book.sort_price }}</p>
                 {% endif %}
 
                 <!-- edit and delete btn -->

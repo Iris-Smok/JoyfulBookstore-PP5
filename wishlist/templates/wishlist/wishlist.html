@@ -54,11 +54,8 @@
                                 </div>
                             </td>
                             <td>
-                                {% if book.sale_price %}
-                                €{{ book.sale_price }}
-                                {% else %}
-                                €{{ book.price }}
-                                {% endif %}
+                                €{{ book.sort_price }}
+
                             </td>
                             <td>
                                 <div class="btn logo-font p-0">

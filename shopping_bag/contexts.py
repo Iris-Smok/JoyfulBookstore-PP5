@@ -15,10 +15,7 @@ def shopping_bag_contents(request):
 
     for item_id, quantity in shopping_bag.items():
         book = get_object_or_404(Book, pk=item_id)
-        if book.sale_price:
-            total += quantity * book.sale_price
-        else:
-            total += quantity * book.price
+        total += quantity * book.sort_price
         book_count += quantity
         shopping_bag_items.append({
             'item_id': item_id,
@@ -27,7 +24,7 @@ def shopping_bag_contents(request):
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = book_count * (settings.STANDARD_DELIVERY)
+        delivery = settings.STANDARD_DELIVERY
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0

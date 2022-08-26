@@ -71,11 +71,8 @@
                         <div class="col-4 col-md-3">{{ item.book.title }}</div>
                         <div class="col-4 col-md-3 text-center">{{ item.quantity }}</div>
                         <div class="col-4 col-md-3">
-                            {% if item.book.sale_price%}
-                            <p class="my-0">€{{ item.book.sale_price | calc_subtotal:item.quantity}}</p>
-                            {% else %}
-                            <p class="my-0">€{{ item.book.price | calc_subtotal:item.quantity}}</p>
-                            {% endif %}
+                            <p class="my-0">€{{ item.book.sort_price | calc_subtotal:item.quantity}}</p>
+
                         </div>
                     </div>
                     {% endfor %}
