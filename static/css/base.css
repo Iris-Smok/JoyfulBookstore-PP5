@@ -60,14 +60,14 @@ footer h6,
 /* NAVBAR */
 
 
-.navbar,
-.dropdown-menu{
+.navbar{
     background-color: var(--main-nav-color);
     backdrop-filter: blur(5px);
 }
 
 .dropdown-menu{
-    background-color: var(--main-nav-color);
+    background-color: whitesmoke;
+    border: 1px solid rgb(228, 226, 226)
 }
 
 .navbar-brand,
@@ -137,6 +137,8 @@ footer h6,
 
 .account-dropdown {
     left: -44px !important;
+    background-color: whitesmoke;
+    border: 1px solid rgb(228, 226, 226)
 }
 
 /* ACCOUNTS */
@@ -197,12 +199,6 @@ footer h6{
     padding-top: 96px;
 }
 
-.welcome-msg div:first-child{
-    padding-right: 15%;
-}
-.welcome-msg h5{
-    line-height: 1.5;
-}
 
 .welcome-msg-wrapper{
     width: fit-content;
