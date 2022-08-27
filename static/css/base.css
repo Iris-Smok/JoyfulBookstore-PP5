@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
+:root {
+    --main-nav-color: #fff;
+  }
+
 html{
     height: 100%;
 }
 
 body{
-    background: url('/media/background_image.png') no-repeat center center fixed;
+    background: url('/media/background2.png') no-repeat center left fixed;
     background-size: cover;
     height: 100vh;
     color: #252525;
@@ -58,17 +62,17 @@ footer h6,
 
 .navbar,
 .dropdown-menu{
-    background-color: #41484a;
+    background-color: var(--main-nav-color);
     backdrop-filter: blur(5px);
 }
 
 .dropdown-menu{
-    background-color: #4c4c4ccc;
+    background-color: var(--main-nav-color);
 }
 
 .navbar-brand,
 .modal-title {
-    color: #f3f365;
+    color: #139035;
     text-decoration: overline;
     font-weight: 600;
     font-family: 'Playfair Display', sans-serif;
@@ -76,7 +80,7 @@ footer h6,
 }
 
 .navbar-brand:hover{
-    color: white;
+    color: darkgreen;
     text-decoration: overline;
 }
 
@@ -95,14 +99,14 @@ footer h6,
 
 .nav-link, .nav-link > a, 
 .dropdown-menu > a{
-    color: #fff;
-    font-size: 1rem;
+    color: black ;
+    font-size: 1.1rem;
     text-transform: uppercase;
     padding-top: 8px;
 }
 
 .nav-link:hover{
-    color: white;
+    color: rgb(59, 59, 59);
     animation: shaking 0.40s ease-in-out;
 }
 
@@ -116,7 +120,7 @@ footer h6,
 
 
 .navbar-toggler-icon > i {
-    color: white;
+    color: black;
     font-size: 2.3rem;
 }
 
@@ -139,7 +143,7 @@ footer h6,
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: var(--main-nav-color); /* text-secondary */
 }
 
 .allauth-form-inner-content input::placeholder {
@@ -150,11 +154,11 @@ footer h6,
 /* FOOTER */
 
 footer{
-    background-color: #41484a;
+    background-color: #367045;
 }
 
 footer h6{
-    color: white;
+    color: black;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 600;
@@ -162,12 +166,13 @@ footer h6{
 }
 
 .footer-link{
-    color: #f3f365;
+    color: var(--main-nav-color);
 }
 
 .footer-link:hover{
-    color: #fff;
+    color: beige;
 }
+
 
 
 
@@ -210,7 +215,7 @@ footer h6{
 }
 
 .welcome-msg-wrapper p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-top: 5px;
 }
 
@@ -238,7 +243,7 @@ footer h6{
 }
 
 .modal-header {
-    background-color: #1A1A25;
+    background-color: #ffffffbd;
     border: none;
     letter-spacing: 2px;
 }
@@ -254,7 +259,7 @@ footer h6{
 }
 
 .modal-header .close:hover{
-    background-color: white;
+    background-color: beige;
     color: black;
 }
 
@@ -368,7 +373,7 @@ footer h6{
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1030px) {
 
     .navbar-nav .nav-link,
     .footer-link {
@@ -383,6 +388,11 @@ footer h6{
     .carousel-display{
         display: none;
     }
+
+    .nav-link, .nav-link > a, 
+.dropdown-menu > a{
+    font-size: 1rem;
+}
 
      
 }
