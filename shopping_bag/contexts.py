@@ -23,7 +23,7 @@ def shopping_bag_contents(request):
             'book': book,
         })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
+    if total != 0 and total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = Decimal(settings.STANDARD_DELIVERY)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:

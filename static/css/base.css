@@ -62,7 +62,6 @@ footer h6,
 
 .navbar{
     background-color: var(--main-nav-color);
-    backdrop-filter: blur(5px);
 }
 
 .dropdown-menu{
@@ -113,7 +112,7 @@ footer h6,
 @keyframes shaking {
     0% { transform: translate(0, 0) rotate(0deg); }
     25% { transform: translate(5px, 5px) rotate(5deg); }
-    50% { transform: translate(0, 0) rotate(0eg); }
+    50% { transform: translate(0, 0) rotate(0deg); }
     75% { transform: translate(-5px, 5px) rotate(-5deg); }
     100% { transform: translate(0, 0) rotate(0deg); }
   }
@@ -156,7 +155,7 @@ footer h6,
 /* FOOTER */
 
 footer{
-    background-color: #367045;
+    background-color: #3e6047;
 }
 
 footer h6{
@@ -228,18 +227,15 @@ footer h6{
     color: white;
 }
 
+#delivery-banner{
+    background-color: #c7c7c7;
+}
 
 /* Modal */
 
-.model-custom{
-    background: url('/media/modal-bg.jpg') no-repeat center center;
-    background-size: cover;
-    border: 0;
-    width: 100%;
-}
 
 .modal-header {
-    background-color: #ffffffbd;
+    background-color: #c7c7c7;
     border: none;
     letter-spacing: 2px;
 }

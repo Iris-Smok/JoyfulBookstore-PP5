@@ -9,6 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="JoyfulBookstore is an online children's bookstore, we sell children's books from early age to young adults | Free Shipping on orders over €20!">
+    <meta name="keywords"
+        content="children's online bookstore, buy books online, reading & learning from early age, book gift ideas, children books by age, cheap children books ireland, Dublin online bookstore,Ireland children bookstore">
     {% endblock %}
 
 
@@ -174,6 +178,16 @@
                 {% include 'includes/mobile-nav.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
+        </div>
+
+        <div id="delivery-banner" class="row text-center">
+            <marquee width="100%" direction="left" height="35px">
+                <h5 class="fw-normal my-2 text-uppercase"><i class="fas fa-truck fa-flip-horizontal"></i> <span
+                        class="text-success">Free</span> delivery on orders over €{{ free_delivery_threshold }}!
+                </h5>
+
+            </marquee>
+        </div>
 
     </header>
     <!-- Toasts -->
@@ -228,7 +242,7 @@
                     <div class="footer-header mt-4">
                         <h6 class="text-uppercase mb-4"><strong>Subscribe</strong></h6>
                     </div>
-                    <p class="text-white">Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight
+                    <p>Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight
                         to
                         your inbox!</p>
                     <form action="{% url 'subscribers' %}" method="POST">
@@ -272,11 +286,6 @@
     <script type="text/javascript">
         // Toasts
         $('.toast').toast('show');
-
-        // Modal
-        $(window).on('load', function () {
-            $('#myModal').modal('show');
-        });
     </script>
 
     {% endblock %}
