@@ -27,10 +27,10 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-3">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font mt-3">Books</h2>
+            <h2 class="logo-font mt-5">Books</h2>
             <hr class="w-50 mb-2">
             {% for c in current_categories %}
             <h4 class="mb-5">{{ c.friendly_name}}</h4>
@@ -145,11 +145,11 @@
                             {% endif %}
                         </div>
                         {% if request.user.is_superuser %}
-                        <small class="ml-4 text-uppercase">
-                            <a href="{% url 'edit_book' book.id %}" class="text-success">edit</a>
-                            <button class="btn btn-sm p-0 pl-1 logo-font text-danger border-0 text-uppercase"
+                        <div class="ml-4 text-uppercase">
+                            <a href="{% url 'edit_book' book.id %}" class="text-success btn btn-small border-0">edit</a>
+                            <button class="bg-light btn-sm p-0 logo-font text-danger border-0 text-uppercase"
                                 data-toggle="modal" data-target="#book-modal-{{book.id}}">Delete</button>
-                        </small>
+                        </div>
 
                         {% include 'books/includes/delete_book_modal.html' %}
 
@@ -160,7 +160,7 @@
                                     <form class="form" action="{% url 'add_to_shopping_bag' book.id %}" method="POST">
                                         {% csrf_token %}
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        <button type="submit" class="btn border rounded-pill btn-style w-100"
+                                        <button type="submit" class="btn border-secondary rounded-pill btn-style w-100"
                                             name="quantity" value="1">Add to bag</button>
                                     </form>
 

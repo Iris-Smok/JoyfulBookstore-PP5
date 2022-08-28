@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <hr>
-            <h2 class="logo-font mb-4">FAQ's Managment</h2>
+            <h2 class="logo-font mb-4 mt-5">FAQ's Managment</h2>
             <h5 class="text-muted">Add Question & Answer</h5>
             <hr>
         </div>
@@ -48,7 +48,7 @@
                     </thead>
                     <tbody>
                         {% for question in questions %}
-                        <tr>
+                        <tr class="border-top">
                             <td>
                                 <p>{{ question.question}}</p>
                             </td>
@@ -62,9 +62,10 @@
                             <td>
                                 <div class="logo-font">
 
-                                    <a href="{% url 'edit_faq' question.id %}" class="text-success d-inline">Edit</a>
+                                    <a href="{% url 'edit_faq' question.id %}"
+                                        class="text-success d-inline btn p-0 btn-small">Edit</a>
 
-                                    <button class="btn logo-font text-danger" data-toggle="modal"
+                                    <button class="btn logo-font text-danger p-0 d-inline btn-sm" data-toggle="modal"
                                         data-target="#deleteFAQ{{question.id}}">Delete</button>
                                     <!-- Modal -->
 

@@ -9,7 +9,7 @@
 {% block inner_content %}
 <div class="col-lg-6">
   <hr>
-  <h2 class="logo-font">{% trans "E-mail Addresses" %}</h2>
+  <h2 class="logo-font mt-5">{% trans "E-mail Addresses" %}</h2>
   <hr>
   {% if user.emailaddress_set.all %}
   <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
@@ -63,7 +63,7 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button name="action_add" type="submit"
-      class="btn btn-style logo-font btn px-5 py-1">{% trans "Add E-mail" %}</button>
+      class="btn btn-style logo-font btn px-5 py-1 mb-3">{% trans "Add E-mail" %}</button>
   </form>
   {% endif %}
 </div>

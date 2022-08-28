@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col text-center">
             <hr>
-            <h2 class="logo-font mb-4">Order History</h2>
+            <h2 class="logo-font mb-4 mt-5">Order History</h2>
             <hr>
         </div>
     </div>
@@ -53,13 +53,13 @@
                             <td>{% for item in order.lineitems.all %}
                                 <!-- image -->
                                 {% if item.book.image %}
-                                <img class="img-fluid rounded" src="{{ item.book.image.url }}"
-                                    alt="{{ item.book.title }}" height="115px" width="90px">
+                                <img class="img-fluid rounded m-1" src="{{ item.book.image.url }}"
+                                    alt="{{ item.book.title }}" height="105px" width="80px">
                                 {% else %}
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                <img class="img-fluid rounded m-1" src="{{ MEDIA_URL }}noimage.png"
                                     alt="{{ item.book.name }}" height="115px" width="90px">
                                 {% endif %}
-                                <span class="ml-3 small">{{ item.book }} </span>
+                                <span class="ml-1 small">{{ item.book }} </span>
 
                                 <br>
                                 {% endfor %}</td>
