@@ -50,11 +50,10 @@
 
                             <!-- Modal -->
                         </small>
-                        {% include 'questions/includes/delete_faq_modal.html' %}
-
 
                         {% endif %}
                     </div>
+                    {% include 'questions/includes/delete_faq_modal.html' %}
                     <div id="collapseOne-{{question.id}}" class="collapse" aria-labelledby="headingOne-{{question.id}}"
                         data-parent="#question-{{question.id}}">
                         <div class="card-body">
@@ -62,13 +61,12 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
-</div>
-</div>
+
 
 
 {% endblock %}
