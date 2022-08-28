@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?category=board_books</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?category=early_readers</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?category=fiction_books</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?category=first_readers</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?category=non_fiction_books</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?category=picture_story_books</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?new=true</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/?on_sale=true</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/shopping_bag/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/questions/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/contact/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/2/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/3/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/5/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/6/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/7/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/4/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/8/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/9/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/10/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/11/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/12/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/13/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/14/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/15/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/16/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/17/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/18/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/19/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/20/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/21/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/22/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/23/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/24/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/25/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/books/1/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joyfulbookstore.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-08-28T07:52:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

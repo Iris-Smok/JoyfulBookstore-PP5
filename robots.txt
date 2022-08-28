@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /shopping_bag/
+Disallow: /checkout/
+Disallow: /profiles/
+Disallow: /books/add_book/
+Disallow: /books/add_category/
+Disallow: /newsletter/
+Sitemap: https://joyfulbookstore.herokuapp.com/sitemap.xml
