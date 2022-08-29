@@ -49,33 +49,33 @@ def subscribe_form_post(request):
 
 def newsletter_email(request):
     """ A view to allow superusers to send an email to their subscriber list """
-    emails = Subscriber.objects.all()
-    dataframe = read_frame(emails, fieldnames=['email'])
-    mail_list = dataframe['email'].values.tolist()
-    if request.method == "POST":
-        form = EmailForm(request.POST)
-        if form.is_valid:
-            form.save()
-            title = form.cleaned_data.get('title')
-            message = form.cleaned_data.get('message')
-            body = render_to_string(
-                'newsletter/newsletter_emails/newsletter_body.txt', {'message': message})
-            send_mail(
-                title,
-                body,
-                '',
-                mail_list,
-                fail_silently=False,
-            )
-            messages.success(request,
-                             'You Have Sent Your Newsletter \
-                              To Your Subscribers.')
+    subscribers = Subscriber.objects.all()
+    for subscriber in subscribers:
+        email = subscriber.email
+        if request.method == "POST":
+            form = EmailForm(request.POST)
+            if form.is_valid:
+                form.save()
+                title = form.cleaned_data.get('title')
+                message = form.cleaned_data.get('message')
+                body = render_to_string(
+                    'newsletter/newsletter_emails/newsletter_body.txt', {'message': message})
+                send_mail(
+                    title,
+                    body,
+                    '',
+                    [email],
+                    fail_silently=False,
+                )
+                messages.success(request,
+                                 'You Have Sent Your Newsletter \
+                                To Your Subscribers.')
 
+                return redirect(reverse("newsletter"))
+        else:
+            form = EmailForm()
+            messages.error(request, 'Please check the form and try again')
             return redirect(reverse("newsletter"))
-    else:
-        form = EmailForm()
-        messages.error(request, 'Please check the form and try again')
-        return redirect(reverse("newsletter"))
 
     context = {
         'form': form,
