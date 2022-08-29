@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mass_mail
 from django_pandas.io import read_frame
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
@@ -49,33 +49,30 @@ def subscribe_form_post(request):
 
 def newsletter_email(request):
     """ A view to allow superusers to send an email to their subscriber list """
-    subscribers = Subscriber.objects.all()
-    for subscriber in subscribers:
-        email = subscriber.email
-        if request.method == "POST":
-            form = EmailForm(request.POST)
-            if form.is_valid:
-                form.save()
-                title = form.cleaned_data.get('title')
-                message = form.cleaned_data.get('message')
-                body = render_to_string(
-                    'newsletter/newsletter_emails/newsletter_body.txt', {'message': message})
-                send_mail(
-                    title,
-                    body,
-                    '',
-                    [email],
-                    fail_silently=False,
-                )
-                messages.success(request,
-                                 'You Have Sent Your Newsletter \
-                                To Your Subscribers.')
+    emails = Subscriber.objects.all()
+    email_host = settings.DEFAULT_FROM_EMAIL
+    dataframe = read_frame(emails, fieldnames=['email'])
+    mail_list = dataframe['email'].values.tolist()
+    if request.method == "POST":
+        form = EmailForm(request.POST)
+        if form.is_valid:
+            form.save()
+            title = form.cleaned_data.get('title')
+            message = form.cleaned_data.get('message')
+            body = render_to_string(
+                'newsletter/newsletter_emails/newsletter_body.txt', {'message': message})
+            email = [(title, body, email_host, [recipient])
+                     for recipient in mail_list]
+            send_mass_mail(email)
+            messages.success(request,
+                             'You Have Sent Your Newsletter \
+                              To Your Subscribers.')
 
-                return redirect(reverse("newsletter"))
-        else:
-            form = EmailForm()
-            messages.error(request, 'Please check the form and try again')
             return redirect(reverse("newsletter"))
+    else:
+        form = EmailForm()
+        messages.error(request, 'Please check the form and try again')
+        return redirect(reverse("newsletter"))
 
     context = {
         'form': form,
