@@ -31,7 +31,7 @@
         <div class="col-12 col-md-6">
             <form action="{% url 'newsletter_email' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form|crispy}}
+                {{ form|crispy|safe}}
                 <div class="text-right mb-3">
                     <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Cancel</a>
                     <button class="btn logo-font btn-style rounded" type="submit">Send Newsletter</button>

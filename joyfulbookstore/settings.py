@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'storages',
+    'django_summernote'
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'joyfulbookstore.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+SUMMERNOTE_THEME = 'bs4'
 
 TEMPLATES = [
     {
@@ -236,3 +239,19 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SUMMERNOTE_CONFIG = {
+    # Change editor size
+    'width': '100%',
+    'height': '480',
+    'toolbar': [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['fontname', ['fontname']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link']],
+    ],
+}

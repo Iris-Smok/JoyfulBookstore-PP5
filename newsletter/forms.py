@@ -1,4 +1,5 @@
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from .models import Subscriber, SubscriberEmail
 
 
@@ -16,4 +17,7 @@ class EmailForm(forms.ModelForm):
     """ send newsletter form"""
     class Meta:
         model = SubscriberEmail
-        fields = '__all__'
+        fields = ('title', 'message')
+        widgets = {
+            'message': SummernoteWidget(),
+        }

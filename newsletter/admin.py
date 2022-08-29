@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Subscriber, SubscriberEmail
 
 
@@ -12,7 +13,7 @@ class SubscriberAdmin(admin.ModelAdmin):
     ordering = ('date',)
 
 
-class SubscriberEmailAdmin(admin.ModelAdmin):
+class SubscriberEmailAdmin(SummernoteModelAdmin):
     """ Email model display """
     list_display = (
         'title',
