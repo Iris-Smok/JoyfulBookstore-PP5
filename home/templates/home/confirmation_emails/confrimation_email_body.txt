@@ -9,7 +9,7 @@ Your message details:
 Email: {{ cust_email }}
 Name: {{ cust_name }}
 
-Message: {{ cust_message }}
+Message: {% autoescape off %} {{ cust_message }} {% endautoescape %}
 
 Sincerely,
 

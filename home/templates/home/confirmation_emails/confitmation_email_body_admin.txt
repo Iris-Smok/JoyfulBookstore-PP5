@@ -5,7 +5,9 @@ Please find {{ cust_name}} message details below:
 Email: {{ cust_email}}
 Name: {{ cust_name}}
 Message: 
+{% autoescape off %}
 "{{ cust_message}}"
+{% endautoescape %}
 
 
 Please respond to the message at {{ cust_email }} as soon as possible.
