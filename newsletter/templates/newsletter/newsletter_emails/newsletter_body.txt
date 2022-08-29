@@ -1,5 +1,6 @@
-
+{% autoescape off %}
 {{ message }}
+{% endautoescape %}
 
 
 Please visit our page for more information! https://joyfulbookstore.herokuapp.com/
