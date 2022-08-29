@@ -36,6 +36,12 @@
                 <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="email"
                     name="email" required>
                 <button class="btn logo-font btn-style rounded mt-3" type="submit">Unsubscribe</button>
+                {% if request.user.is_superuser %}
+                <div>
+                    <a href="{% url 'newsletter' %}" class="btn logo-font btn-style rounded mt-2">
+                        Back to Newsletter Page</a>
+                </div>
+                {% endif %}
             </form>
         </div>
     </div>
