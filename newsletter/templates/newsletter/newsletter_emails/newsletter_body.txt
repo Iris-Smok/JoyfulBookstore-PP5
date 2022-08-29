@@ -1,4 +1,3 @@
-New books are waiting for you!
 
 {{ message }}
 
