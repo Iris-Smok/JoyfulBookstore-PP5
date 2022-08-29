@@ -2,32 +2,24 @@
     height: 270px;
     width: 250px;
 }
-
 .book-details-img{
     max-width: 500px;
     max-height: 550px;
 }
-
 .description-text{
     line-height: 27px;
 }
-
-
 .fa-star,
 .fa-star-half,
 .fa-star-half-o{
     color:#d7b500;
     text-shadow: 0 0.5rem 1rem rgba(0,0,0,.15)!important;
-
 }
-
 .btn-color{
     color: #fff;
     background-color: #343a40;
     border-color: #363c42;
 }
-
-
 #myBtn {
     display: none;
     position: fixed;
@@ -42,48 +34,40 @@
     padding: 15px;
     border-radius: 10px;
     font-size: 18px;
-  }
-
-  
-  #myBtn:hover {
+}
+#myBtn:hover {
     background-color: #555;
     color: white;
-  }
-
-
-  .sale-new-label {
+}
+.sale-new-label {
     color: black;
     box-shadow: 0 0 5px #222222;
     background: gold;
     width: fit-content;
     padding: 4px 8px 2px;
     top: -12px;
-    border-radius: -2px;
-    right: 50px;
+    right: 40px;
     position: absolute;
     z-index: 1;
     font-size: .8rem;
 }
-
-
 .lower-label {
     top: 22px;
 }
-
 .category-table{
     max-height: 450px;
     overflow: auto;
 }
-
 .input-div-shopping:hover input{
     color: white;
 }
-
-@media only screen and (max-width: 1700px) {
-
+@media only screen and (max-width: 1300px) {
     .sale-new-label {
-        right: 1px;
-
-    }
-
+        right: 5px;
+   }
+}
+@media only screen and (max-width: 678px) {
+    .sale-new-label {
+        right: 10px;
+   }
 }
