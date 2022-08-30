@@ -281,3 +281,79 @@ Wireframes for each device are linked here:
 <p align="center">
 <img src="assets/documents/README_docs/database.png" width="1000" height="100%">
 </p>
+
+- I added the category to the database later so the admin could have full CRUD functionality
+
+
+# Design choice
+Bootstrap provides a flexible framework for building upon and wherever possible its structure has been used and modified to achieve the desired functionality and feel.
+
+## Color schema
+
+The color scheme is green, because it is neutral and the page looks cheerful, the combination of white, green and gray gives the page a nice but also cheerful look
+
+- #139035 - green color for site logo
+- dimgray - footer color, fit nicely with the page
+- gold - used for sale and new labels
+
+The aim was to provide a solid colour base which could bring the other elements on the site to life.
+
+## Fonts 
+- Playfair Display - welcome message heading, modal title and navbar-brand
+- Roboto Slab - nav and footer links 
+- Work Sans - main font 
+
+
+# Technologies Used
+
+## Languages 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Python](https://www.python.org/)
+
+
+
+
+## Frameworks, Libraries & Programs Used
+[GitHub](https://github.com/) - Holds the repository of my project, GitHub connects to GitPod and Heroku.
+
+[GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
+
+[AWS](https://aws.amazon.com/) – was used to store our static files 
+
+[Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
+
+[Django](https://www.djangoproject.com/) - This framework was used to build the foundations of this project
+
+[Gunicorn](https://gunicorn.org/) - Gunicorn is a pure-Python HTTP server for WSGI applications.
+
+[Dj Database URL](https://pypi.org/project/dj-database-url/) - This allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
+[Bootstrap](https://getbootstrap.com/) - Used to quickly add design to my website, Bootstrap focuses on mobile first design meaning this website is responsive across multiple devices ans screen sizes. 
+
+[jQuery](https://jquery.com/) - Used to write JS code
+
+[Google Fonts](https://fonts.google.com/https://fonts.google.com/) - provide fonts for the website.
+
+[Font Awesome](https://fontawesome.com/) -was used for icons.
+
+[Balsamiq](https://balsamiq.com/) - was used to create site wireframes.
+
+[Am I Responsive](http://ami.responsivedesign.is/) - to check if the site is responsive on different screen sizes.
+
+[W3C Markup Validator](https://validator.w3.org/#validate_by_input) - was used to validate HTML
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - was used to validate CSS
+
+## Extensions 
+
+[Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - was used to to create, configure, and manage AWS services
+
+[Pillow](https://pillow.readthedocs.io/en/stable/) - This library provides extensive file format support, an efficient internal representation, and fairly powerful image processing capabilities.
+
+[Stripe](https://stripe.com/docs) - was used to make and process payments
+
+
+
+
