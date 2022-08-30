@@ -155,23 +155,29 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic-admin/facebook-page-bookstore2.png" width="600" height="100%">
 </p>
 
+10. As a store owner I can read and respond to users questions send by contact form
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-admin/bookstore-customer-service.png" width="600" height="100%">
+</p>
+
 ## EPIC: Navigation
 
-10. As a user I can see an interesting home page so that I can understand what shop sells
+11. As a user I can see an interesting home page so that I can understand what shop sells
     - The landing page has a short description that describes the purpose of the page so that the user can immediately see the purpose of the page
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/home-page.png" width="100%" height="100%">
 </p>
 
-11. As a user I can easily navigate through the site so that I can view desired content
+12. As a user I can easily navigate through the site so that I can view desired content
     - Navigation is located on each page so that the user can easily and simply navigate through the page and find all the necessary information
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/navigation-bar2.png" width="600" height="100%">
 </p>
 
-12. As a user I can easily find a navigation bar and footer so that I can see what content there is on the website
+13. As a user I can easily find a navigation bar and footer so that I can see what content there is on the website
     - The navigation bar and the footer are on every page and provide the user with a quick link to the desired content
     
 <p align="center">
@@ -182,7 +188,7 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/footer.png" width="900" height="100%">
 </p>
 
-13. Aa a user I can easily see the products list so that I can see what the store has to offer
+14. Aa a user I can easily see the products list so that I can see what the store has to offer
     - On the All books page, the user can see a list of all the books in the store and can sort them by price, title, category and rating.
 
 
@@ -190,7 +196,7 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-list.png" width="600" height="100%">
 </p>
 
-14. As a user I can search products by category so that I can easily find what I'm looking for
+15. As a user I can search products by category so that I can easily find what I'm looking for
     - User can search books by category and easily sort books by desired book type
 
 <p align="center">
@@ -198,7 +204,7 @@ Due to lack of time, it remained unresolved
 </p>
 
 
-15. As a user I can sort products by rating, price and name so that I can easily find what I'm looking for
+16. As a user I can sort products by rating, price and name so that I can easily find what I'm looking for
     - User can sort products by price,rating,title and category on All Books page
 
 
@@ -206,14 +212,14 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/sort-by-category.png" width="600" height="100%">
 </p>
 
-16. As a user I can search for products using the search form so that I can find the products I'm specifically looking for
+17. As a user I can search for products using the search form so that I can find the products I'm specifically looking for
     - User can use search bar to search for specific product, search form will perform a search in the author, title and description fields
 
  <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/search-form.png" width="900" height="100%">
 </p>
 
-17. As a user I can see the book details page so that I can see the book name, rating, price, short description and comments
+18. As a user I can see the book details page so that I can see the book name, rating, price, short description and comments
     - The user can see the book details and leave a review if they have an account
 
 <p align="center">
@@ -224,7 +230,7 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/reviews-navigation.png" width="600" height="100%">
 </p>
 
-18. As a user I can read the FAQ's so that I can find the answer to my question or concern before contacting the bookstore
+19. As a user I can read the FAQ's so that I can find the answer to my question or concern before contacting the bookstore
     - The user can read the FAQ's page before contacting the bookstore and check if his question has already been answered
 
 <p align="center">
@@ -233,7 +239,7 @@ Due to lack of time, it remained unresolved
 
 ## EPIC: Purchase
 
-19. As a user I can select the quantity of the desired product so that I can buy more product of the same kind
+20. As a user I can select the quantity of the desired product so that I can buy more product of the same kind
     - User can select quantity of the desired product on Book Detail page and on Shopping Bag page
 
 <p align="center">
@@ -244,7 +250,7 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
 </p>
 
-20. As a user I can add a selected book into the shopping bag so that I can keep track of what I am spending
+21. As a user I can add a selected book into the shopping bag so that I can keep track of what I am spending
     - User can add selected book into the shopping bag from All Books page and from Book Details Page
 
 
@@ -256,28 +262,28 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-list.png" width="600" height="100%">
 </p>
 
-21. As a user I can see the shopping bag summary and total cost so that I can see how much I will spend
+22. As a user I can see the shopping bag summary and total cost so that I can see how much I will spend
     - Shopping bas is located in navbar and user can always see shopping bag summary
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag-summary.png" width="600" height="100%">
 </p>
 
-22. As a user I can remove items from shopping bag so that I don't buy what I don't want
+23. As a user I can remove items from shopping bag so that I don't buy what I don't want
     - User can remove the unwanted items from the shopping bag
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
 </p>
 
-23. As a user I can put in my card details so that I can pay for my goods
+24. As a user I can put in my card details so that I can pay for my goods
      - User can put in card details and delivery details so that they can make a purchase
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_purchase/checkout.png" width="600" height="100%">
 </p>
 
-24. As a user I receive order confirmations so that I can be sure my order has been processed
+25. As a user I receive order confirmations so that I can be sure my order has been processed
     - After user submitted the purcase they can see order summary and confirmation
 
 <p align="center">
@@ -287,8 +293,54 @@ Due to lack of time, it remained unresolved
 
 ## EPIC:  User Interaction
 
-25. As a user I can see rating and reviews so that I can read the opinions of other users
+26. As a user I can see rating and reviews so that I can read the opinions of other users
+
 
  <p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/reviews-navigation.png" width="600" height="100%">
+<img src="assets/documents/README_docs/user-story-testing/epic_navigation/reviews-navigation.png" width="900" height="100%">
+</p>
+
+ <p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/rating-book-details.png" width="900" height="100%">
+</p>
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/rating-books-page.png" width="900" height="100%">
+</p>
+
+27. As a user I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated
+    -  Toast messages inform the user of their status and any change the user makes
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/toasts.png" width="600" height="100%">
+</p>
+
+28. As a user I can contact the bookstore so that I can find out any information that I require
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/contact-page.png" width="600" height="100%">
+</p>
+
+29. As a user I can receive a contact confirmation email to let me know that my email has been sent
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/confirmation-contact-form.png" width="600" height="100%">
+</p>
+
+30. As a logged-in User I can leave reating and reviews so that I can share my experience with others
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/review-user-interaction.png" width="900" height="100%">
+</p>
+
+31. As a logged-in User I can save selected products to my whishlist for later purchase
+    - Logged-in User can save and remove products to wishlist. 
+    - For Users that don't have an account and try to use "add to wishlist" button a pop window will tell users to open an account to uset this feature 
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/wishlist-remove.png" width="600" height="100%">
+</p>
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/wishlist-create-account.png" width="600" height="100%">
 </p>
