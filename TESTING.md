@@ -228,5 +228,58 @@ Due to lack of time, it remained unresolved
     - The user can read the FAQ's page before contacting the bookstore and check if his question has already been answered
 
 <p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/questions-page.png" width="600" height="100%">
+<img src="assets/documents/README_docs/user-story-testing/epic_navigation/questions-page.png" width="900" height="100%">
+</p>
+
+## EPIC: Purchase
+
+19. As a user I can select the quantity of the desired product so that I can buy more product of the same kind
+    - User can select quantity of the desired product on Book Detail page and on Shopping Bag page
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/quantity-btns-book-details.png" width="600" height="100%">
+</p>
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
+</p>
+
+20. As a user I can add a selected book into the shopping bag so that I can keep track of what I am spending
+    - User can add selected book into the shopping bag from All Books page and from Book Details Page
+
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/quantity-btns-book-details.png" width="600" height="100%">
+</p>
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-list.png" width="600" height="100%">
+</p>
+
+21. As a user I can see the shopping bag summary and total cost so that I can see how much I will spend
+    - Shopping bas is located in navbar and user can always see shopping bag summary
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag-summary.png" width="600" height="100%">
+</p>
+
+22. As a user I can remove items from shopping bag so that I don't buy what I don't want
+    - User can remove the unwanted items from the shopping bag
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
+</p>
+
+23. As a user I can put in my card details so that I can pay for my goods
+     - User can put in card details and delivery details so that they can make a purchase
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/checkout.png" width="600" height="100%">
+</p>
+
+24. As a user I receive order confirmations so that I can be sure my order has been processed
+    - After user submitted the purcase they can see order summary and confirmation
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/order-confirmation.png" width="600" height="100%">
 </p>
