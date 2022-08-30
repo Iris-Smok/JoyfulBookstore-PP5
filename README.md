@@ -77,17 +77,15 @@ This website will offer all of these things whilst also allowing for intuitive n
 
 | ID  | Content                                                                                                                                                   |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | As a **store owner** I can log in/out from of the admin panel so that I can connect or disconnect from the website                                        |
-| 2   | As a **store owner** I can log in so that I have full access to the store backend                                                                         |
-| 3   | As a **store owner** I can add new product to the shop so that I can make sure the website is up to date                                                  |
-| 4   | As a **store owner** I can add new categories to the shop so that I can make sure the website is up to date                                               |
-| 5   | As a **store owner** I can add FAQ's to the site so that I can make sure that the user can find answer on the page before contacting the customer         |service                                                                                                                                                           |
-| 6   | As a **store owner** I can edit/delete products so that I can make sure the website is up to date                                                         |
-| 7   | As a **store owner** I can edit/delete categories so that I can make sure the website is up to date                                                       |
-| 8   | As a **store owner** I can edit/delete FAQ's so that I can make sure the FAQ's are answered on correctly                                                  |
-| 9   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new books                                                |
-| 10  | As a **store owner** I have created Facebook shop page to increase traffic on my website                                                                  |
-| 11  | As a **store owner** I can add/edit or delete questions to FAQ's section so that I can provide users with information about common questions and concerns |
+| 1   | As a **store owner** I can log in so that I have full access to the store backend                                                                         |
+| 2   | As a **store owner** I can add new product to the shop so that I can make sure the website is up to date                                                  |
+| 3   | As a **store owner** I can add new categories to the shop so that I can make sure the website is up to date                                               |
+| 4   | As a **store owner** I can add FAQ's to the site so that I can make sure that the user can find answer on the page before contacting the customer         |service                                                                                                                                                           |
+| 5   | As a **store owner** I can edit/delete products so that I can make sure the website is up to date                                                         |
+| 6   | As a **store owner** I can edit/delete categories so that I can make sure the website is up to date                                                       |
+| 7   | As a **store owner** I can edit/delete questions so that I can provide users with information about common questions and concerns                                                                                                                                                          |
+| 8   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new books                                                |
+| 9   | As a **store owner** I have created Facebook shop page to increase traffic on my website                                                                   |
 
 **Epic: Navigation**
 
@@ -243,6 +241,7 @@ _Footer:_
 - Gift Card
 - School and craft materials
 - Stock app
+- Owner can see send newsletters
 
 #
 
