@@ -6,7 +6,7 @@ class SubscriberForm(forms.ModelForm):
     """ subscriber form"""
     class Meta:
         model = Subscriber
-        fields = ['email', ]
+        fields = ['subscriber_email', ]
         labels = {
             'email': ''
         }

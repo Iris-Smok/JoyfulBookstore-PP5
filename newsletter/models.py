@@ -3,7 +3,8 @@ from django.db import models
 
 class Subscriber(models.Model):
     """ model to store subscriber email"""
-    email = models.EmailField(max_length=254, blank=False, null=False)
+    subscriber_email = models.EmailField(
+        max_length=254, blank=False, null=False)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

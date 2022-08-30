@@ -5,10 +5,10 @@ from .models import Subscriber, SubscriberEmail
 class SubscriberAdmin(admin.ModelAdmin):
     """ Subscriber model display """
     list_display = (
-        'email', 'date'
+        'subscriber_email', 'date'
     )
 
-    search_fields = ('email', 'date')
+    search_fields = ('subscriber_email', 'date')
     ordering = ('date',)
 
 
