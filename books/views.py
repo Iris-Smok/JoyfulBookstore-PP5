@@ -31,6 +31,7 @@ def all_books(request):
         if 'direction' in request.GET:
             direction = request.GET['direction']
 
+            # Thanks to tutor Igor at Code Institute for tips on nulls_last
             if sortkey == 'rating':
                 if direction == 'desc':
                     books = books.order_by(
@@ -40,32 +41,31 @@ def all_books(request):
                     books = books.order_by(
                         F(sortkey).asc(nulls_first=True)
                     )
-        else:
+            else:
+                if sortkey == 'name':
+                    sortkey = 'lower_name'
+                    books = books.annotate(lower_name=Lower('title'))
+                if sortkey == 'category':
+                    sortkey = 'category__name'
 
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                books = books.annotate(lower_title=Lower('title'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            books = books.order_by(sortkey)
 
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            books = books.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+                books = books.order_by(sortkey)
 
-        if 'new' in request.GET:
-            books = books.filter(is_new=True)
-            new = True
+    if 'category' in request.GET:
+        categories = request.GET['category'].split(',')
+        books = books.filter(category__name__in=categories)
+        # pylint: disable=no-member
+        categories = Category.objects.filter(name__in=categories)
 
-        if 'on_sale' in request.GET:
-            books = books.filter(~Q(sale_price=price))
-            sale = True
+    if 'new' in request.GET:
+        books = books.filter(is_new=True)
+        new = True
+
+    if 'on_sale' in request.GET:
+        books = books.filter(~Q(sale_price=price))
+        sale = True
 
     if 'q' in request.GET:
         query = request.GET['q']
