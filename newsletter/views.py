@@ -1,17 +1,19 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+""" newsletter app views"""
+# pylint: disable=locally-disabled, no-member
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mass_mail
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
-from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.template.loader import render_to_string
-from .models import Subscriber, SubscriberEmail
+from .models import Subscriber
 from .forms import EmailForm, SubscriberForm
 
 
 def newsletter(request):
-    """ subscribers page view"""
+    """ Subscribers page view"""
     all_subscribers = Subscriber.objects.all()
     form = EmailForm()
     template = 'newsletter/newsletter_admin.html'
@@ -31,16 +33,22 @@ def subscribe_form_post(request):
     if request.method == "POST":
         subscribe_form = SubscriberForm(request.POST)
         email_host = settings.DEFAULT_FROM_EMAIL
+        message = ('You are subscribed to JoyfulBookstore online '
+                   'newsletter!\n To unsubscribe follow the link '
+                   'https: // joyfulbookstore.herokuapp.'
+                   'com/newsletter/unsubscribe')
         if subscribe_form.is_valid():
             subscriber_email = subscribe_form.cleaned_data['subscriber_email']
-            if Subscriber.objects.filter(subscriber_email=subscriber_email).exists():
+            if Subscriber.objects.filter(
+                    subscriber_email=subscriber_email).exists():
                 messages.error(
-                    request, f'You are already subscribed with {subscriber_email}! ')
+                    request, f'You are already\
+                         subscribed with {subscriber_email}! ')
             else:
                 subscribe_form.save()
                 send_mail(
                     'Thank you for subscribing!',
-                    'You are subscibed to JoyfulBookstore online newsletter! \n To unsubscribe follow the link https://joyfulbookstore.herokuapp.com/newsletter/unsubscribe',
+                    message,
                     email_host,
                     [subscriber_email],
                 )
@@ -53,8 +61,10 @@ def subscribe_form_post(request):
         return redirect(reverse("home"), context)
 
 
+@login_required
 def newsletter_email(request):
-    """ A view to allow superusers to send an email to their subscriber list """
+    """A view to allow superusers to send
+    an email to their subscriber list"""
     emails = Subscriber.objects.all()
     email_host = settings.DEFAULT_FROM_EMAIL
     dataframe = read_frame(emails, fieldnames=['subscriber_email'])
@@ -66,7 +76,8 @@ def newsletter_email(request):
             title = form.cleaned_data.get('title')
             message = form.cleaned_data.get('message')
             body = render_to_string(
-                'newsletter/newsletter_emails/newsletter_body.txt', {'message': message})
+                'newsletter/newsletter_emails/newsletter_body.txt',
+                {'message': message})
             email = [(title, body, email_host, [recipient])
                      for recipient in mail_list]
             send_mass_mail(email)
@@ -103,7 +114,8 @@ def unsubscribe(request):
         except Subscriber.DoesNotExist:
             messages.error(
                 request,
-                f'The email {subscriber_email} is not on our list of subscribers')
+                f'The email {subscriber_email}\
+                     is not on our list of subscribers')
     context = {
         'on_page': True,
 

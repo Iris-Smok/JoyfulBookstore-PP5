@@ -1,6 +1,10 @@
-import stripe
+""" Checkout app views"""
+# pylint: disable=locally-disabled, no-member
 import json
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+import stripe
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404,
+                              HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -20,7 +24,8 @@ def cache_checkout_data(request):
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
-            'shopping_bag': json.dumps(request.session.get('shopping_bag', {})),
+            'shopping_bag': json.dumps(
+                request.session.get('shopping_bag', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
@@ -32,6 +37,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ checkout view"""
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -74,7 +80,8 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('shopping_bag_view'))
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')

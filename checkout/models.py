@@ -1,4 +1,5 @@
 """ checkout models to save order and order item """
+# pylint: disable=locally-disabled, no-member
 import uuid
 
 from django.db import models
@@ -14,7 +15,8 @@ class Order(models.Model):
     """ order model """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+                                     null=True, blank=True,
+                                     related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -72,12 +74,14 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     """  Model to save each item in an Order instance as a lineitem. """
     order = models.ForeignKey(
-        Order, on_delete=models.CASCADE, related_name='lineitems', null=False, blank=False)
+        Order, on_delete=models.CASCADE, related_name='lineitems',
+        null=False, blank=False)
     book = models.ForeignKey(
         Book, on_delete=models.CASCADE, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
-        max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+        max_digits=6, decimal_places=2, null=False,
+        blank=False, editable=False)
 
     def save(self, *args, **kwargs):
         """

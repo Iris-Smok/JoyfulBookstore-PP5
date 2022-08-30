@@ -1,9 +1,11 @@
+"""wishlist views"""
+# pylint: disable=locally-disabled, no-member
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from books.models import Book
 from profiles.models import UserProfile
 from . models import Wishlist
-from books.models import Book
 
 
 @login_required

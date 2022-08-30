@@ -1,9 +1,11 @@
+"""Profile apps vews.py"""
+# pylint: disable=locally-disabled, no-member
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
-from .forms import UserProfileForm
 from checkout.models import Order
+from .forms import UserProfileForm
 
 
 @login_required
@@ -56,6 +58,7 @@ def order_history(request):
 
 @login_required
 def order_confirmation(request, order_number):
+    """ order confirmation page where user can see order summary"""
     order = get_object_or_404(Order, order_number=order_number)
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}.'
@@ -84,7 +87,8 @@ def admin_profile(request):
 
 @login_required
 def book_managment(request):
-    """ Display book managment page where admin can choose to add category and book """
+    """ Display book managment page where admin
+    can choose to add category and book """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only store owners can do that.')
         return redirect(reverse('home'))

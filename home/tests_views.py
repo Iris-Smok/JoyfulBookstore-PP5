@@ -1,3 +1,4 @@
+""" test views for home and contact page"""
 from django.test import TestCase
 
 

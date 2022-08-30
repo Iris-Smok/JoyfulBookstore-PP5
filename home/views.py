@@ -1,4 +1,4 @@
-""" home page views"""
+""" views for home and contact page"""
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.core.mail import send_mail

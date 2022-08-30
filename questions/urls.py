@@ -1,4 +1,4 @@
-""" FAQ's app views"""
+""" FAQ's app url's"""
 
 from django.urls import path
 from . import views

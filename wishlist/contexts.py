@@ -1,7 +1,8 @@
 """ Get wishlist items """
+# pylint: disable=locally-disabled, no-member
 
-from .models import Wishlist
 from profiles.models import UserProfile
+from .models import Wishlist
 
 
 def wishlist_list_items(request):

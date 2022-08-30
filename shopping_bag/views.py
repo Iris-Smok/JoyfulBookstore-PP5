@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+""" shopping_bag viewspy"""
+from django.shortcuts import (
+    render, redirect, reverse,
+    get_object_or_404, HttpResponse)
 from django.contrib import messages
 from books.models import Book
 
@@ -39,7 +42,8 @@ def adjust_shopping_bag(request, item_id):
     elif quantity > 0:
         shopping_bag[item_id] = quantity
         messages.success(
-            request, f'Updated {book.title} quantity to {shopping_bag[item_id]}')
+            request, f'Updated {book.title}\
+                 quantity to {shopping_bag[item_id]}')
     else:
         shopping_bag.pop(item_id)
         messages.success(request, f'Removed {book.title} from your bag')

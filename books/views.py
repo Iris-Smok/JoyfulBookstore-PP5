@@ -6,9 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.db.models import Avg
+from profiles.models import UserProfile
 from .forms import BookForm, CategoryForm, ReviewForm
 from .models import Book, Category, Review
-from profiles.models import UserProfile
 
 
 def all_books(request):

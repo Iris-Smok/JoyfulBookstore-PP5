@@ -1,4 +1,5 @@
 """ models for to save user info """
+# pylint: disable=locally-disabled, no-member
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save

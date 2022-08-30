@@ -1,3 +1,5 @@
+"""context.py for home app"""
+# pylint: disable=locally-disabled, no-member
 from books.models import Category
 
 
