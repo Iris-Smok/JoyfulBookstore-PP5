@@ -5,13 +5,13 @@
 - All Pages were checked with the official [W3C validator](https://validator.w3.org/). 
 
 ## Lighthouse 
+
 <p align="center">
 <img src="assets/documents/README_docs/validators/bookstore-lighthouse.png" width="800" height="100%">
 </p>
 
 
 ## Home Page
-
 
 <p align="center">
 <img src="assets/documents/README_docs/validators/home-page-validator.png" width="100%" height="100%">
@@ -20,13 +20,11 @@
 
 ## All Books Page
 
-
 <p align="center">
 <img src="assets/documents/README_docs/validators/all-boks-validator.png" width="100%" height="100%">
 </p>
 
 ## Book Detail
-
 
 <p align="center">
 <img src="assets/documents/README_docs/validators/book-detail-validator.png" width="100%" height="100%">
@@ -38,12 +36,11 @@ Unsolved bug!
 Due to lack of time, it remained unresolved
 
 <p align="center">
-<img src="assets/documents/README_docs/validators/shopping-bag-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
 </p>
 
 
 ## Checkout Page
-
 
 <p align="center">
 <img src="assets/documents/README_docs/validators/checkout-validator.png" width="100%" height="100%">
@@ -52,25 +49,72 @@ Due to lack of time, it remained unresolved
 
 ## User Account
 
-
 <p align="center">
 <img src="assets/documents/README_docs/validators/account-validator.png" width="100%" height="100%">
+</p>
+
+### Personal Details
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/user-details-validator.png" width="100%" height="100%">
+</p>
+
+### Order History
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/order-history-validator.png" width="100%" height="100%">
+</p>
+
+### Wishlist
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/wishlist-validator.png" width="100%" height="100%">
 </p>
 
 
 ## Admin Account
 
+<p align="center">
+<img src="assets/documents/README_docs/validators/admin-profile-validator.png" width="100%" height="100%">
+</p>
+
+### Add Category 
 
 <p align="center">
-<img src="assets/documents/README_docs/validators/admin-profile.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/add-category-validator.jpg" width="100%" height="100%">
 </p>
+
+### Add Book
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/add-book-validator.png" width="100%" height="100%">
+</p>
+
+
+### Add FAQ's
+<p align="center">
+<img src="assets/documents/README_docs/validators/add-question-validator.png" width="100%" height="100%">
+</p>
+
+
+### Newsetter
+<p align="center">
+<img src="assets/documents/README_docs/validators/newsletter-validator.png" width="100%" height="100%">
+</p>
+
+
 
 
 ## Contact Page
 
-
 <p align="center">
 <img src="assets/documents/README_docs/validators/contact-validator.png" width="100%" height="100%">
+</p>
+
+## FAQ's
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
 </p>
 
 
