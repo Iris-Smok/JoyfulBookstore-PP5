@@ -4,46 +4,47 @@
      * to be inserted into the users cart. Credit: Code Institute, Boutique Ado project
      */
 
-    // Disable +/- buttons outside 1-99 range
-    // Disable +/- buttons outside 1-99 range
+    // Disables +/- buttons outside range 1-99
     function handleEnableDisable(itemId) {
-        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
-        var minusDisabled = currentValue < 2;
-        var plusDisabled = currentValue > 98;
-        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+        let currentValue = parseInt($(`.id_qty_${itemId}`).val());
+        let minusDisabled = currentValue < 2;
+        let plusDisabled = currentValue > 98;
+        $(`.minus-qty-${itemId}`).prop('disabled', minusDisabled);
+        $(`.plus-qty-${itemId}`).prop('disabled', plusDisabled);
     }
 
-    // Ensure proper enabling/disabling of all inputs on page load
-    var allQtyInputs = $('.qty_input');
-    for (var i = 0; i < allQtyInputs.length; i++) {
-        var itemId = $(allQtyInputs[i]).data('item_id');
+    // Ensures proper enabling/disabling of all inputs on page load
+    let allQtyInputs = $('.qty-input');
+    for (let i = 0; i < allQtyInputs.length; i++) {
+        let itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
 
     // Check enable/disable every time the input is changed
-    $('.qty_input').change(function () {
-        var itemId = $(this).data('item_id');
+    $('.qty-input').change(function () {
+        let itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 
     // Increment quantity
-    $('.increment-qty').click(function (e) {
+    $('.plus-qty').click(function (e) {
         e.preventDefault();
-        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-        var currentValue = parseInt($(closestInput).val());
+        console.log('+ clicked');
+        let closestInput = $(this).closest('.qty-btns').find('.qty-input')[0];
+        let currentValue = parseInt($(closestInput).val());
         $(closestInput).val(currentValue + 1);
-        var itemId = $(this).data('item_id');
+        let itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 
-    // Decrement quantity
-    $('.decrement-qty').click(function (e) {
+    // Decrease quantity
+    $('.minus-qty').click(function (e) {
         e.preventDefault();
-        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-        var currentValue = parseInt($(closestInput).val());
+        console.log('- clicked');
+        let closestInput = $(this).closest('.qty-btns').find('.qty-input')[0];
+        let currentValue = parseInt($(closestInput).val());
         $(closestInput).val(currentValue - 1);
-        var itemId = $(this).data('item_id');
+        let itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 </script>
