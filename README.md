@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<img src="assets/documents/README_docs/responsive-site-booktore.png" width="800" height="100%">
+<img src="assets/documents/README_docs/responsive-site.png" width="800" height="100%">
 </p>
 
 
@@ -23,7 +23,8 @@
    - [Sitemap](#sitemap)
    - [Wireframes](#wireframes)
    - [Database schema](#database-schema)
-   - [Models](#models)
+   - [Business Model](#business-model)
+   - [Marketing](#marketing)
 
 4. [Web marketing](#web-marketing)
 
@@ -146,7 +147,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 _Navigation bar:_
 
 - The navigation bar appears on every page so users can easily navigate through the site
-- Navigation bar has links for 'Home', 'All Books', 'Categories' and icons for search bar, account and shopping bag
+- Navigation bar has links for 'Home', 'All Books', 'Categories', 'Special Offers and icons for search bar, account and shopping bag
 
 _Account - Login/Register:_
 
@@ -159,47 +160,56 @@ _Shopping bag:_
 - The shopping bag is also situated on the top right corner of the site and it is always visible for the user throughout all the pages. With one click they can access their shopping bag to see what is in there, update the quantities of book they wish to purchase or to delete them from the shopping bag
 - The navbar is fully responsive, collapsing into a hamburger menu for medium and small screen size
 
-_Carousel:_
-
-- The carousel welcomes the user with a short message and background image advertising what the website is about
-- The 'Shop Now' button will take users to the all books page
-
-_New releases:_
-
-- The New Releases section displays the latest books that the bookstore has in store so users can keep up with new book releases
-- Each book card displayes an image, book title, author and price
-- Each book card will take the user to the book details page where the user can add book to the shopping bag or whishlist
-- Each book card also had an "Add to Bag" button so the user could quickly add the book to their shopping bag
 
 _Footer:_
 
 - Appears on every page and contains FAQ's, Shipping Info, Privacy Policy, Subscribe form, Contact Link and Social links
 - Social links are opened in a new tab to avoid dragging users from our site
 
+
+<p align="center">
+<img src="assets/documents/README_docs/gifs/home-page.gif" width="900" height="100%">
+</p>
+
 ### **User Profile**
 
 - A logged-in user can access the My account link, this page displayed links to personal details, previous orders and wishlist
-- The personal details page is where the user can update their default shipping/billing address and contact information
+- The personal details page is where the user can update their default shipping/billing address, change email address and password
 - The previous order displays a list of all the orders previously made by the user
-- Wish list displays the list of items the user has saved to their wishlist, with the ability to remove the product
+- Wishlist displays the list of items the user has saved to their wishlist, with the ability to remove the product
 
-### **Admin User**
+<p align="center">
+<img src="assets/documents/README_docs/gifs/user-profile.gif" width="900" height="100%">
+</p>
 
-- Admin user can preform full CRUD functionalliy without having to enter the default 'admin panel' from django
-- Admin user can add books from 'Book Managment' link in the account menu from the navigation bar
-- Admin user can add category from 'Book Managment' link
-- Admin user can add FAQ's from 'FAQ's' link
-- Admin user can send Newsletter to subscribed users
-- Admin user can unsubscribe user
-- Admin user can edit/delete books from all books page and books details page
-- Admin user can edit/delete category from 'Category Management' link
-- Admin user can edit/delete FAQ from 'FAQ Managemnt' and FAQ's page, mark them as published or draft
+
+
+### **Admin**
+
+- Admin can preform full CRUD functionalliy without having to enter the default 'admin panel' from django
+- Admin can add books from 'Book Managment' link in the account menu from the navigation bar
+- Admin can add category from 'Book Managment' link
+- Admin can add FAQ's from 'FAQ's' link
+- Admin can send Newsletter to subscribed users
+- Admin can unsubscribe user
+- Admin can edit/delete books from all books page and books details page
+- Admin can edit/delete category from 'Category Management' link
+- Admin can edit/delete FAQ from 'FAQ Managemnt' and FAQ's page, mark them as published or draft
+
+<p align="center">
+<img src="assets/documents/README_docs/gifs/admin.gif" width="900" height="100%">
+</p>
+
 
 ### **All Books**
 
 - The All Books page shows all the books that the bookstore sells
 - Each book has an image, book title, author, rating and price
 - Each book card takes users to the book details page
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-list.png" width="900" height="100%">
+</p>
 
 ### **Categories**
 
@@ -211,20 +221,25 @@ _Footer:_
   - Early Readers
   - Fiction Books
   - Non Fiction Books
-  - Sale
-  - New Arrivals
+
+
 
 ### **Special Offers**
-
 - Special Offers dropdown from Navbar, allowing the user to access specific offer
-- From the dropdown menu user can select : - Sale - New arrivals
+- From the dropdown menu user can select :
+    - Sale
+    - New arrivals
 
 ### **Book Details Page**
 
 - The Book Details Page displays all the information about the selected book
 - Page main body of the page will display book cover image, title, rating, author, book type, size, suitable for ages, category, description
 - After the main body content user can select quantity and add product to the shopping bag or whishlist
-- Commenting section is located at the end of the page, only logged in users can leave a comment
+- Review section is located at the end of the page, only logged in users can leave a comment
+
+<p align="center">
+<img src="assets/documents/README_docs/gifs/book-details.gif" width="900" height="100%">
+</p>
 
 ### **Checkout Page**
 
@@ -232,12 +247,22 @@ _Footer:_
 - Once the site users have made their last decision about what to purchase and they are happy with it. At the checkout the site user can enter and save their personal details and see a summary of what they are about to purchase before entering their card details
 - If the checkout was successful the user is taken to the 'checkout success' page, which displays the order number and delivery details
 
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/order-confirmation.png" width="600" height="100%">
+</p>
+
+
 ### **Shopping Bag**
 
 - The shopping bag page provides an overview of all of the items added by the user
 - The information is displayed in a table that has product name, image, quantity, price and subtotal
 - The user can amend the quantity of each product and also remove it whilst on this page
 - Buttons to proceed to the checkout or to keep shopping are located at the end of the page
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
+</p>
+
 
 ## Future Features
 
@@ -252,7 +277,7 @@ _Footer:_
 
 In the children's book market, the target audience isn't made up of children but the bigs who purchase the books for them. That might be parents, uncles, aunts, grandparents,teachers — whomever so the structure idea for JoyfullBookstore was to keep it simple. Simplicity helps users to quickly and easily access the app and navigate within the app.
 
-The website is made from \_\_\_ app:
+The website is made from 8 apps:
 
 - Books
 - Checkout
@@ -268,6 +293,8 @@ The website is made from \_\_\_ app:
 <p align="center">
 <img src="assets/documents/README_docs/sitemap.png" width="1000" height="100%">
 </p>
+
+- Full CRUD functonality for Category model was added lately in the project, correct site map should containe "Add Category" at "Store Owner Account" page
 
 # Wireframes
 
@@ -285,6 +312,28 @@ Wireframes for each device are linked here:
 </p>
 
 - I added the category to the database later so the admin could have full CRUD functionality
+
+# Business Model
+
+The business model for this store would be a B2C (Business to Customer) model, as the business would be selling products directly from themselves to the customer
+
+# Marketing 
+- Links to all the social media sites can be found both inside the footer and on the contact page.
+- The facebook link takes you to the Dry Drops business page which can be found [here](https://www.facebook.com/JoyfulBookstore.Dublin).
+
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-admin/facebook-page-bookstore2.png" width="1000" height="100%">
+</p>
+
+- The newsletter sign up form can also be found in the footer
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_navigation/footer.png" width="1000" height="100%">
+</p>
+
+# Search Engine Optimisation
+I have created a sitemap.xml and robots.txt file to help aid search engines locate the site. To keep user's information safe, any pages that could contain sensitive information has been disallowed in the robots.txt.
 
 
 # Design choice

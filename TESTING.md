@@ -6,7 +6,7 @@
 
 ## Lighthouse 
 <p align="center">
-<img src="assets/documents/README_docs/bookstore-lighthouse.png" width="800" height="100%">
+<img src="assets/documents/README_docs/validators/bookstore-lighthouse.png" width="800" height="100%">
 </p>
 
 
@@ -14,7 +14,7 @@
 
 
 <p align="center">
-<img src="assets/documents/README_docs/home-page-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/home-page-validator.png" width="100%" height="100%">
 </p>
 
 
@@ -22,14 +22,14 @@
 
 
 <p align="center">
-<img src="assets/documents/README_docs/all-boks-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/all-boks-validator.png" width="100%" height="100%">
 </p>
 
 ## Book Detail
 
 
 <p align="center">
-<img src="assets/documents/README_docs/book-detail-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/book-detail-validator.png" width="100%" height="100%">
 </p>
 
 ## Shopping Bag
@@ -38,7 +38,7 @@ Unsolved bug!
 Due to lack of time, it remained unresolved
 
 <p align="center">
-<img src="assets/documents/README_docs/shopping-bag-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/shopping-bag-validator.png" width="100%" height="100%">
 </p>
 
 
@@ -46,7 +46,7 @@ Due to lack of time, it remained unresolved
 
 
 <p align="center">
-<img src="assets/documents/README_docs/checkout-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/checkout-validator.png" width="100%" height="100%">
 </p>
 
 
@@ -54,7 +54,7 @@ Due to lack of time, it remained unresolved
 
 
 <p align="center">
-<img src="assets/documents/README_docs/account-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/account-validator.png" width="100%" height="100%">
 </p>
 
 
@@ -62,7 +62,7 @@ Due to lack of time, it remained unresolved
 
 
 <p align="center">
-<img src="assets/documents/README_docs/admin-profile.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/admin-profile.png" width="100%" height="100%">
 </p>
 
 
@@ -70,7 +70,7 @@ Due to lack of time, it remained unresolved
 
 
 <p align="center">
-<img src="assets/documents/README_docs/contact-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/contact-validator.png" width="100%" height="100%">
 </p>
 
 
