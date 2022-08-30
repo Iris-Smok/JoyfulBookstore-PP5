@@ -291,7 +291,7 @@ Due to lack of time, it remained unresolved
 </p>
 
 
-## EPIC:  User Interaction
+## EPIC: User Interaction
 
 26. As a user I can see rating and reviews so that I can read the opinions of other users
 
@@ -344,3 +344,37 @@ Due to lack of time, it remained unresolved
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/wishlist-create-account.png" width="600" height="100%">
 </p>
+
+## EPIC: Accounts
+
+32. As a user I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+    - User can easily see they account status, when the user is logged in they will see My Account link
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-account/accounts-login.png" width="600" height="100%">
+</p>
+
+32. As a user I can log in/out off my account if I wish so that I can connect or disconnect from the website
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-account/accounts-signin.png" width="600" height="100%">
+</p>
+
+33. As a user I can register for an account so that I can use features for logged-in users
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-account/register.png" width="600" height="100%">
+</p>
+
+34. As a user I can receive a confirmation email when creating an account so that I know the registration was successful
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-account/confirm-email.png" width="600" height="100%">
+</p>
+
+35. As a logged-in User I can have my details saved so that I don't have to retype my address every time
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-account/delivery-details.png" width="600" height="100%">
+</p>
+
