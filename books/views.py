@@ -1,12 +1,13 @@
+"""views for books app"""
+# pylint: disable=locally-disabled, no-member
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.db.models import Avg
-from django.conf import settings
-from .models import Book, Category, Review
 from .forms import BookForm, CategoryForm, ReviewForm
+from .models import Book, Category, Review
 from profiles.models import UserProfile
 
 
@@ -104,7 +105,8 @@ def book_detail(request, book_id):
             return redirect(reverse('book_detail', args=[book.id]))
         else:
             messages.error(
-                request, 'Failed to add review. Please ensure the form is valid.')
+                request, 'Failed to add review.\
+                    Please ensure the form is valid.')
 
     else:
         form = ReviewForm()
@@ -140,7 +142,8 @@ def add_book(request):
                 book.discount = book.price - book.sale_price
                 if book.sale_price and book.sale_price > book.price:
                     messages.error(
-                        request, 'Sale price must be lower than current price!')
+                        request, 'Sale price must be lower\
+                             than current price!')
                     return redirect(reverse('edit_book', args=[book.id]))
 
             else:
@@ -151,7 +154,8 @@ def add_book(request):
             return redirect(reverse('book_detail', args=[book.id]))
         else:
             messages.error(
-                request, 'Failed to add book. Please ensure the form is valid.')
+                request, 'Failed to add book.\
+                     Please ensure the form is valid.')
     else:
         form = BookForm()
 
@@ -179,7 +183,8 @@ def add_category(request):
             return redirect(reverse('add_category'))
         else:
             messages.error(
-                request, 'Failed to add book. Please ensure the form is valid.')
+                request, 'Failed to add book.\
+                     Please ensure the form is valid.')
     else:
         form = CategoryForm()
     template = 'books/add_category.html'
@@ -206,7 +211,8 @@ def edit_book(request, book_id):
                 book.discount = book.price - book.sale_price
                 if book.sale_price and book.sale_price > book.price:
                     messages.error(
-                        request, 'Sale price must be lower than current price!')
+                        request, 'Sale price must be lower\
+                             than current price!')
                     return redirect(reverse('edit_book', args=[book.id]))
             else:
                 book.discount = None

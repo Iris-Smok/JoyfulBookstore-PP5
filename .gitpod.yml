@@ -14,5 +14,3 @@ vscode:
     - ms-toolsai.jupyter-keymap
     - ms-toolsai.jupyter-renderers
     - luma.jupyter
-    - esbenp.prettier-vscode
-    - batisteo.vscode-django
