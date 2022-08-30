@@ -283,3 +283,12 @@ Due to lack of time, it remained unresolved
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic_purchase/order-confirmation.png" width="600" height="100%">
 </p>
+
+
+## EPIC:  User Interaction
+
+25. As a user I can see rating and reviews so that I can read the opinions of other users
+
+ <p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic_navigation/reviews-navigation.png" width="600" height="100%">
+</p>

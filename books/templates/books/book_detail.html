@@ -213,7 +213,7 @@
                     </div>
                     <div>
                         <!-- User and admin edit btn -->
-                        {% if review.user == request.user or request.user.is_superuser %}
+                        {% if review.user.user.id == user.id or request.user.is_superuser %}
                         <a href="{% url 'edit_review' review.id %}#reviews-section"
                             aria-label="Edit review from {{ review.user }}" class="text-secondary text-decoration-none">
                             <span class="icon mr-2">
