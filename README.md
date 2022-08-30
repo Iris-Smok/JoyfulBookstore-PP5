@@ -87,7 +87,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 8   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new books                                                |
 | 9   | As a **store owner** I have created Facebook shop page to increase traffic on my website                                                                  |
 | 10  | As a **store owner** I can read and respond to users questions send by contact form                                                                       |
-| 11  | As a **store owner** I can read and unsubscribe subscribers from newsletter                                                                               |
+| 11  | As a **store owner** I can unsubscribe subscribers from newsletter                                                                               |
 
 **Epic: Navigation**
 
@@ -131,7 +131,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 
 | ID  | Content                                                                                                                  |
 | --- | ------------------------------------------------------------------------------------------------------------------------ |
-| 34  | As a **user** I can easily see if I'm logged-in or logged-out so that I can be sure what my status is                    |
+| 36  | As a **user** I can easily see if I'm logged-in or logged-out so that I can be sure what my status is                    |
 | 37  | As a **user** I can log in/out off my account if I wish so that I can connect or disconnect from the website             |
 | 38  | As a **user** I can register for an account so that I can use features for logged-in users                               |
 | 39  | As a **user** I can receive a confirmation email when creating an account so that I know the registration was successful |
