@@ -26,25 +26,17 @@
    - [Business Model](#business-model)
    - [Marketing](#marketing)
 
-4. [Web marketing](#web-marketing)
+4. [Surface](#surface)
 
-   - [Newsletter](#newsletter)
-   - [Facebook](#facebook)
-   - [SEO](#seo)
+5. [Technologies Used](#technologies-used)
 
-5. [Surface](#surface)
+6. [Testing](#testing)
 
-6. [Technologies Used](#technologies-used)
+7. [Bugs](#bugs)
 
-7. [Code validation](#code-validation)
+8. [Deployment](#deployment)
 
-8. [Testing](#testing)
-
-9. [Bugs](#bugs)
-
-10. [Deployment](#deployment)
-
-11. [Credits](#credits)
+9. [Credits](#credits)
 
 responsive image and link to live site
 
@@ -336,16 +328,26 @@ The business model for this store would be a B2C (Business to Customer) model, a
 I have created a sitemap.xml and robots.txt file to help aid search engines locate the site. To keep user's information safe, any pages that could contain sensitive information has been disallowed in the robots.txt.
 
 
-# Design choice
+# Surface
+
+## Design choice
 Bootstrap provides a flexible framework for building upon and wherever possible its structure has been used and modified to achieve the desired functionality and feel.
 
 ## Color schema
 
 The color scheme is green, because it is neutral and the page looks cheerful, the combination of white, green and gray gives the page a nice but also cheerful look
 
+Color pallet from [Colors](https://coolors.co/139035-696969-ffd700-d7b500-252525)
+
 - #139035 - green color for site logo
-- dimgray - footer color, fit nicely with the page
-- gold - used for sale and new labels
+- #252525 - footer color, fit nicely with the page
+- #FFD700- used for sale and new labels
+- #D7B500 - used for review stars
+- #252525 - used for btn hover background
+
+<p align="center">
+<img src="assets/documents/README_docs/color-palett.png" width="1000" height="100%">
+</p>
 
 The aim was to provide a solid colour base which could bring the other elements on the site to life.
 
