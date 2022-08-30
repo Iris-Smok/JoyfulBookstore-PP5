@@ -33,8 +33,8 @@
         <div class="col-12 col-md-6">
             <form action="#" method="POST" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="email"
-                    name="email" required>
+                <input type="email" class="form-control" placeholder="email" aria-label="email-unsubscribe"
+                    name="email-unsubscribe" required>
                 <button class="btn logo-font btn-style rounded mt-3" type="submit">Unsubscribe</button>
                 {% if request.user.is_superuser %}
                 <div>

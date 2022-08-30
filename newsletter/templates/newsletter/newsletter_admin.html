@@ -30,7 +30,7 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <form action="{% url 'newsletter_email' %}" method="POST" class="form mb-2">
+            <form action="{% url 'newsletter_email' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy}}
                 <div class="text-right mb-3">
@@ -55,27 +55,26 @@
                         </tr>
                     </thead>
                     {% for subscriber in all_subscribers %}
-                    <tr>
-                        <td>
-                            {{ subscriber.email}}
-                        </td>
-                        <td>
-                            <div class="btn logo-font d-inline">
-                                <a href="{% url 'unsubscribe' %}" class="btn logo-font text-danger">
-                                    Unsubscribe
-                                </a>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ subscriber.email}}
+                            </td>
+                            <td>
+                                <div class="btn logo-font d-inline">
+                                    <a href="{% url 'unsubscribe' %}" class="btn logo-font text-danger">
+                                        Unsubscribe
+                                    </a>
 
-                            </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
             </div>
-            </td>
-            </tr>
-            {% endfor %}
-            </tbody>
-            </table>
         </div>
     </div>
 </div>
-</div>
-
 
 {% endblock %}

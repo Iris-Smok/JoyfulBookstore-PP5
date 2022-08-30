@@ -108,12 +108,12 @@
                         {% if book.image %}
                         <a href="{% url 'book_detail' book.id %}" class="text-center">
                             <img class="card-img-top img-fluid book-img" src="{{ book.image.url }}"
-                                alt="{{ book.title }}" width="100%" height="400px">
+                                alt="{{ book.title }}">
                         </a>
                         {% else %}
                         <a href="{% url 'book_detail' book.id %}" class="text-center">
                             <img class="card-img-top img-fluid book-img" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ book.title }}" width="100%" height="400px">
+                                alt="{{ book.title }}">
                         </a>
                         {% endif %}
 
@@ -160,8 +160,8 @@
                                     <form class="form" action="{% url 'add_to_shopping_bag' book.id %}" method="POST">
                                         {% csrf_token %}
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        <button type="submit" class="btn border-secondary rounded-pill btn-style w-100"
-                                            name="quantity" value="1">Add to bag</button>
+                                        <button type="submit" class=" btn border-secondary
+                                            rounded-pill btn-style w-100" name="quantity" value="1">Add to bag</button>
                                     </form>
 
                                 </div>
@@ -201,76 +201,11 @@
         </div>
     </div>
 </div>
-</div>
 
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script>
-    //Get the button:
-    mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-</script>
-
-
-<script type="text/javascript">
-    $('.btt-link').click(function (e) {
-        window.scrollTo(0, 0)
-    })
-</script>
-<script type="text/javascript">
-    $('#sort-selector').change(function () {
-        var selector = $(this);
-        var currentUrl = new URL(window.location);
-
-        var selectedVal = selector.val();
-        if (selectedVal != "reset") {
-            var sort = selectedVal.split("_")[0];
-            if (sort === 'sort') {
-                sort = `${sort}_price`
-                var direction = selectedVal.split("_")[2];
-            } else {
-                var direction = selectedVal.split("_")[1];
-            }
-
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    })
-</script>
-
-
-
-<script>
-    var scroll = $(window).scrollTop();
-    $("html").scrollTop(scroll);
-</script>
+{% include 'books/includes/script.html' %}
 
 {% endblock %}

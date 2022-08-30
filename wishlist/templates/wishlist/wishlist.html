@@ -26,7 +26,7 @@
         <div class="col-sm-8 text-center">
             {% if wishlist_items %}
             <div class="table-responsive mb-5">
-                <table class="table table-borderless table-striped" width="100%">
+                <table class="table table-borderless table-striped w-100">
                     <thead>
                         <tr class="border-bottom">
                             <th>Book</th>
@@ -40,16 +40,14 @@
                         <tr class="border-top">
                             <td>
                                 <p class="m-0"> {{book.title}}</p>
-                                <div class="small">
+                                <div class="small wishlist-img">
                                     {% if book.image %}
                                     <a href="{{ book.image.url }}" target="_blank">
-                                        <img src="{{ book.image.url }}" alt="{{ book.title }}" height="80px"
-                                            width="60px">
+                                        <img src="{{ book.image.url }}" alt="{{ book.title }}">
                                     </a>
                                     {% else %}
                                     <a href="">
-                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ book.title }}" width="60px"
-                                            height="80px">
+                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ book.title }}">
                                     </a>
                                     {% endif %}
                                 </div>
@@ -78,8 +76,5 @@
         </div>
     </div>
 </div>
-
-</div>
-
 
 {% endblock %}

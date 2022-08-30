@@ -24,6 +24,11 @@
     max-height: 80vh;
     overflow: auto;
 }
+.order-history-img > img{
+    height: 90px;
+    width: 80px;
+}
+
 @media only screen and (max-width: 668px){
     .accounts-btns{
         width: 100%;

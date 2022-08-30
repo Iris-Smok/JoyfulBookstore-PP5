@@ -84,7 +84,7 @@ def newsletter_email(request):
 def unsubscribe(request):
     """ unsubscribe from newsletter"""
     if request.method == 'POST':
-        email = request.POST.get("email")
+        email = request.POST.get("email-unsubscribe")
         try:
             current_subscriber = Subscriber.objects.get(email=email)
             current_subscriber.delete()

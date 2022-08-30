@@ -14,7 +14,7 @@ class BookForm(forms.ModelForm):
     """ Book Form """
     class Meta:
         model = Book
-        exclude = ('discount', 'rating', 'review_count',)
+        exclude = ('discount', 'rating', 'review_count', 'sort_price')
 
     image = forms.ImageField(
         label='Image', required=False, widget=CustomClearableFileInput)

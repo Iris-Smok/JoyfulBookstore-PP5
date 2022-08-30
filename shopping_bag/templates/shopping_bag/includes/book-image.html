@@ -1,6 +1,5 @@
 {% if item.book.image %}
-<img class="img-fluid rounded" src="{{ item.book.image.url }}" alt="{{ item.book.title }}"
-    style="width: 9rem; height: 10rem;">
+<img class="img-fluid rounded shopping-bag-img" src="{{ item.book.image.url }}" alt="{{ item.book.title }}">
 {% else %}
-<img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.book.name }}" height="180px" width="180px">
+<img class="img-fluid rounded shopping-bag-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.book.name }}">
 {% endif %}

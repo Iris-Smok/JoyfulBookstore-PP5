@@ -11,11 +11,11 @@
             <a class="nav-link mx-3" href="{% url 'books' %}">All Books</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-expanded="false">
+            <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdownMobile" role="button"
+                data-toggle="dropdown" aria-expanded="false">
                 Categories
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMobile">
                 <a class="dropdown-item" href="{% url 'books' %}?category=board_books">Board Books</a>
                 <a class="dropdown-item" href="{% url 'books' %}?category=picture_story_books">Picture Story
                     Books</a>
@@ -27,11 +27,11 @@
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-expanded="false">
+            <a class="nav-link dropdown-toggle mx-3" href="#" id="SpecialOffersMobile" role="button"
+                data-toggle="dropdown" aria-expanded="false">
                 Special Offers
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="SpecialOffersMobile">
                 <a class="dropdown-item" href=" {% url 'books' %}?new=true">New arrivals</a>
                 <a class="dropdown-item" href="{% url 'books' %}?on_sale=true">Sale</a>
             </div>
