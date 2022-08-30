@@ -16,6 +16,7 @@ class Category(models.Model):
         return str(self.name)
 
     def get_friendly_name(self):
+        """method to get category friendly name"""
         return str(self.friendly_name)
 
 
@@ -43,7 +44,7 @@ class Book(models.Model):
         max_digits=6, decimal_places=0, null=True, blank=True, default=0
     )
     sort_price = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)  # field for sorting books by price
+        max_digits=6, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
         return str(self.title)
