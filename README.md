@@ -86,6 +86,8 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 7   | As a **store owner** I can edit/delete questions so that I can provide users with information about common questions and concerns                                                                                                                                                          |
 | 8   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new books                                                |
 | 9   | As a **store owner** I have created Facebook shop page to increase traffic on my website                                                                  |
+| 10  | As a **store owner** I can read and respond to users questions send by contact form                                                                       |
+| 11  | As a **store owner** I can read and unsubscribe subscribers from newsletter                                                                               |
 
 **Epic: Navigation**
 
@@ -119,20 +121,21 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 28  | As a **user** I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated      |
 | 29  | As a **user** I can connect to the social media sites so that I can follow them and keep up to date with their products and promotions |
 | 30  | As a **user** I can sign up for the website's newsletter so that I can keep up to date with new products and promotions                |
-| 31  | As a **user** I can contact the bookstore so that I can find out any information that I require                                        |
-| 31  | As a **user** I can receive a contact confirmation email to let me know that my email has been sent                                    |
-| 32  | As a **logged-in User** I can leave reating and reviews so that I can share my experience with others                                  |
-| 33  | As a **logged-in User** I can save selected products to my whishlist for later purchase                                                |
+| 31  | As a **user** I can unsubscribe from newsletter if I don't want to receive stors newsletters                                           |
+| 32  | As a **user** I can contact the bookstore so that I can find out any information that I require                                        |
+| 33  | As a **user** I can receive a contact confirmation email to let me know that my email has been sent                                    |
+| 34  | As a **logged-in User** I can leave reating and reviews so that I can share my experience with others                                  |
+| 35  | As a **logged-in User** I can save selected products to my whishlist for later purchase                                                |
 
 **Epic: Accounts**
 
 | ID  | Content                                                                                                                  |
 | --- | ------------------------------------------------------------------------------------------------------------------------ |
 | 34  | As a **user** I can easily see if I'm logged-in or logged-out so that I can be sure what my status is                    |
-| 35  | As a **user** I can log in/out off my account if I wish so that I can connect or disconnect from the website             |
-| 36  | As a **user** I can register for an account so that I can use features for logged-in users                               |
-| 37  | As a **user** I can receive a confirmation email when creating an account so that I know the registration was successful |
-| 38  | As a **logged-in User** I can have my details saved so that I don't have to retype my address every time                 |
+| 37  | As a **user** I can log in/out off my account if I wish so that I can connect or disconnect from the website             |
+| 38  | As a **user** I can register for an account so that I can use features for logged-in users                               |
+| 39  | As a **user** I can receive a confirmation email when creating an account so that I know the registration was successful |
+| 40  | As a **logged-in User** I can have my details saved so that I don't have to retype my address every time                 |
 
 # Scope
 

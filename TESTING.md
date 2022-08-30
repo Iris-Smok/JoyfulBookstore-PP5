@@ -106,7 +106,7 @@ Due to lack of time, it remained unresolved
 </p>
 
 5. As a store owner I can edit/delete products so that I can make sure the website is up to date
-    - Store Owner can edit/delete products directly from Admin panel or from All Books page and Book Detail page
+    - Store Owner can edit/delete products from All Books page and Book Detail page
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-admin/edit-delete-book-admin.png" width="800" height="100%">
@@ -315,25 +315,32 @@ Due to lack of time, it remained unresolved
 <img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/toasts.png" width="600" height="100%">
 </p>
 
-28. As a user I can contact the bookstore so that I can find out any information that I require
+28. As a user I can connect to the social media sites so that I can follow them and keep up to date with their products and promotions
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/contact-page.png" width="600" height="100%">
 </p>
 
-29. As a user I can receive a contact confirmation email to let me know that my email has been sent
+29. As a user I can sign up for the website's newsletter so that I can keep up to date with new products and promotions
+    - Footer containes a link for User to subscribe to bookstore newsletter, once subscribe user will receive email confirmation  
+
+<p align="center">
+<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/subscribe-confirm.png" width="600" height="100%">
+</p>
+
+30. As a user I can receive a contact confirmation email to let me know that my email has been sent
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/confirmation-contact-form.png" width="600" height="100%">
 </p>
 
-30. As a logged-in User I can leave reating and reviews so that I can share my experience with others
+31. As a logged-in User I can leave reating and reviews so that I can share my experience with others
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/review-user-interaction.png" width="900" height="100%">
 </p>
 
-31. As a logged-in User I can save selected products to my whishlist for later purchase
+32. As a logged-in User I can save selected products to my whishlist for later purchase
     - Logged-in User can save and remove products to wishlist. 
     - For Users that don't have an account and try to use "add to wishlist" button a pop window will tell users to open an account to uset this feature 
 
@@ -347,32 +354,32 @@ Due to lack of time, it remained unresolved
 
 ## EPIC: Accounts
 
-32. As a user I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+33. As a user I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
     - User can easily see they account status, when the user is logged in they will see My Account link
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-account/accounts-login.png" width="600" height="100%">
 </p>
 
-32. As a user I can log in/out off my account if I wish so that I can connect or disconnect from the website
+34. As a user I can log in/out off my account if I wish so that I can connect or disconnect from the website
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-account/accounts-signin.png" width="600" height="100%">
 </p>
 
-33. As a user I can register for an account so that I can use features for logged-in users
+35. As a user I can register for an account so that I can use features for logged-in users
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-account/register.png" width="600" height="100%">
 </p>
 
-34. As a user I can receive a confirmation email when creating an account so that I know the registration was successful
+36. As a user I can receive a confirmation email when creating an account so that I know the registration was successful
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-account/confirm-email.png" width="600" height="100%">
 </p>
 
-35. As a logged-in User I can have my details saved so that I don't have to retype my address every time
+37. As a logged-in User I can have my details saved so that I don't have to retype my address every time
 
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-account/delivery-details.png" width="600" height="100%">
