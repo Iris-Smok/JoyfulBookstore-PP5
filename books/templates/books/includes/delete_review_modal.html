@@ -1,38 +1,23 @@
-<div
-  class="modal fade"
-  id="reviewDeleteModal"
-  tabindex="-1"
-  aria-hidden="true"
-  data-keyboard="false"
-  data-backdrop="static"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content text-center">
-      <div class="modal-header logo-font">
-        <h3 class="modal-title text-uppercase w-100">JoyfulBookstore</h3>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body-delete p-2">
-        <h4 class="mt-4">
-          Hi <strong class="text-uppercase">{{ review.user}} </strong> <br />are
-          you sure you want to delete your review?
-        </h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
-          Close
-        </button>
-        <a class="btn btn-danger" href="{% url 'delete_review' review.id %}"
-          >Delete</a
-        >
-      </div>
+<div class="modal fade" id="reviewDeleteModal" tabindex="-1" aria-hidden="true" data-keyboard="false"
+    data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header logo-font">
+                <h3 class="modal-title text-uppercase w-100">JoyfulBookstore</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body-delete p-2">
+                <h4 class="mt-4">Hi <strong class="text-uppercase">{{ review.user}} </strong> <br>are you sure you want
+                    to
+                    delete your review?
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                <a class="btn btn-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

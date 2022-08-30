@@ -1,101 +1,94 @@
-{% extends 'base.html' %} {% load static %} {% load shopping_bag_tools %} {%
-load crispy_forms_tags %} {% block extra_title %} | Order History{% endblock %}
+{% extends 'base.html' %}
+{% load static %}
+{% load shopping_bag_tools %}
+{% load crispy_forms_tags %}
+
+{% block extra_title %} | Order History{% endblock %}
+
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}" />
-{% endblock %} {% block page_header %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+
+{% block content %}
 <div class="overlay"></div>
 <div class="container">
-  <div class="row">
-    <div class="col text-center">
-      <hr />
-      <h2 class="logo-font mb-4 mt-5">Order History</h2>
-      <hr />
-    </div>
-  </div>
-  <div class="row mb-5 justify-content-center">
-    <div class="col-12 col-lg-10 order-history">
-      <div id="table-responsive">
-        {% if orders %}
-        <table class="table table-sm">
-          <thead class="border-th-orders">
-            <tr>
-              <th>Order Date</th>
-              <th>Order No.</th>
-              <th>Book</th>
-              <th>Order Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for order in orders %}
-            <tr>
-              <th>{{ order.date|date:"d F Y" }}</th>
-              <td>
-                <a
-                  href="{% url 'order_confirmation' order.order_number %}"
-                  title="{{order.order_number}}"
-                  >{{ order.order_number |truncatechars:6}}</a
-                >
-              </td>
-              <td class="order-history-img">
-                {% for item in order.lineitems.all %}
-                <!-- image -->
-                {% if item.book.image %}
-                <img
-                  class="img-fluid rounded m-1"
-                  src="{{ item.book.image.url }}"
-                  alt="{{ item.book.title }}"
-                />
-                {% else %}
-                <img
-                  class="img-fluid rounded m-1"
-                  src="{{ MEDIA_URL }}noimage.png"
-                  alt="{{ item.book.name }}"
-                />
-                {% endif %}
-                <span class="ml-1 small">{{ item.book }} </span>
-
-                <br />
-                {% endfor %}
-              </td>
-              <td class="text-right small">€{{ order.grand_total }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        {% else %}
-        <div class="text-center my-5">
-          <h6>No previous orders to display</h6>
+    <div class="row">
+        <div class="col text-center">
+            <hr>
+            <h2 class="logo-font mb-4 mt-5">Order History</h2>
+            <hr>
         </div>
-        {% endif %}
-      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col text-center mt-5 mb-3 order-history-links">
-      <a
-        href="{% url 'account_overview' %}"
-        class="btn logo-font btn-style rounded mr-2"
-        >Back to My Account</a
-      >
+    <div class="row mb-5 justify-content-center">
+        <div class="col-12 col-lg-10 order-history">
+            <div id="table-responsive">
+                {% if orders %}
+                <table class="table table-sm">
 
-      <a
-        href="{% url 'books' %}"
-        class="btn logo-font btn-style rounded uppercase mr-2"
-        >Shop Again</a
-      >
-      <a
-        href="{% url 'home' %}"
-        class="btn logo-font btn-style rounded uppercase mr-2"
-        >Home</a
-      >
+                    <thead class="border-th-orders">
+                        <tr>
+                            <th>Order Date</th>
+                            <th>Order No.</th>
+                            <th>Book</th>
+                            <th>Order Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <th>{{ order.date|date:"d F Y" }}</th>
+                            <td>
+                                <a href="{% url 'order_confirmation' order.order_number %}"
+                                    title="{{order.order_number}}">{{ order.order_number |truncatechars:6}}</a>
+                            </td>
+                            <td class="order-history-img">{% for item in order.lineitems.all %}
+                                <!-- image -->
+                                {% if item.book.image %}
+                                <img class="img-fluid rounded m-1" src="{{ item.book.image.url }}"
+                                    alt="{{ item.book.title }}">
+                                {% else %}
+                                <img class="img-fluid rounded m-1" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ item.book.name }}">
+                                {% endif %}
+                                <span class="ml-1 small">{{ item.book }} </span>
+
+                                <br>
+                                {% endfor %}</td>
+                            <td class="text-right small">€{{ order.grand_total }}</td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+                {% else %}
+                <div class="text-center my-5">
+                    <h6>No previous orders to display</h6>
+                </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col text-center mt-5 mb-3 order-history-links">
+            <a href="{% url 'account_overview' %}" class="btn logo-font btn-style rounded mr-2">Back
+                to My
+                Account</a>
+
+            <a href="{% url 'books' %}" class="btn logo-font btn-style rounded uppercase mr-2">Shop Again</a>
+            <a href="{% url 'home' %}" class="btn logo-font btn-style rounded uppercase mr-2">Home</a>
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}

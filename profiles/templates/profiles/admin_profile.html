@@ -1,58 +1,73 @@
-{% extends 'base.html' %} {% load static %} {% block extra_title %} | Profile{%
-endblock %} {% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}" />
-{% endblock %} {% block page_header %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+
+
+{% block page_header %}
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col text-center">
-      <hr />
-      <h2 class="logo-font mb-4 mt-5">Admin Panel</h2>
-      <hr />
+    <div class="row">
+        <div class="col text-center">
+            <hr>
+            <h2 class="logo-font mb-4 mt-5">Admin Panel</h2>
+            <hr>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="container">
-  <div class="row mt-4">
-    <div class="col text-center">
-      <a href="{% url 'book_managment' %}">
-        <div class="btn logo-font btn-style accounts-btns">
-          <span><i class="fa-solid fa-book pr-2"></i></span>
-          Book Managment
+    <div class="row mt-4">
+        <div class="col text-center">
+            <a href="{% url 'book_managment' %}">
+                <div class="btn logo-font btn-style accounts-btns">
+                    <span><i class="fa-solid fa-book pr-2"></i></span>
+                    Book Managment
+                </div>
+            </a>
+            <p class="mt-2"> Category and Book Managment</p>
+
         </div>
-      </a>
-      <p class="mt-2">Category and Book Managment</p>
     </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col text-center">
-      <a href="{% url 'add_faq' %}">
-        <div class="btn logo-font btn-style accounts-btns">
-          <span><i class="fas fa-question pr-2"></i></span>
-          FAQ's
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a href="{% url 'add_faq' %}">
+                <div class="btn logo-font btn-style accounts-btns">
+                    <span><i class="fas fa-question pr-2"></i></span>
+                    FAQ's
+                </div>
+            </a>
+            <p class="mt-2"> Manage FAQ's section</p>
+
         </div>
-      </a>
-      <p class="mt-2">Manage FAQ's section</p>
     </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col text-center">
-      <a href="{% url 'newsletter' %}">
-        <div class="btn logo-font btn-style accounts-btns">
-          <span><i class="fas fa-users pr-2"></i></span>
-          Newsletter
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a href="{% url 'newsletter' %}">
+                <div class="btn logo-font btn-style accounts-btns">
+                    <span><i class="fas fa-users pr-2"></i></span>
+                    Newsletter
+                </div>
+            </a>
+            <p class=" mt-2"> Send Newsletters & Manage Subscribers</p>
+
         </div>
-      </a>
-      <p class="mt-2">Send Newsletters & Manage Subscribers</p>
     </div>
-  </div>
 </div>
+
+
 
 {% endblock %}

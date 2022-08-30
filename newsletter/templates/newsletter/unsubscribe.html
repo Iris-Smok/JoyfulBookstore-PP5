@@ -1,61 +1,51 @@
-{% extends 'base.html' %} {% load static %} {% block extra_title %} |
-Unsubscribe{% endblock %} {% block extra_css %}
-<link rel="stylesheet" href="{% static 'newsletter/css/newsletter.css' %}" />
-{% endblock %} {% block page_header %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | Unsubscribe{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'newsletter/css/newsletter.css' %}">
+{% endblock %}
+
+{% block page_header %}
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <div class="overlay"></div>
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <hr />
-      <h2 class="logo-font mb-4 mt-5">Unsubscribe</h2>
-      <p>We are sorry to see you go!</p>
-      <p>
-        If you change your mind and would like to start receiving our emails
-        again then please contact our Customer Service team.
-      </p>
-      <hr />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <form
-        action="#"
-        method="POST"
-        class="form mb-2"
-        enctype="multipart/form-data"
-      >
-        {% csrf_token %}
-        <input
-          type="email"
-          class="form-control"
-          placeholder="email"
-          aria-label="email-unsubscribe"
-          name="email-unsubscribe"
-          required
-        />
-        <button class="btn logo-font btn-style rounded mt-3" type="submit">
-          Unsubscribe
-        </button>
-        {% if request.user.is_superuser %}
-        <div>
-          <a
-            href="{% url 'newsletter' %}"
-            class="btn logo-font btn-style rounded mt-2"
-          >
-            Back to Newsletter Page</a
-          >
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4 mt-5">Unsubscribe</h2>
+            <p>We are sorry to see you go!</p>
+            <p>If you change your mind and would like to start receiving our emails again then please contact our
+                Customer Service team.</p>
+            <hr>
         </div>
-        {% endif %}
-      </form>
     </div>
-  </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form action="#" method="POST" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="email" class="form-control" placeholder="email" aria-label="email-unsubscribe"
+                    name="email-unsubscribe" required>
+                <button class="btn logo-font btn-style rounded mt-3" type="submit">Unsubscribe</button>
+                {% if request.user.is_superuser %}
+                <div>
+                    <a href="{% url 'newsletter' %}" class="btn logo-font btn-style rounded mt-2">
+                        Back to Newsletter Page</a>
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
 </div>
+
 
 {% endblock %}

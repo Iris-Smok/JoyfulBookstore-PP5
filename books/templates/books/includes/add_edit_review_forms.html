@@ -1,37 +1,27 @@
-{% if reviewed %}
-<p class="text-center">
-  You have already reviewed <strong> {{ book.title }}</strong>.
-</p>
-{% else %} {% if request.user.is_authenticated %} {% if edit %}
-<form
-  method="POST"
-  action="{% url 'edit_review' review.id %}#reviews-section"
-  class="form mb-2"
->
-  {% csrf_token %} {{ form | crispy }}
-  <div class="text-right">
-    <a
-      href="{% url 'book_detail' book.id %}#reviews-section"
-      class="btn btn-outline-dark"
-      >Cancel</a
-    >
-    <button class="btn btn-dark" type="submit">Update</button>
-  </div>
-</form>
-{% else %}
-<form method="POST" action="{% url 'book_detail' book.id %}">
-  {% csrf_token %} {{ form|crispy }}
-  <div class="text-right">
-    <button class="btn btn-style logo-font mb-5" type="submit">
-      Submit Review
-    </button>
-  </div>
-</form>
-{% endif %} {% else %}
-<p class="text-center">
-  Please
-  <a class="link-normal" href="{% url 'account_signup' %}">Register</a> or
-  <a class="link-normal" href="{% url 'account_login' %}">Login</a> to leave a
-  review.
-</p>
-{% endif %} {% endif %}
+    {% if reviewed %}
+    <p class="text-center">You have already reviewed <strong> {{ book.title }}</strong>.</p>
+    {% else %}
+    {% if request.user.is_authenticated %}
+    {% if edit %}
+    <form method="POST" action="{% url 'edit_review' review.id %}#reviews-section" class="form mb-2">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="text-right">
+            <a href="{% url 'book_detail' book.id %}#reviews-section" class="btn btn-outline-dark">Cancel</a>
+            <button class="btn btn-dark" type="submit">Update</button>
+        </div>
+    </form>
+    {% else %}
+    <form method="POST" action="{% url 'book_detail' book.id %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="text-right">
+            <button class="btn btn-style logo-font mb-5" type="submit">Submit Review</button>
+        </div>
+    </form>
+    {% endif %}
+    {% else %}
+    <p class="text-center">Please <a class="link-normal" href="{% url 'account_signup' %}">Register</a> or
+        <a class="link-normal" href="{% url 'account_login' %}">Login</a> to leave a review.</p>
+    {% endif %}
+    {% endif %}

@@ -1,324 +1,278 @@
-{% extends 'base.html' %} {% load static %} {% block extra_title %} |
-{{book.title}} {% endblock %} {% block extra_css %}
-<link rel="stylesheet" href="{% static 'books/css/books.css' %}" />
-{% endblock %} {% block page_header %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | {{book.title}} {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'books/css/books.css' %}">
+{% endblock %}
+
+
+{% block page_header %}
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+
+{% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-      <div class="image-container my-5">
-        {% if book.image %}
-        <a href="{{ book.image.url }}" target="_blank">
-          <img
-            class="card-img-top img-fluid book-details-img"
-            src="{{ book.image.url }}"
-            alt="{{ book.title }}"
-          />
-        </a>
-        {% else %}
-        <a href="">
-          <img
-            class="card-img-top img-fluid book-details-img"
-            src="{{ MEDIA_URL }}noimage.png"
-            alt="{{ book.title }}"
-            width="100%"
-            height="400px"
-          />
-        </a>
-        {% endif %}
-      </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="book-details-container mb-5 mt-md-5">
-        <h2 class="mb-0 text-left font-weight-bold">{{ book.title }}</h2>
-        {% if book.category %}
-        <p class="small mt-1 mb-0">
-          <a
-            href="{% url 'books' %}?category={{ book.category.name }}"
-            class="text-muted"
-          >
-            <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-          </a>
-        </p>
-        {%endif %}
-        <div class="mb-3">
-          <a href="#reviews-section" class="text-decoration-none">
-            <div class="book-rating d-inline">
-              {% include 'books/includes/book_rating.html' %}
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-container my-5">
+                {% if book.image %}
+                <a href="{{ book.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid book-details-img" src="{{ book.image.url }}"
+                        alt="{{ book.title }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid book-details-img" src="{{ MEDIA_URL }}noimage.png"
+                        alt="{{ book.title }}" width="100%" height="400px">
+                </a>
+                {% endif %}
             </div>
-          </a>
-          {% if book.review_count > 0 %}
-          <p class="ml-3 small d-inline">({{ book.review_count}})</p>
-          {% endif %}
         </div>
-
-        {% if book.sale_price %}
-        <p class="mr-1 mb-0">
-          <del class="text-muted">€{{ book.price }} </del>
-        </p>
-        <p class="lead font-weight-bold">€{{ book.sort_price }}</p>
-        {% else %}
-
-        <p class="lead font-weight-bold">€{{ book.sort_price }}</p>
-        {% endif %}
-
-        <!-- edit and delete btn -->
-        {% if request.user.is_superuser %}
-        <div>
-          <small class="text-uppercase">
-            <a href="{% url 'edit_book' book.id %}" class="text-success"
-              >edit</a
-            >
-            <button
-              class="btn btn-sm p-0 pl-1 logo-font text-danger border-0 text-uppercase"
-              data-toggle="modal"
-              data-target="#book-modal-{{book.id}}"
-            >
-              Delete
-            </button>
-          </small>
-
-          {% include 'books/includes/delete_book_modal.html' %}
-        </div>
-        {% endif %}
-
-        <!-- Book details -->
-        <div class="book-details">
-          <p class="mt-5 mb-3"><strong>Author:</strong> {{ book.author }}</p>
-          <p class="my-3"><strong>Book Type:</strong> {{ book.book_type }}</p>
-          <p class="my-3"><strong>Book Size:</strong> {{ book.book_size }}</p>
-          <p class="my-3">
-            <strong>Suitable for ages:</strong> {{ book.suitable_for_ages }}
-          </p>
-          <p class="mt-5 description-text"><strong>Description:</strong></p>
-          <p>{{book.description}}</p>
-        </div>
-      </div>
-
-      <!-- FORM -->
-      <form
-        class="form"
-        action="{% url 'add_to_shopping_bag' book.id %}"
-        method="POST"
-      >
-        {% csrf_token %}
-        <div class="row">
-          <div class="col-12">
-            <p class="mt-3"><strong>Quantity:</strong></p>
-            <div class="form-group w-50">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <button
-                    class="decrement-qty btn btn-color rounded mr-1"
-                    data-item_id="{{ book.id }}"
-                    id="decrement-qty_{{ book.id }}"
-                  >
-                    <span class="icon">
-                      <i class="fas fa-minus"></i>
-                    </span>
-                  </button>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="book-details-container mb-5 mt-md-5">
+                <h2 class="mb-0 text-left font-weight-bold">{{ book.title }} </h2>
+                {% if book.category %}
+                <p class="small mt-1 mb-0">
+                    <a href="{% url 'books' %}?category={{ book.category.name }}" class="text-muted">
+                        <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                    </a>
+                </p>
+                {%endif %}
+                <div class="mb-3">
+                    <a href="#reviews-section" class="text-decoration-none">
+                        <div class="book-rating d-inline">{% include 'books/includes/book_rating.html' %}</div>
+                    </a>
+                    {% if book.review_count > 0 %}
+                    <p class="ml-3 small d-inline">({{ book.review_count}})</p>
+                    {% endif %}
                 </div>
-                <input
-                  class="form-control qty_input"
-                  type="number"
-                  name="quantity"
-                  value="1"
-                  min="1"
-                  max="99"
-                  data-item_id="{{ book.id }}"
-                  id="id_qty_{{ book.id }}"
-                />
-                <div class="input-group-append">
-                  <button
-                    class="increment-qty btn btn-color rounded ml-1"
-                    data-item_id="{{ book.id }}"
-                    id="increment-qty_{{ book.id }}"
-                  >
-                    <span class="icon">
-                      <i class="fas fa-plus"></i>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-12">
-            <div
-              class="input-div-shopping btn mt-5 border-secondary w-100 btn-style text-center logo-font"
-            >
-              <span class="icon">
-                <i class="fas fa-chevron-left"></i>
-              </span>
-              <input
-                type="button"
-                value="Keep Shopping"
-                class="border-0 bg-transparent logo-font text-uppercase d-inline"
-                onClick="window.history.back();return false;"
-              />
+                {% if book.sale_price %}
+                <p class="mr-1 mb-0"><del class="text-muted">€{{ book.price }} </del></p>
+                <p class="lead font-weight-bold">€{{ book.sort_price }}</p>
+                {% else %}
+
+                <p class=" lead font-weight-bold">€{{ book.sort_price }}</p>
+                {% endif %}
+
+                <!-- edit and delete btn -->
+                {% if request.user.is_superuser %}
+                <div>
+                    <small class="text-uppercase">
+                        <a href="{% url 'edit_book' book.id %}" class="text-success">edit</a>
+                        <button class="btn btn-sm p-0 pl-1 logo-font text-danger border-0 text-uppercase"
+                            data-toggle="modal" data-target="#book-modal-{{book.id}}">Delete</button>
+                    </small>
+
+                    {% include 'books/includes/delete_book_modal.html' %}
+
+                </div>
+                {% endif %}
+
+                <!-- Book details -->
+                <div class="book-details">
+
+                    <p class="mt-5 mb-3"><strong>Author:</strong> {{ book.author }}
+                    </p>
+                    <p class="my-3"><strong>Book Type:</strong> {{ book.book_type }} </p>
+                    <p class="my-3"><strong>Book Size:</strong> {{ book.book_size }} </p>
+                    <p class="my-3"><strong>Suitable for ages:</strong> {{ book.suitable_for_ages }} </p>
+                    <p class="mt-5 description-text"><strong>Description:</strong></p>
+                    <p>{{book.description}}</p>
+                </div>
             </div>
+
+            <!-- FORM -->
+            <form class="form" action="{% url 'add_to_shopping_bag' book.id %}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="decrement-qty btn btn-color rounded mr-1"
+                                        data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
+                                    max="99" data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
+                                <div class="input-group-append">
+                                    <button class="increment-qty btn btn-color rounded ml-1"
+                                        data-item_id="{{ book.id }}" id="increment-qty_{{ book.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-div-shopping btn mt-5 border-secondary w-100 btn-style text-center logo-font">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <input type=button value="Keep Shopping"
+                                class="border-0 bg-transparent logo-font text-uppercase d-inline"
+                                onClick="window.history.back();return false;">
+
+                        </div>
+                        <div>
+                            <input type="submit"
+                                class="btn text-uppercase mt-2 border-secondary w-100 text-center btn-style logo-font"
+                                value="add to shopping bag">
+                        </div>
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
+            </form>
             <div>
-              <input
-                type="submit"
-                class="btn text-uppercase mt-2 border-secondary w-100 text-center btn-style logo-font"
-                value="add to shopping bag"
-              />
+
+                {% if request.user.is_authenticated %}
+
+                <a href="{% url 'add_to_wishlist' book.id %}">
+
+                    {% if book in wishlist_items %}
+                    <div class="btn text-uppercase mt-5 border-secondary btn-style logo-font"
+                        style="background-color:goldenrod;">remove from wishlist</div>
+                    {% else %}
+
+                    <div class="btn text-uppercase mt-5 border-secondary btn-style logo-font">add to wishlist</div>
+                    {% endif %}
+                </a>
+                {% else %}
+                <button class="btn text-uppercase mt-5 border-secondary btn-style logo-font" data-toggle="modal"
+                    data-target="#wishlist">add to wishlist</button>
+                {% endif %}
             </div>
-          </div>
-          <input type="hidden" name="redirect_url" value="{{ request.path }}" />
         </div>
-      </form>
-      <div>
-        {% if request.user.is_authenticated %}
-
-        <a href="{% url 'add_to_wishlist' book.id %}">
-          {% if book in wishlist_items %}
-          <div
-            class="btn text-uppercase mt-5 border-secondary btn-style logo-font"
-            style="background-color: goldenrod"
-          >
-            remove from wishlist
-          </div>
-          {% else %}
-
-          <div
-            class="btn text-uppercase mt-5 border-secondary btn-style logo-font"
-          >
-            add to wishlist
-          </div>
-          {% endif %}
-        </a>
-        {% else %}
-        <button
-          class="btn text-uppercase mt-5 border-secondary btn-style logo-font"
-          data-toggle="modal"
-          data-target="#wishlist"
-        >
-          add to wishlist
-        </button>
-        {% endif %}
-      </div>
     </div>
-  </div>
 </div>
 {% include 'books/includes/wishlist_modal.html' %}
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <hr class="border-secondary w-100" />
+    <div class="row">
+        <div class="col">
+            <hr class="border-secondary w-100">
+        </div>
     </div>
-  </div>
 </div>
 <!-- Reviews -->
 <section id="reviews-section">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        {% if reviews %}
-        <h4>
-          {{ review_count }} Reviews for <strong>{{ book.title }}</strong>
-        </h4>
-        <hr />
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6">
-        {% for review in reviews %}
-        <div class="row mt-3">
-          <div class="col review-stars">
-            {% if review.rating == 5 %}
-            <i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i>
-            {% elif review.rating == 4 %}
-            <i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i>
-            <i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i>
-            <i class="fa fa-regular fa-star"></i>
-            {% elif review.rating == 3 %}
-            <i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-regular fa-star"></i
-            ><i class="fa fa-regular fa-star"></i>
-            {% elif review.rating == 2 %}
-            <i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-regular fa-star"></i
-            ><i class="fa fa-regular fa-star"></i
-            ><i class="fa fa-regular fa-star"></i>
-            {% elif review.rating == 1 %}
-            <i class="fa fa-solid fa-star"></i
-            ><i class="fa fa-regular fa-star"></i
-            ><i class="fa fa-regular fa-star"></i
-            ><i class="fa fa-regular fa-star"></i
-            ><i class="fa fa-regular fa-star"></i>
-            {% endif %}
-          </div>
-          <div>
-            <!-- User and admin edit btn -->
-            {% if review.user == request.user or request.user.is_superuser %}
-            <a
-              href="{% url 'edit_review' review.id %}#reviews-section"
-              aria-label="Edit review from {{ review.user }}"
-              class="text-secondary text-decoration-none"
-            >
-              <span class="icon mr-2">
-                <i class="fa-regular fa-pen-to-square"></i>
-              </span>
-            </a>
-            <a
-              class="text-danger text-decoration-none btn"
-              data-toggle="modal"
-              data-target="#reviewDeleteModal"
-              aria-label="Delete review from {{ review.user }}"
-            >
-              <span class="icon">
-                <i class="fa-regular fa-trash-can"></i>
-              </span>
-            </a>
+    <div class="container">
 
-            {% include 'books/includes/delete_review_modal.html' %} {% endif %}
-          </div>
-        </div>
         <div class="row">
-          <div class="col">
-            {{ review.body}}
-            <p class="small text-muted">
-              {{ review.user }} &#8226; {{review.created_on|timesince }}
-            </p>
-          </div>
+            <div class="col">
+                {% if reviews %}
+                <h4>{{ review_count }} Reviews for <strong>{{ book.title }}</strong></h4>
+                <hr>
+            </div>
         </div>
-        {% endfor %} {% else %} {% if not edit %}
-        <div class="col-12 col-md-8 mx-auto">
-          <h5>This Book has no reviews</h5>
-        </div>
-        {% endif %} {% endif %}
-      </div>
-      <!-- Add review -->
-      <div class="col-12 col-md-6">
-        <h4 class="text-center">Leave A Review</h4>
-        {% include 'books/includes/add_edit_review_forms.html' %}
-      </div>
     </div>
-  </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+
+                {% for review in reviews %}
+                <div class="row mt-3">
+                    <div class="col review-stars">
+                        {% if review.rating == 5 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i>
+                        {% elif review.rating == 4 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 3 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 2 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
+                            class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% elif review.rating == 1 %}
+                        <i class="fa fa-solid fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i><i class="fa fa-regular fa-star"></i><i
+                            class="fa fa-regular fa-star"></i>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <!-- User and admin edit btn -->
+                        {% if review.user == request.user or request.user.is_superuser %}
+                        <a href="{% url 'edit_review' review.id %}#reviews-section"
+                            aria-label="Edit review from {{ review.user }}" class="text-secondary text-decoration-none">
+                            <span class="icon mr-2">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </span>
+                        </a>
+                        <a class="text-danger text-decoration-none btn" data-toggle="modal"
+                            data-target="#reviewDeleteModal" aria-label="Delete review from {{ review.user }}">
+                            <span class="icon">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </span>
+                        </a>
+
+                        {% include 'books/includes/delete_review_modal.html' %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ review.body}}
+                        <p class="small text-muted">{{ review.user }} &#8226; {{review.created_on|timesince }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                {% if not edit %}
+                <div class="col-12 col-md-8 mx-auto">
+                    <h5>This Book has no reviews</h5>
+                </div>
+                {% endif %}
+                {% endif %}
+
+
+
+            </div>
+
+            <!-- Add review -->
+            <div class="col-12 col-md-6">
+                <h4 class="text-center">Leave A Review</h4>
+                {% include 'books/includes/add_edit_review_forms.html' %}
+            </div>
+
+        </div>
+    </div>
 </section>
-{% endblock %} {% block postloadjs %} {{ block.super }} {% include
-'books/includes/quantity_input_script.html' %}
+
+
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+{% include 'books/includes/quantity_input_script.html' %}
 <script>
-  $(document).ready(function () {
-    $("p:contains('None')").hide();
-  });
+    $(document).ready(function () {
+        $("p:contains('None')").hide();
+    });
 </script>
+
 {% endblock %}

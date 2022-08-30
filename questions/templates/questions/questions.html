@@ -1,75 +1,72 @@
-{% extends 'base.html' %} {% load static %} {% block extra_title %} | FAQ {%
-endblock %} {% block page_header %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | FAQ {% endblock %}
+
+{% block page_header %}
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+
+{% block content %}
 <div class="overlay"></div>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col text-center mt-3">
-      <h2 class="logo-font mt-5">FAQ's</h2>
-      <hr class="w-50 mb-2" />
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font mt-5">FAQ's</h2>
+            <hr class="w-50 mb-2">
+
+        </div>
     </div>
-  </div>
+
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col my-4">
-      {% for question in questions %}
-      <div class="accordion" id="question-{{question.id}}">
-        <div class="card">
-          <div class="card-header p-0" id="headingOne-{{question.id}}">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-block text-left p-3"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseOne-{{question.id}}"
-                aria-expanded="false"
-                aria-controls="collapseOne"
-              >
-                {{question.question}}
-              </button>
-            </h2>
-            {% if request.user.is_superuser %}
+    <div class="row">
+        <div class="col my-4">
+            {% for question in questions %}
+            <div class="accordion" id="question-{{question.id}}">
+                <div class="card">
+                    <div class="card-header p-0" id="headingOne-{{question.id}}">
+                        <h2 class="mb-0">
+                            <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse"
+                                data-target="#collapseOne-{{question.id}}" aria-expanded="false"
+                                aria-controls="collapseOne">
+                                {{question.question}}
 
-            <small class="text-uppercase ml-3">
-              <a
-                href="{% url 'edit_faq' question.id %}"
-                class="text-success text-decoration-none p-1"
-                >edit</a
-              >
-              <button
-                class="btn btn-sm p-1 logo-font text-danger text-uppercase"
-                data-toggle="modal"
-                data-target="#deleteFAQ{{question.id}}"
-              >
-                Delete
-              </button>
+                            </button>
+                        </h2>
+                        {% if request.user.is_superuser %}
 
-              <!-- Modal -->
-            </small>
+                        <small class="text-uppercase ml-3">
+                            <a href="{% url 'edit_faq' question.id %}"
+                                class="text-success text-decoration-none p-1">edit</a>
+                            <button class="btn btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
+                                data-target="#deleteFAQ{{question.id}}">Delete</button>
 
-            {% endif %}
-          </div>
-          {% include 'questions/includes/delete_faq_modal.html' %}
-          <div
-            id="collapseOne-{{question.id}}"
-            class="collapse"
-            aria-labelledby="headingOne-{{question.id}}"
-            data-parent="#question-{{question.id}}"
-          >
-            <div class="card-body">{{question.answer}}</div>
-          </div>
+                            <!-- Modal -->
+                        </small>
+
+                        {% endif %}
+                    </div>
+                    {% include 'questions/includes/delete_faq_modal.html' %}
+                    <div id="collapseOne-{{question.id}}" class="collapse" aria-labelledby="headingOne-{{question.id}}"
+                        data-parent="#question-{{question.id}}">
+                        <div class="card-body">
+                            {{question.answer}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-      </div>
-      {% endfor %}
     </div>
-  </div>
 </div>
+
+
 
 {% endblock %}
