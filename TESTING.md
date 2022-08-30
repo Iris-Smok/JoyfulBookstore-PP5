@@ -6,6 +6,7 @@
 * [PEP8](#pep8)
 
 [User Stories Testing](#user-stories-testing)
+[Responsiveness](#Responsiveness)
 
 # Lighthouse 
 
@@ -156,26 +157,32 @@ Due to lack of time, it remained unresolved
 
 ## Base
 <p align="center">
-<img src="assets/documents/README_docs/validators/base.js-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/base.js-validator.png" width="800" height="100%">
 </p>
 
 ## Checkout 
 <p align="center">
-<img src="assets/documents/README_docs/validators/checkout.js-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/checkout.js-validator.png" width="800" height="100%">
 </p>
 
 ## Shopping Bag quantity buttons
 
 <p align="center">
-<img src="assets/documents/README_docs/validators/quantity-buttons-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/quantity-buttons-validator.png" width="800" height="100%">
 </p>
 
 ## Shopping Bag
 
 <p align="center">
-<img src="assets/documents/README_docs/validators/shopping-bag.js-validator.png" width="100%" height="100%">
+<img src="assets/documents/README_docs/validators/shopping-bag.js-validator.png" width="800" height="100%">
 </p>
 
+# PEP8
+ - PEP8 only shows the type of errors that can be ignored.
+
+ <p align="center">
+<img src="assets/documents/README_docs/validators/pep8.png" width="600" height="100%">
+</p>
 
 
 # User Stories Testing
@@ -511,3 +518,24 @@ Due to lack of time, it remained unresolved
 </p>
 
 
+# Responsiveness
+
+<p align="center">
+<img src="assets/documents/README_docs/gifs/responsivness" width="100%" height="100%">
+</p>
+
+
+# Bugs
+
+## Fixed 
+
+- Sorting products by highest and lowest price was not working properly due to sale price. The sort method did not consider sale_price to be a price. I have created a new field in the book model sort_price that will take the value of price and sale_price depending on which is True. I then used the sort_price value to sort the products by price
+
+- I used marquee for delivery banner but after reading [Mdn web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee) I dicided to create my own and make sure it passes HTML and CSS validators
+
+- Unicode characters in newsletter email - during the development, I noticed that when the admin sends the newsletter to the subscribers, all non-alphabetic characters are converted to Unicode characters. To escape that I used {{autoescape off}} tag on variable in the subscriber's email
+
+## Unfixed
+
+- Shopping bag page 
+    - "Error: Duplicate ID delete_3."  error acurres due to two delete buttons with the same ID
