@@ -1,80 +1,84 @@
-{% extends 'base.html' %}
-{% load static %}
-
-
-{% block extra_title %} | Newsletter{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'newsletter/css/newsletter.css' %}">
-{% endblock %}
-
-{% block page_header %}
+{% extends 'base.html' %} {% load static %} {% block extra_title %} |
+Newsletter{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'newsletter/css/newsletter.css' %}" />
+{% endblock %} {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <hr>
-            <h2 class="logo-font mb-4 mt-5">Newsletter Managment</h2>
-            <h5 class="text-muted">Send Newsletter</h5>
-            <hr>
-        </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <hr />
+      <h2 class="logo-font mb-4 mt-5">Newsletter Managment</h2>
+      <h5 class="text-muted">Send Newsletter</h5>
+      <hr />
     </div>
+  </div>
 
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <form action="{% url 'newsletter_email' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form|crispy}}
-                <div class="text-right mb-3">
-                    <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Cancel</a>
-                    <button class="btn logo-font btn-style rounded" type="submit">Send Newsletter</button>
-                    <div>
-                        <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded mt-2">
-                            Back to Admin Panel</a>
-                    </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <form
+        action="{% url 'newsletter_email' %}"
+        method="POST"
+        class="form mb-2"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {{ form|crispy}}
+        <div class="text-right mb-3">
+          <a
+            href="{% url 'admin_profile' %}"
+            class="btn logo-font btn-style rounded"
+            >Cancel</a
+          >
+          <button class="btn logo-font btn-style rounded" type="submit">
+            Send Newsletter
+          </button>
+          <div>
+            <a
+              href="{% url 'admin_profile' %}"
+              class="btn logo-font btn-style rounded mt-2"
+            >
+              Back to Admin Panel</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- List of subscribers -->
+    <div class="col-12 col-lg-6">
+      <div class="newsletter-table table-responsive mb-5">
+        <table class="table table-sm table-borderless">
+          <thead>
+            <tr class="border-bottom">
+              <th>Subscribers</th>
+              <th></th>
+            </tr>
+          </thead>
+          {% for subscriber in all_subscribers %}
+          <tbody>
+            <tr>
+              <td>{{ subscriber.subscriber_email}}</td>
+              <td>
+                <div class="btn logo-font d-inline">
+                  <a
+                    href="{% url 'unsubscribe' %}"
+                    class="btn logo-font text-danger"
+                  >
+                    Unsubscribe
+                  </a>
                 </div>
-            </form>
-        </div>
-        <!-- List of subscribers -->
-        <div class="col-12 col-lg-6">
-            <div class="newsletter-table table-responsive mb-5">
-                <table class="table table-sm table-borderless">
-                    <thead>
-                        <tr class="border-bottom">
-                            <th>Subscribers</th>
-                            <th></th>
-
-                        </tr>
-                    </thead>
-                    {% for subscriber in all_subscribers %}
-                    <tbody>
-                        <tr>
-                            <td>
-                                {{ subscriber.subscriber_email}}
-                            </td>
-                            <td>
-                                <div class="btn logo-font d-inline">
-                                    <a href="{% url 'unsubscribe' %}" class="btn logo-font text-danger">
-                                        Unsubscribe
-                                    </a>
-
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    {% endfor %}
-                </table>
-            </div>
-        </div>
+              </td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}

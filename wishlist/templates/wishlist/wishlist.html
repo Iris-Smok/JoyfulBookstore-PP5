@@ -1,80 +1,73 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block extra_title %} | Wishlist{% endblock %}
-
-{% block page_header %}
+{% extends 'base.html' %} {% load static %} {% block extra_title %} | Wishlist{%
+endblock %} {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <hr>
-            <h2 class="logo-font mb-4 mt-5">Wishlist</h2>
-            <hr>
-        </div>
+  <div class="row">
+    <div class="col text-center">
+      <hr />
+      <h2 class="logo-font mb-4 mt-5">Wishlist</h2>
+      <hr />
     </div>
+  </div>
 
-    <div class="row justify-content-center">
-        <div class="col-sm-8 text-center">
-            {% if wishlist_items %}
-            <div class="table-responsive mb-5">
-                <table class="table table-borderless table-striped w-100">
-                    <thead>
-                        <tr class="border-bottom">
-                            <th>Book</th>
-                            <th>Price</th>
-                            <th></th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for book in wishlist_items %}
-                        <tr class="border-top">
-                            <td>
-                                <p class="m-0"> {{book.title}}</p>
-                                <div class="small wishlist-img">
-                                    {% if book.image %}
-                                    <a href="{{ book.image.url }}" target="_blank">
-                                        <img src="{{ book.image.url }}" alt="{{ book.title }}">
-                                    </a>
-                                    {% else %}
-                                    <a href="">
-                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ book.title }}">
-                                    </a>
-                                    {% endif %}
-                                </div>
-                            </td>
-                            <td>
-                                €{{ book.sort_price }}
-
-                            </td>
-                            <td>
-                                <div class="btn logo-font p-0">
-
-                                    <a href="{% url 'remove_from_wishlist' book.id %}"
-                                        class="btn bg-danger text-light">Remove</a>
-
-                                </div>
-
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                {% else %}
-                <p>No books in wishlist</p>
-                {% endif %}
-            </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 text-center">
+      {% if wishlist_items %}
+      <div class="table-responsive mb-5">
+        <table class="table table-borderless table-striped w-100">
+          <thead>
+            <tr class="border-bottom">
+              <th>Book</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for book in wishlist_items %}
+            <tr class="border-top">
+              <td>
+                <p class="m-0">{{book.title}}</p>
+                <div class="small wishlist-img">
+                  {% if book.image %}
+                  <a href="{{ book.image.url }}" target="_blank">
+                    <img src="{{ book.image.url }}" alt="{{ book.title }}" />
+                  </a>
+                  {% else %}
+                  <a href="">
+                    <img
+                      src="{{ MEDIA_URL }}noimage.png"
+                      alt="{{ book.title }}"
+                    />
+                  </a>
+                  {% endif %}
+                </div>
+              </td>
+              <td>€{{ book.sort_price }}</td>
+              <td>
+                <div class="btn logo-font p-0">
+                  <a
+                    href="{% url 'remove_from_wishlist' book.id %}"
+                    class="btn bg-danger text-light"
+                    >Remove</a
+                  >
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>No books in wishlist</p>
+        {% endif %}
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}

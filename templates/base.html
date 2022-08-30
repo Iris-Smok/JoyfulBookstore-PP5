@@ -1,313 +1,398 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="JoyfulBookstore is an online children's bookstore, we sell children's books from early age to young adults | Free Shipping on orders over €20!">
-    <meta name="keywords"
-        content="children's online bookstore, buy books online, reading & learning from early age, book gift ideas, children books by age, cheap children books ireland, Dublin online bookstore,Ireland children bookstore">
-    {% endblock %}
-
-
-    {% block corecss %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JoyfulBookstore is an online children's bookstore, we sell children's books from early age to young adults | Free Shipping on orders over €20!"
+    />
+    <meta
+      name="keywords"
+      content="children's online bookstore, buy books online, reading & learning from early age, book gift ideas, children books by age, cheap children books ireland, Dublin online bookstore,Ireland children bookstore"
+    />
+    {% endblock %} {% block corecss %}
     <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <!-- favicon -->
-    <link type="image/png" sizes="16x16" rel="icon" href="{% static 'favicon/icons8-literature-color-16.png' %}">
-    <link type="image/png" sizes="32x32" rel="icon" href="{% static 'favicon/icons8-literature-color-32.png' %}">
-    <link type="image/png" sizes="96x96" rel="icon" href="{% static 'favicon/icons8-literature-color-96.png' %}">
-    {% endblock %}
-
-    {% block extra_css %}
-    {% endblock %}
-
-    {% block corejs %}
-    <script src="https://kit.fontawesome.com/fce2e52a2f.js" crossorigin="anonymous"></script>
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="{% static 'favicon/icons8-literature-color-16.png' %}"
+    />
+    <link
+      type="image/png"
+      sizes="32x32"
+      rel="icon"
+      href="{% static 'favicon/icons8-literature-color-32.png' %}"
+    />
+    <link
+      type="image/png"
+      sizes="96x96"
+      rel="icon"
+      href="{% static 'favicon/icons8-literature-color-96.png' %}"
+    />
+    {% endblock %} {% block extra_css %} {% endblock %} {% block corejs %}
+    <script
+      src="https://kit.fontawesome.com/fce2e52a2f.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
-        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+      crossorigin="anonymous"
+    ></script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="../static/js/base.js"></script>
 
-
-
-    {% endblock %}
-
-    {% block extra_js %}
-    {% endblock %}
+    {% endblock %} {% block extra_js %} {% endblock %}
 
     <title>JoyfullBookstore {% block extra_title %}{% endblock %}</title>
-</head>
+  </head>
 
-
-<body class="d-flex flex-column min-vh-100">
-
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
     <header class="container-fluid p-0 fixed-top">
-        <nav class="navbar navbar-expand-lg d-none d-lg-flex">
-            <!-- LOGO -->
-            <a class="navbar-brand text-uppercase" href="{% url 'home' %}">joyfulbookstore</a>
+      <nav class="navbar navbar-expand-lg d-none d-lg-flex">
+        <!-- LOGO -->
+        <a class="navbar-brand text-uppercase" href="{% url 'home' %}"
+          >joyfulbookstore</a
+        >
 
-            <!-- LINKS -->
-            <div class="nav-bar-links mx-3">
-                <ul class="navbar-nav m-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'books' %}">All Books</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Categories
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for category in categories %}
-                            <a class="dropdown-item"
-                                href="{% url 'books' %}?category={{ category.name }}">{{ category.friendly_name }}</a>
-                            {% endfor %}
+        <!-- LINKS -->
+        <div class="nav-bar-links mx-3">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'books' %}">All Books</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for category in categories %}
+                <a
+                  class="dropdown-item"
+                  href="{% url 'books' %}?category={{ category.name }}"
+                  >{{ category.friendly_name }}</a
+                >
+                {% endfor %}
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="SpecialOffers"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Special Offers
+              </a>
+              <div class="dropdown-menu" aria-labelledby="SpecialOffers">
+                <a class="dropdown-item" href=" {% url 'books' %}?new=true"
+                  >New arrivals</a
+                >
+                <a class="dropdown-item" href="{% url 'books' %}?on_sale=true"
+                  >Sale</a
+                >
+              </div>
+            </li>
+          </ul>
 
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="SpecialOffers" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Special Offers
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="SpecialOffers">
-                            <a class="dropdown-item" href=" {% url 'books' %}?new=true">New arrivals</a>
-                            <a class="dropdown-item" href="{% url 'books' %}?on_sale=true">Sale</a>
-                        </div>
-                    </li>
-
-                </ul>
-
-                <!-- ICONS -->
-                <div class="list-inline-item ">
-                    <a class="nav-link d-block pt-4" href="#" id="search-icon" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" aria-label="Search">
-                        <div class="text-center">
-                            <div><i class="fas fa-search fa-lg"></i></div>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu w-100 p-3 search-icon bg-nav my-0" aria-labelledby="search-icon">
-                        <form class="form" method="GET" action="{% url 'books' %}">
-                            <div class="input-group w-100 input-left">
-                                <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search..."
-                                    aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="input-btn form-control form-control btn btn-trans" type="submit"
-                                        aria-label="Search">
-                                        <span class="icon">
-                                            <i class="fas fa-search"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+          <!-- ICONS -->
+          <div class="list-inline-item">
+            <a
+              class="nav-link d-block pt-4"
+              href="#"
+              id="search-icon"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Search"
+            >
+              <div class="text-center">
+                <div><i class="fas fa-search fa-lg"></i></div>
+              </div>
+            </a>
+            <div
+              class="dropdown-menu w-100 p-3 search-icon bg-nav my-0"
+              aria-labelledby="search-icon"
+            >
+              <form class="form" method="GET" action="{% url 'books' %}">
+                <div class="input-group w-100 input-left">
+                  <input
+                    class="form-control mr-sm-2"
+                    type="search"
+                    name="q"
+                    placeholder="Search..."
+                    aria-label="Search"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="input-btn form-control form-control btn btn-trans"
+                      type="submit"
+                      aria-label="Search"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </button>
+                  </div>
                 </div>
-
-
-                <div class="list-inline-item  dropdown">
-                    <a class="nav-link d-block pt-4" href="#" data-toggle="dropdown">
-                        <div class="text-center">
-                            <div><i class="fa-solid fa-user fa-lg"></i></div>
-                        </div>
-                    </a>
-                    <div class="account-dropdown dropdown-menu" aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a href="{% url 'admin_profile' %}" class="dropdown-item">Admin</a>
-                        {% endif %}
-                        <a href="{% url 'account_overview' %}" class="dropdown-item">My Account</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                        {% endif %}
-                    </div>
-                </div>
-
-
-                <!-- Cart nav link that dynamically displays the cart count and total-->
-                <div class="list-inline-item">
-                    <a class="nav-link d-block pt-4" href="{% url 'shopping_bag_view'%}"
-                        title="{% if grand_total %}Your cart grand total is {{ grand_total }}{% else %}Your cart is empty{% endif %}"
-                        aria-label="cart">
-                        <div class="text-center">
-                            <div><i class="fas fa-bag-shopping fa-lg"></i>
-                            </div>
-                            <small
-                                class="my-0 grand-total {% if grand_total %}border-orange{% else %}border-white{% endif %}">
-                                {% if grand_total %}
-                                €{{ grand_total|floatformat:2 }}
-                                {% else %}
-                                €0.00
-                                {% endif %}
-                            </small>
-                        </div>
-                    </a>
-                </div>
+              </form>
             </div>
+          </div>
+
+          <div class="list-inline-item dropdown">
+            <a class="nav-link d-block pt-4" href="#" data-toggle="dropdown">
+              <div class="text-center">
+                <div><i class="fa-solid fa-user fa-lg"></i></div>
+              </div>
+            </a>
+            <div
+              class="account-dropdown dropdown-menu"
+              aria-labelledby="user-options"
+            >
+              {% if request.user.is_authenticated %} {% if
+              request.user.is_superuser %}
+              <a href="{% url 'admin_profile' %}" class="dropdown-item"
+                >Admin</a
+              >
+              {% endif %}
+              <a href="{% url 'account_overview' %}" class="dropdown-item"
+                >My Account</a
+              >
+              <a href="{% url 'account_logout' %}" class="dropdown-item"
+                >Logout</a
+              >
+              {% else %}
+              <a href="{% url 'account_signup' %}" class="dropdown-item"
+                >Register</a
+              >
+              <a href="{% url 'account_login' %}" class="dropdown-item"
+                >Login</a
+              >
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Cart nav link that dynamically displays the cart count and total-->
+          <div class="list-inline-item">
+            <a
+              class="nav-link d-block pt-4"
+              href="{% url 'shopping_bag_view'%}"
+              title="{% if grand_total %}Your cart grand total is {{ grand_total }}{% else %}Your cart is empty{% endif %}"
+              aria-label="cart"
+            >
+              <div class="text-center">
+                <div><i class="fas fa-bag-shopping fa-lg"></i></div>
+                <small
+                  class="my-0 grand-total {% if grand_total %}border-orange{% else %}border-white{% endif %}"
+                >
+                  {% if grand_total %} €{{ grand_total|floatformat:2 }} {% else
+                  %} €0.00 {% endif %}
+                </small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row">
+        <nav class="navbar d-lg-none w-100">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#main-nav"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"
+              ><i class="fas fa-bars" aria-hidden="true"></i
+            ></span>
+          </button>
+          {% include 'includes/mobile-nav.html' %} {% include
+          'includes/main-nav.html' %}
         </nav>
+      </div>
 
-        <div class="row">
-            <nav class="navbar d-lg-none w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span>
-                </button>
-                {% include 'includes/mobile-nav.html' %}
-                {% include 'includes/main-nav.html' %}
-            </nav>
-        </div>
-
-        <div class="row text-center marquee">
-            <h5 class="fw-normal my-2 text-uppercase"><i class="fas fa-truck fa-flip-horizontal"></i> <span
-                    class="text-success">Free</span> delivery on orders over €{{ free_delivery_threshold }}!</h5>
-        </div>
-
+      <div class="row text-center marquee">
+        <h5 class="fw-normal my-2 text-uppercase">
+          <i class="fas fa-truck fa-flip-horizontal"></i>
+          <span class="text-success">Free</span> delivery on orders over €{{
+          free_delivery_threshold }}!
+        </h5>
+      </div>
     </header>
 
     <!-- Toasts -->
     {% if messages %}
     <div class="message-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-        {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-        {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
+      {% for message in messages %} {% with message.level as level %} {% if
+      level == 40 %} {% include 'includes/toasts/toast_error.html' %} {% elif
+      level == 30 %} {% include 'includes/toasts/toast_warning.html' %} {% elif
+      level == 25 %} {% include 'includes/toasts/toast_success.html' %} {% else
+      %} {% include 'includes/toasts/toast_info.html' %} {% endif %} {% endwith
+      %} {% endfor %}
     </div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
+    {% endif %} {% block page_header %} {% endblock %} {% block content %} {%
+    endblock %}
 
     <footer class="w-100 mt-auto text-center pb-4">
-        <div class="container-fluid">
-            <div class="row">
-                <div class=" col-sm-12 col-md-4">
-                    <!-- Help Section -->
-                    <div class="footer-header mt-4">
-                        <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
-                    </div>
-                    <div><a href="{% url 'faq_page' %}" class="footer-link">FAQ's</a>
-                    </div>
-                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#ShippingModal">Shipping
-                            Info</a>
-                    </div>
-                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#PolicyModal">Privacy
-                            Policy</a>
-
-
-                    </div>
-
-
-                </div>
-
-                <div class="col-sm-12 col-md-4">
-                    <!-- Subscribe -->
-                    <div class="footer-header mt-4">
-                        <h6 class="text-uppercase mb-4"><strong>Subscribe</strong></h6>
-                    </div>
-                    <p>Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight
-                        to
-                        your inbox!</p>
-                    <form action="{% url 'subscribers' %}" method="POST">
-                        {% csrf_token %}
-                        {{ subscribe_form | crispy }}
-                        <input type="submit" class=" btn-style submit btn mt-2 d-block" value="Subscribe">
-                    </form>
-
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="footer-header mt-4">
-                        <!-- Contact Us Section -->
-                        <h6 class="text-uppercase mb-4"><strong>Contact Us</strong></h6>
-                    </div>
-                    <div>
-                        <a href="{% url 'contact' %}" class="footer-link">Get in Touch</a>
-                    </div>
-                    <h6 class="text-uppercase">Follow Us</h6>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-link">
-                        <i class="fa-brands fa-instagram footer-links fa-lg"></i>
-                    </a>
-                    <a href="https://www.facebook.com/JoyfulBookstore.Dublin" target="_blank" rel="noopener"
-                        class="footer-link">
-                        <i class="fa-brands fa-facebook-f fa-lg"></i>
-                    </a>
-                    <div>
-                        <!-- Copyright -->
-                        <div class="copyright">
-                            <i class="fa-regular fa-copyright text-white"></i>
-                            <p class="d-inline text-white">JoyfulBookstore, 2022</p>
-                        </div>
-                    </div>
-
-                </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <!-- Help Section -->
+            <div class="footer-header mt-4">
+              <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
             </div>
+            <div>
+              <a href="{% url 'faq_page' %}" class="footer-link">FAQ's</a>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="footer-link"
+                data-toggle="modal"
+                data-target="#ShippingModal"
+                >Shipping Info</a
+              >
+            </div>
+            <div>
+              <a
+                href="#"
+                class="footer-link"
+                data-toggle="modal"
+                data-target="#PolicyModal"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <!-- Subscribe -->
+            <div class="footer-header mt-4">
+              <h6 class="text-uppercase mb-4"><strong>Subscribe</strong></h6>
+            </div>
+            <p>
+              Subscribe to the JoyfulBookstore mailing list to get exclusive
+              offers straight to your inbox!
+            </p>
+            <form action="{% url 'subscribers' %}" method="POST">
+              {% csrf_token %} {{ subscribe_form | crispy }}
+              <input
+                type="submit"
+                class="btn-style submit btn mt-2 d-block"
+                value="Subscribe"
+              />
+            </form>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <div class="footer-header mt-4">
+              <!-- Contact Us Section -->
+              <h6 class="text-uppercase mb-4"><strong>Contact Us</strong></h6>
+            </div>
+            <div>
+              <a href="{% url 'contact' %}" class="footer-link">Get in Touch</a>
+            </div>
+            <h6 class="text-uppercase">Follow Us</h6>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              class="footer-link"
+            >
+              <i class="fa-brands fa-instagram footer-links fa-lg"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/JoyfulBookstore.Dublin"
+              target="_blank"
+              rel="noopener"
+              class="footer-link"
+            >
+              <i class="fa-brands fa-facebook-f fa-lg"></i>
+            </a>
+            <div>
+              <!-- Copyright -->
+              <div class="copyright">
+                <i class="fa-regular fa-copyright text-white"></i>
+                <p class="d-inline text-white">JoyfulBookstore, 2022</p>
+              </div>
+            </div>
+          </div>
         </div>
-        {% include 'includes/privacy_policy_modal.html' %}
-        {% include 'includes/shipping_info.html' %}
+      </div>
+      {% include 'includes/privacy_policy_modal.html' %} {% include
+      'includes/shipping_info.html' %}
     </footer>
     {% block postloadjs %}
     <script>
-        // Toasts
-        $('.toast').toast('show');
+      // Toasts
+      $(".toast").toast("show");
 
-        // Back to top btn
-        mybutton = document.getElementById("myBtn");
+      // Back to top btn
+      mybutton = document.getElementById("myBtn");
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            scrollFunction()
-        };
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
         }
+      }
 
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
     </script>
 
     {% endblock %}
-</body>
-
+  </body>
 </html>

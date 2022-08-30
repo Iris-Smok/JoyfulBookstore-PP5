@@ -1,200 +1,200 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load shopping_bag_tools %}
-
-{% block extra_title %} | Shopping Bag{% endblock %}
-
-{% block page_header %}
+{% extends 'base.html' %} {% load static %} {% load shopping_bag_tools %} {%
+block extra_title %} | Shopping Bag{% endblock %} {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
-{% endblock %}
-
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <hr>
-            <h2 class="mb-5 mt-5"> Shopping Bag</h2>
-
-        </div>
+  <div class="row">
+    <div class="col text-center">
+      <hr />
+      <h2 class="mb-5 mt-5">Shopping Bag</h2>
     </div>
-    <div class="row">
-        <div class="col">
-            {% if shopping_bag_items %}
-            <div class="d-block d-md-none">
-                <!-- Back to top btn -->
+  </div>
+  <div class="row">
+    <div class="col">
+      {% if shopping_bag_items %}
+      <div class="d-block d-md-none">
+        <!-- Back to top btn -->
 
-                <div class="row">
-                    <div class="col mb-2">
-                        {% include 'shopping_bag/includes/shopping-bag-total.html'%}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        {% include 'shopping_bag/includes/checkout-btns.html'%}
-                        <p class="text-muted mb-5 mt-2">A summary of your bag contents is below</p>
-                    </div>
-                </div>
-                {% for item in shopping_bag_items %}
-                <div class="row">
-                    <div class="col-12 col-sm-6 mb-2">
-                        {% include 'shopping_bag/includes/book-image.html'%}
-                    </div>
-                    <div class="col-12 col-sm-6 mb-2">
-                        <p class="my-0"><strong>{{ item.book.title }}</strong></p>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        {% if item.book.sale_price %}
-                        <p class="my-0"><strong>€{{ item.book.sale_price }}</strong></p>
-                        {% else %}
-                        <p class="my-0"><strong>€{{ item.book.price }}</strong></p>
-                        {% endif %}
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        {% include 'shopping_bag/includes/quantity-form.html'%}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <hr>
-                    </div>
-                </div>
-                {% endfor %}
-                <div>
-                    <button onclick="topFunction()" id="ShoppingBagBtn" title="Go to top">Top</button>
-                </div>
-
-            </div>
-            <div class="table-responsive rounded mb-5 d-none d-md-block">
-                <table class="table table-sm table-borderless">
-                    <thead class="text-black">
-                        <tr>
-                            <th scope="col">Book Info</th>
-                            <th scope="col"></th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subotal</th>
-                        </tr>
-                    </thead>
-                    {% for item in shopping_bag_items %}
-                    <tbody class="border-top">
-                        <tr>
-                            <!-- Book Image -->
-                            <td class="p-3">
-                                <a href="{% url 'book_detail' item.book.id %}">
-                                    {% include 'shopping_bag/includes/book-image.html'%}
-                                </a>
-                            </td>
-
-                            <!-- Book Info -->
-                            <td class="py-3">
-                                <p class="my-0"><strong>{{ item.book.title }}</strong></p>
-                            </td>
-
-                            <!-- Book Price -->
-                            <td class="py-3">
-                                {% if item.book.sale_price %}
-                                <p class="my-0">€{{ item.book.sale_price }}</p>
-                                {% else %}
-                                <p class="my-0">€{{ item.book.price }}</p>
-                                {% endif %}
-                            </td>
-
-                            <!-- Quantity Form -->
-                            <td class="py-3 w-25">
-
-                                {% include 'shopping_bag/includes/quantity-form.html'%}
-
-                                <p class=" btn update-link text-info"><small>Update</small></p>
-                                <p class="btn delete-item text-danger text-left ml-1" id="delete_{{ item.item_id }}">
-                                    <small>Delete</small></p>
-                            </td>
-
-                            <td class="py-3">
-                                {% if item.book.sale_price %}
-                                <p class="my-0">€{{ item.book.sale_price | calc_subtotal:item.quantity }}</p>
-                                {% else %}
-                                <p class="my-0">€{{ item.book.price | calc_subtotal:item.quantity }}</p>
-                                {% endif %}
-                            </td>
-                        </tr>
-
-                    </tbody>
-                    {% endfor %}
-                </table>
-                <div>
-                    <!-- Shopping bag total -->
-                    {% include 'shopping_bag/includes/shopping-bag-total.html'%}
-                </div>
-                <div>
-                    <!-- Checkout Btns -->
-                    {% include 'shopping_bag/includes/checkout-btns.html'%}
-                </div>
-            </div>
+        <div class="row">
+          <div class="col mb-2">
+            {% include 'shopping_bag/includes/shopping-bag-total.html'%}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            {% include 'shopping_bag/includes/checkout-btns.html'%}
+            <p class="text-muted mb-5 mt-2">
+              A summary of your bag contents is below
+            </p>
+          </div>
+        </div>
+        {% for item in shopping_bag_items %}
+        <div class="row">
+          <div class="col-12 col-sm-6 mb-2">
+            {% include 'shopping_bag/includes/book-image.html'%}
+          </div>
+          <div class="col-12 col-sm-6 mb-2">
+            <p class="my-0"><strong>{{ item.book.title }}</strong></p>
+          </div>
+          <div class="col-12 col-sm-6">
+            {% if item.book.sale_price %}
+            <p class="my-0"><strong>€{{ item.book.sale_price }}</strong></p>
             {% else %}
-            <p class="lead my-5 text-center"> Your bag is empty.</p>
-            <a href="{% url 'books' %}">
-                <button class="btn-style logo-font my-5 p-2"><i class="fas fa-arrow-left"></i> Keep
-                    Shopping</button>
-            </a>
+            <p class="my-0"><strong>€{{ item.book.price }}</strong></p>
             {% endif %}
+          </div>
+          <div class="col-12 col-sm-6">
+            {% include 'shopping_bag/includes/quantity-form.html'%}
+          </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <hr />
+          </div>
+        </div>
+        {% endfor %}
+        <div>
+          <button onclick="topFunction()" id="ShoppingBagBtn" title="Go to top">
+            Top
+          </button>
+        </div>
+      </div>
+      <div class="table-responsive rounded mb-5 d-none d-md-block">
+        <table class="table table-sm table-borderless">
+          <thead class="text-black">
+            <tr>
+              <th scope="col">Book Info</th>
+              <th scope="col"></th>
+              <th scope="col">Price</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Subotal</th>
+            </tr>
+          </thead>
+          {% for item in shopping_bag_items %}
+          <tbody class="border-top">
+            <tr>
+              <!-- Book Image -->
+              <td class="p-3">
+                <a href="{% url 'book_detail' item.book.id %}">
+                  {% include 'shopping_bag/includes/book-image.html'%}
+                </a>
+              </td>
+
+              <!-- Book Info -->
+              <td class="py-3">
+                <p class="my-0"><strong>{{ item.book.title }}</strong></p>
+              </td>
+
+              <!-- Book Price -->
+              <td class="py-3">
+                {% if item.book.sale_price %}
+                <p class="my-0">€{{ item.book.sale_price }}</p>
+                {% else %}
+                <p class="my-0">€{{ item.book.price }}</p>
+                {% endif %}
+              </td>
+
+              <!-- Quantity Form -->
+              <td class="py-3 w-25">
+                {% include 'shopping_bag/includes/quantity-form.html'%}
+
+                <p class="btn update-link text-info"><small>Update</small></p>
+                <p
+                  class="btn delete-item text-danger text-left ml-1"
+                  id="delete_{{ item.item_id }}"
+                >
+                  <small>Delete</small>
+                </p>
+              </td>
+
+              <td class="py-3">
+                {% if item.book.sale_price %}
+                <p class="my-0">
+                  €{{ item.book.sale_price | calc_subtotal:item.quantity }}
+                </p>
+                {% else %}
+                <p class="my-0">
+                  €{{ item.book.price | calc_subtotal:item.quantity }}
+                </p>
+                {% endif %}
+              </td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+        <div>
+          <!-- Shopping bag total -->
+          {% include 'shopping_bag/includes/shopping-bag-total.html'%}
+        </div>
+        <div>
+          <!-- Checkout Btns -->
+          {% include 'shopping_bag/includes/checkout-btns.html'%}
+        </div>
+      </div>
+      {% else %}
+      <p class="lead my-5 text-center">Your bag is empty.</p>
+      <a href="{% url 'books' %}">
+        <button class="btn-style logo-font my-5 p-2">
+          <i class="fas fa-arrow-left"></i> Keep Shopping
+        </button>
+      </a>
+      {% endif %}
     </div>
+  </div>
 </div>
 
-{% endblock %}
-{% block postloadjs %}
-{{ block.super }}
-{% include 'books/includes/quantity_input_script.html' %}
+{% endblock %} {% block postloadjs %} {{ block.super }} {% include
+'books/includes/quantity_input_script.html' %}
 <script>
-    // Update quantity on click
-    $('.update-link').click(function (e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    });
+  // Update quantity on click
+  $(".update-link").click(function (e) {
+    var form = $(this).prev(".update-form");
+    form.submit();
+  });
 
-    // Remove item and reload on click
-    $('.delete-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('delete_')[1];
-        var url = `/shopping_bag/delete/${itemId}/`;
-        var data = {
-            'csrfmiddlewaretoken': csrfToken,
-        };
-
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
-    })
-
-
-    //Get the button:
-    mybutton = document.getElementById("ShoppingBagBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
+  // Remove item and reload on click
+  $(".delete-item").click(function (e) {
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr("id").split("delete_")[1];
+    var url = `/shopping_bag/delete/${itemId}/`;
+    var data = {
+      csrfmiddlewaretoken: csrfToken,
     };
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
+    $.post(url, data).done(function () {
+      location.reload();
+    });
+  });
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  //Get the button:
+  mybutton = document.getElementById("ShoppingBagBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
     }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 </script>
 
 {% endblock %}

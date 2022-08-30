@@ -1,183 +1,187 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load shopping_bag_tools %}
-
-{% block extra_title %} | Receipt {% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
-
-
-
-{% block page_header %}
+{% extends 'base.html' %} {% load static %} {% load shopping_bag_tools %} {%
+block extra_title %} | Receipt {% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}" />
+{% endblock %} {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4 text-center mt-5">Thank You</h2>
-            <hr>
-            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email}}</strong>
+  <div class="row">
+    <div class="col">
+      <hr />
+      <h2 class="logo-font mb-4 text-center mt-5">Thank You</h2>
+      <hr />
+      <p>
+        Your order information is below. A confirmation email will be sent to
+        <strong>{{ order.email}}</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-7">
+      <div class="order-confirmation-wrapper p-md-5 p-2 border">
+        <div class="row">
+          <div class="col">
+            <small class="text-muted">Order Info:</small>
+          </div>
+        </div>
+        <!-- Order number and date -->
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-0 text-black">
+              <strong>Order Number: </strong>{{ order.order_number }}
             </p>
+          </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12 col-lg-7">
-            <div class="order-confirmation-wrapper p-md-5 p-2 border">
-                <div class="row">
-                    <div class="col">
-                        <small class="text-muted">Order Info:</small>
-                    </div>
-                </div>
-                <!-- Order number and date -->
-                <div class="row">
-                    <div class="col-12">
-                        <p class="mb-0 text-black"><strong>Order Number: </strong>{{ order.order_number }}</p>
-                    </div>
-                </div>
+        <div class="row border-bottom pb-3">
+          <div class="col-12">
+            <p class="mb-0"><strong>Order Date: </strong>{{ order.date }}</p>
+          </div>
+        </div>
 
-                <div class="row border-bottom pb-3">
-                    <div class="col-12">
-                        <p class="mb-0"><strong>Order Date: </strong>{{ order.date }}</p>
-                    </div>
-                </div>
+        <!-- Ordered items info  -->
+        <div class="row my-3 font-weight-bold">
+          <div class="col-3 d-none d-md-block"></div>
+          <div class="col-4 col-md-3">Items</div>
+          <div class="col-4 col-md-3 text-center">Qty</div>
+          <div class="col-4 col-md-3">Subtotal</div>
+        </div>
 
-                <!-- Ordered items info  -->
-                <div class="row my-3 font-weight-bold">
-                    <div class="col-3 d-none d-md-block"></div>
-                    <div class="col-4 col-md-3">Items</div>
-                    <div class="col-4 col-md-3 text-center">Qty</div>
-                    <div class="col-4 col-md-3">Subtotal</div>
-                </div>
-
-                <div>
-                    {% for item in order.lineitems.all %}
-                    <div class="row mb-4">
-                        <div class="col-3 d-none d-md-block">
-                            {% if item.book.image %}
-                            <img class="w-50" src="{{ item.book.image.url }}" alt="{{ book.title }}">
-                            {% else %}
-                            <img class="w-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.title }}">
-                            {% endif %}
-                        </div>
-                        <div class="col-4 col-md-3">{{ item.book.title }}</div>
-                        <div class="col-4 col-md-3 text-center">{{ item.quantity }}</div>
-                        <div class="col-4 col-md-3">
-                            <p class="my-0">€{{ item.book.sort_price | calc_subtotal:item.quantity}}</p>
-
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <!-- Delivering to -->
-                <div class="row">
-                    <div class="col mt-3 pt-3 border-top">
-                        <small class="text-muted">Delivering To:</small>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.full_name }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.street_address1 }}</p>
-                    </div>
-                </div>
-
-                {% if order.street_address2 %}
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.street_address2 }}</p>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if order.county %}
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.county }}</p>
-                    </div>
-                </div>
-                {% endif %}
-
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.town_or_city }}</p>
-                    </div>
-                </div>
-
-                {% if order.postcode %}
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.postcode }}</p>
-                    </div>
-                </div>
-                {% endif %}
-
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.country }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <p class="mb-0">{{ order.phone_number }}</p>
-                    </div>
-                </div>
-                <!-- Billing Info -->
-                <div class="row">
-                    <div class="col mt-3 pt-3 border-top">
-                        <small class="text-muted">Billing Info:</small>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <p class="mb-0"><strong>Total: </strong>€{{ order.order_total }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <p class="mb-0"><strong>Delivery: </strong>€{{ order.delivery_cost }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <p class="mb-0 text-black font-weight-bold">Grand Total: €{{ order.grand_total }}</p>
-                    </div>
-                </div>
+        <div>
+          {% for item in order.lineitems.all %}
+          <div class="row mb-4">
+            <div class="col-3 d-none d-md-block">
+              {% if item.book.image %}
+              <img
+                class="w-50"
+                src="{{ item.book.image.url }}"
+                alt="{{ book.title }}"
+              />
+              {% else %}
+              <img
+                class="w-50"
+                src="{{ MEDIA_URL }}noimage.png"
+                alt="{{ book.title }}"
+              />
+              {% endif %}
             </div>
+            <div class="col-4 col-md-3">{{ item.book.title }}</div>
+            <div class="col-4 col-md-3 text-center">{{ item.quantity }}</div>
+            <div class="col-4 col-md-3">
+              <p class="my-0">
+                €{{ item.book.sort_price | calc_subtotal:item.quantity}}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
         </div>
+
+        <!-- Delivering to -->
+        <div class="row">
+          <div class="col mt-3 pt-3 border-top">
+            <small class="text-muted">Delivering To:</small>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.full_name }}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.street_address1 }}</p>
+          </div>
+        </div>
+
+        {% if order.street_address2 %}
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.street_address2 }}</p>
+          </div>
+        </div>
+        {% endif %} {% if order.county %}
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.county }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.town_or_city }}</p>
+          </div>
+        </div>
+
+        {% if order.postcode %}
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.postcode }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.country }}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <p class="mb-0">{{ order.phone_number }}</p>
+          </div>
+        </div>
+        <!-- Billing Info -->
+        <div class="row">
+          <div class="col mt-3 pt-3 border-top">
+            <small class="text-muted">Billing Info:</small>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p class="mb-0"><strong>Total: </strong>€{{ order.order_total }}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p class="mb-0">
+              <strong>Delivery: </strong>€{{ order.delivery_cost }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p class="mb-0 text-black font-weight-bold">
+              Grand Total: €{{ order.grand_total }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Continue Shopping btn -->
 <div class="container">
-    <div class="row my-3">
-        <div class="col-12 text-center text-md-left">
-            <a href="{% url 'books' %}" class="btn logo-font btn-style">
-                Continue Shopping
-            </a>
-        </div>
+  <div class="row my-3">
+    <div class="col-12 text-center text-md-left">
+      <a href="{% url 'books' %}" class="btn logo-font btn-style">
+        Continue Shopping
+      </a>
     </div>
+  </div>
 </div>
 
 {% endblock %}
