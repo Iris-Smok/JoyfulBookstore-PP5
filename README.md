@@ -85,7 +85,7 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 6   | As a **store owner** I can edit/delete categories so that I can make sure the website is up to date                                                       |
 | 7   | As a **store owner** I can edit/delete questions so that I can provide users with information about common questions and concerns                                                                                                                                                          |
 | 8   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new books                                                |
-| 9   | As a **store owner** I have created Facebook shop page to increase traffic on my website                                                                   |
+| 9   | As a **store owner** I have created Facebook shop page to increase traffic on my website                                                                  |
 
 **Epic: Navigation**
 
@@ -95,10 +95,10 @@ This website will offer all of these things whilst also allowing for intuitive n
 | 13  | As a **user** I can easily navigate through the site so that I can view desired content                                      |
 | 14  | As a **user** I can easily find a navigation bar and footer so that I can see what content there is on the website           |
 | 15  | Aa a **user** I can easily see the products list so that I can see what the store has to offer                               |
-| 16  | As a **user** I can sort products by category so that I can easily find what I'm looking for                                 |
+| 16  | As a **user** I can search products by category so that I can easily find what I'm looking for                               |
 | 17  | As a **user** I can sort products by rating, price and name so that I can easily find what I'm looking for                   |
 | 18  | As a **user** I can search for products using the search form so that I can find the products I'm specifically looking for   |
-| 19  | As a **user** I can see the book details page so that I can see the book name, rating, price, short description and comments |
+| 19  | As a **user** I can see the book details page so that I can see the book name, rating, price, short description and ratings  |
 | 20  | As a **user** I can read the FAQ's so that I can find the answer to my question or concern before contacting the bookstore   |
 
 **Epic: Purchase**
