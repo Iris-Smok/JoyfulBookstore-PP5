@@ -57,6 +57,9 @@
                     </div>
                     <div class="col-12 col-sm-6">
                         {% include 'shopping_bag/includes/quantity-form.html'%}
+                        <p class=" btn update-link text-info"><small>Update</small></p>
+                        <p class="btn delete-item text-danger text-left ml-1" id="delete_{{ item.item_id }}">
+                            <small>Delete</small></p>
                     </div>
                 </div>
                 <div class="row">
