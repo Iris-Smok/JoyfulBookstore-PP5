@@ -1,14 +1,23 @@
-# Validators
+[Validators](#validators)
+* [Lighthouse](#lighthouse)
+* [HTML](#html)
+* [CSS](#css)
+* [JSHINT](#jshint)
+* [PEP8](#pep8)
 
-## HTML
+[User Stories Testing](#user-stories-testing)
 
-- All Pages were checked with the official [W3C validator](https://validator.w3.org/). 
-
-## Lighthouse 
+# Lighthouse 
 
 <p align="center">
 <img src="assets/documents/README_docs/validators/bookstore-lighthouse.png" width="800" height="100%">
 </p>
+
+
+# HTML
+
+- All Pages were checked with the official [W3C validator](https://validator.w3.org/). 
+
 
 
 ## Home Page
@@ -116,6 +125,57 @@ Due to lack of time, it remained unresolved
 <p align="center">
 <img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
 </p>
+
+# CSS
+
+## Base.css
+<p align="center">
+<img src="assets/documents/README_docs/validators/base.css-validator.png" width="100%" height="100%">
+</p>
+
+## Books.css
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/books.css-validator.png" width="100%" height="100%">
+</p>
+
+## Checkout.css
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/checkout.css-validator.png" width="100%" height="100%">
+</p>
+
+## Profiles.css
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/profiles.css-validator.png" width="100%" height="100%">
+</p>
+
+# JSHINT 
+- All JS was passed through Jshint
+
+## Base
+<p align="center">
+<img src="assets/documents/README_docs/validators/base.js-validator.png" width="100%" height="100%">
+</p>
+
+## Checkout 
+<p align="center">
+<img src="assets/documents/README_docs/validators/checkout.js-validator.png" width="100%" height="100%">
+</p>
+
+## Shopping Bag quantity buttons
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/quantity-buttons-validator.png" width="100%" height="100%">
+</p>
+
+## Shopping Bag
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/shopping-bag.js-validator.png" width="100%" height="100%">
+</p>
+
 
 
 # User Stories Testing
@@ -449,4 +509,5 @@ Due to lack of time, it remained unresolved
 <p align="center">
 <img src="assets/documents/README_docs/user-story-testing/epic-account/delivery-details.png" width="600" height="100%">
 </p>
+
 

@@ -373,7 +373,7 @@ The aim was to provide a solid colour base which could bring the other elements 
 
 [GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
 
-[AWS](https://aws.amazon.com/) – was used to store our static files 
+[AWS](https://aws.amazon.com/) – was used to store static files 
 
 [Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
 
