@@ -3,7 +3,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, F
 from django.db.models.functions import Lower
 from django.db.models import Avg
 from profiles.models import UserProfile
@@ -27,6 +27,21 @@ def all_books(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+
+            if sortkey == 'rating':
+                if direction == 'desc':
+                    books = books.order_by(
+                        F(sortkey).desc(nulls_last=True)
+                    )
+                else:
+                    books = books.order_by(
+                        F(sortkey).asc(nulls_first=True)
+                    )
+        else:
+
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 books = books.annotate(lower_title=Lower('title'))
