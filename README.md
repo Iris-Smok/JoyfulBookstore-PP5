@@ -726,3 +726,17 @@ Stripe is needed to handle the checkout process when a payment is made. You will
     STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
     STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
     ```
+
+# Credits
+
+### Content 
+
+The description of the books on the product details page are taken from [Bag of Books](https://bagsofbooks.ie/)
+
+### Media
+All images were taken from [Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/)
+
+## Acknowledgements
+
+- Big thanks to everybody from the Code Institute Slack community 
+- Thank you Daniel Callaghan for your great help in solving the sort price bug
