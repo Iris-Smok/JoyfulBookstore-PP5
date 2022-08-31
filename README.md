@@ -37,7 +37,6 @@ You can find live site [here](https://joyfulbookstore.herokuapp.com/)
 
 8. [Credits](#credits)
 
-responsive image and link to live site
 
 # About
 
