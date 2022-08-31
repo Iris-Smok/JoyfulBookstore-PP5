@@ -5,6 +5,7 @@
 <img src="assets/documents/README_docs/responsive-site.png" width="800" height="100%">
 </p>
 
+You can find live site [here](https://joyfulbookstore.herokuapp.com/)
 
 # Table of Contents
 
@@ -32,11 +33,9 @@
 
 6. [Testing](#testing)
 
-7. [Bugs](#bugs)
+7. [Deployment](#deployment)
 
-8. [Deployment](#deployment)
-
-9. [Credits](#credits)
+8. [Credits](#credits)
 
 responsive image and link to live site
 
