@@ -6,7 +6,11 @@
 * [PEP8](#pep8)
 
 [User Stories Testing](#user-stories-testing)
-[Responsiveness](#Responsiveness)
+
+[Responsiveness](#responsiveness)
+
+[Bugs](#bugs)
+
 
 # Lighthouse 
 
@@ -521,7 +525,7 @@ Due to lack of time, it remained unresolved
 # Responsiveness
 
 <p align="center">
-<img src="assets/documents/README_docs/gifs/responsivness" width="100%" height="100%">
+<img src="assets/documents/README_docs/gifs/responsivness.gif" width="100%" height="100%">
 </p>
 
 
@@ -535,7 +539,5 @@ Due to lack of time, it remained unresolved
 
 - Unicode characters in newsletter email - during the development, I noticed that when the admin sends the newsletter to the subscribers, all non-alphabetic characters are converted to Unicode characters. To escape that I used {{autoescape off}} tag on variable in the subscriber's email
 
-## Unfixed
-
 - Shopping bag page 
-    - "Error: Duplicate ID delete_3."  error acurres due to two delete buttons with the same ID
+    - "Error: Duplicate ID delete_3."  error acurres due to two delete buttons with the same ID. I add extra jQuery for deletebutton for mobile view and rename the delete button class and id
